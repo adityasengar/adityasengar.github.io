@@ -5,15 +5,14 @@
 
     {% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-sCutv9tIopvR2CxltfbqtCIuG9SnuG5afA4YpU2t3Bg+1VfMgvL2tBYrAD2YxTqn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTadx52GII+pzIMk2zV7T8R2jAonT8HOKS+YJaBFCcmNqwqJoE4OEOfNa" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/Gf1ESgOStT3rI7M3JftGvCQ0OhHwWJUNrE8M_vsQMyJGnft" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    </head>
 
   <body>
     <div class="wrapper-masthead">
