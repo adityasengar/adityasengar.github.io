@@ -91,7 +91,9 @@ $$
 \mathbf{M}_{\mathrm{final}} = \mathrm{concat} \left( \left[ \mathbf{M}_{\mathrm{msa}}, \mathbf{M}_{\mathrm{templ}} \right], \, \mathrm{axis}=0 \right)
 $$
 
-The resulting matrix, $\mathbf{M}_{\mathrm{final}}$, has shape $((N_{\mathrm{clust}} + N_{\mathrm{templ}}) \times N_{\mathrm{res}} \times c_m)$. This larger matrix, where $N_{\mathrm{seq}} = N_{\mathrm{clust}} + N_{\mathrm{templ}}$, is what the Evoformer processes.
+The resulting matrix, $\mathbf{M}{\mathrm{final}}$, has shape $((N{\mathrm{clust}} + N_{\mathrm{templ}}) \times N_{\mathrm{res}} \times c_m)$. This larger matrix, where $N_{\mathrm{seq}} = N_{\mathrm{clust}} + N_{\mathrm{templ}}$, is what the Evoformer processes.
+
+
 
 This treats the template not as a static map, but as an expert participant in the evolutionary dialogue. By sitting alongside the other sequences, its structural information can directly bias the MSA attention mechanisms. For example, if a template's torsion angles clearly define a beta-strand, it can encourage the MSA attention to focus on finding the long-range co-evolutionary signals that are characteristic of beta-sheet formation.
 
