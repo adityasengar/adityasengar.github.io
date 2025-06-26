@@ -86,17 +86,11 @@ The crucial step is how this is incorporated. For each residue pair $(i, j)$ in 
 Second, in a particularly elegant move, the model extracts the known backbone torsion angles from the templates. These angles are embedded into a feature vector and then **concatenated directly to the MSA representation** as if they were additional sequences.
 # MSA Representation Mathematical Description
 
-To be precise, the main MSA representation, $\mathbf{M}_{\text{msa}}$, has shape $(N_{\text{clust}} \times N_{\text{res}} \times c_m)$, where $N_{\text{clust}}$ is the number of clustered sequences and $c_m = 256$ is the number of channels. 
-
-The template torsion angle features are first passed through a small MLP to create a template representation, $\mathbf{M}_{\text{templ}}$, with a compatible shape of $(N_{\text{templ}} \times N_{\text{res}} \times c_m)$. 
-
-The concatenation happens along the sequence dimension:
-
-$$\mathbf{M}_{\text{final}} = \text{concat} \left( \left[ \mathbf{M}_{\text{msa}}, \mathbf{M}_{\text{templ}} \right], \, \text{axis}=0 \right)$$
-
-The resulting matrix, $\mathbf{M}_{\text{final}}$, has shape $((N_{\text{clust}} + N_{\text{templ}}) \times N_{\text{res}} \times c_m)$. This larger matrix, where $N_{\text{seq}} = N_{\text{clust}} + N_{\text{templ}}$, is what the Evoformer processes.
-
-
+To be precise, the main MSA representation, $\mathbf{M}{\mathrm{msa}}$, has shape $(N{\mathrm{clust}} \times N_{\mathrm{res}} \times cm)$, where $N{\mathrm{clust}}$ is the number of clustered sequences and $cm = 256$ is the number of channels. The template torsion angle features are first passed through a small MLP to create a template representation, $\mathbf{M}{\mathrm{templ}}$, with a compatible shape of $(N{\mathrm{templ}} \times N_{\mathrm{res}} \times cm)$. The concatenation happens along the sequence dimension:
+$$
+\mathbf{M}{\mathrm{final}} = \mathrm{concat} \left( \left[ \mathbf{M}{\mathrm{msa}}, \mathbf{M}{\mathrm{templ}} \right], \, \mathrm{axis}=0 \right)
+$$
+The resulting matrix, $\mathbf{M}{\mathrm{final}}$, has shape $((N{\mathrm{clust}} + N{\mathrm{templ}}) \times N{\mathrm{res}} \times cm)$. This larger matrix, where $N{\mathrm{seq}} = N{\mathrm{clust}} + N{\mathrm{templ}}$, is what the Evoformer processes.
 
 This treats the template not as a static map, but as an expert participant in the evolutionary dialogue. By sitting alongside the other sequences, its structural information can directly bias the MSA attention mechanisms. For example, if a template's torsion angles clearly define a beta-strand, it can encourage the MSA attention to focus on finding the long-range co-evolutionary signals that are characteristic of beta-sheet formation.
 
