@@ -72,6 +72,7 @@ The final initial pair representation is the sum of these two components:
 
 $$\mathbf{z}_{ij}^{\text{initial}} = \mathbf{z}_{ij}^{\text{pairs}} + \mathbf{p}_{ij}$$
 
+
 This initial grid is like digital graph paper, with basic 1D relationships sketched out. The job of the Evoformer is to enrich this grid, filling its 128 channels with sophisticated 3D information like residue-pair distances and orientations.
 
 #### Structural Templates: A Powerful Head Start
