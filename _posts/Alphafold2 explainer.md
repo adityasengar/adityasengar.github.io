@@ -266,68 +266,111 @@ This intricate, deterministic machine set a new standard for accuracy, but its c
 Ultimately, the genius of AlphaFold 2 lies in its integrated design. It doesn't treat protein structure prediction as a simple pipeline, but as a holistic reasoning problem. The Evoformer creates a rich, context-aware blueprint by forcing a deep dialogue between evolutionary data and a geometric hypothesis. The Structure Module then uses a physically-inspired, equivariant attention mechanism to translate this abstract blueprint into a precise atomic model. This end-to-end philosophy, guided by a symphony of carefully chosen loss functions, is what allowed AlphaFold 2 to not just advance the field, but to fundamentally redefine what was thought possible.
 
 ***
+# Appendix
 
-## Appendix
-### A Deeper Look at Self-Attention (The Transformer's Engine)
+## A Deeper Look at Self-Attention
 
-Before we see how the Evoformer achieves its dialogue, we must understand its core computational tool: the **attention mechanism**. Imagine we want a model to understand the word "sat" in the phrase "the cat sat on the mat". The context ("cat", "mat") is crucial. Self-attention is the mechanism that allows the model to learn these relationships by weighing the influence of other words. Here’s a tiny numerical example showing how it computes a new, context-aware representation for "sat".
+The core computational engine of the Transformer architecture is the **self-attention mechanism**. Its purpose is to generate a new, contextually-aware representation for each element in an input sequence. It achieves this by systematically weighing the influence of every other element in the sequence, allowing the model to dynamically capture relationships between them.
 
-1.  **Our Input Embeddings:** We start with three words, which have been converted into simple 2D vectors (embeddings). Let's represent them as a matrix $\mathbf{X}$.
-    $$
-    \mathbf{X} = 
-    \begin{bmatrix}
-    1 & 0 \\ % cat
-    0 & 1 \\ % sat
-    1 & 1   % mat
-    \end{bmatrix}
-    $$
-    
-2.  **Project to Query, Key, and Value spaces:** The model learns three distinct weight matrices, $\mathbf{W_Q}$, $\mathbf{W_K}$, and $\mathbf{W_V}$, to project our input embeddings into three roles:
-    * A **Query (Q)**: Asks "What am I looking for?"
-    * A **Key (K)**: Says "Here is the kind of information I provide."
-    * A **Value (V)**: Contains the actual information to be shared.
-    
-    For our example, let's use these simple projection matrices:
-    $$
-    \mathbf{W_Q} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \quad
-    \mathbf{W_K} = \begin{bmatrix} 0.5 & 0 \\ 0 & 0.5 \end{bmatrix} \quad
-    \mathbf{W_V} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
-    $$
-    We calculate the $\mathbf{Q}$, $\mathbf{K}$, and $\mathbf{V}$ matrices by multiplying our input $\mathbf{X}$ with these weight matrices.
-    $$
-    \begin{align*}
-        \mathbf{Q} &= \mathbf{X}\mathbf{W_Q} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{bmatrix} \\
-        \mathbf{K} &= \mathbf{X}\mathbf{W_K} = \begin{bmatrix} 0.5 & 0 \\ 0 & 0.5 \\ 0.5 & 0.5 \end{bmatrix} \\
-        \mathbf{V} &= \mathbf{X}\mathbf{W_V} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{bmatrix}
-    \end{align*}
-    $$
+To illustrate this, we will use a relevant example from protein biology. Imagine the model is processing a peptide sequence and needs to learn the electrostatic interaction between a positively charged Lysine (K) and a negatively charged Aspartate (D), which can form a salt bridge. We will walk through how self-attention enables the model to learn this relationship, focusing on updating the representation for Lysine.
 
-3.  **Calculate Scores for "sat":** To update the representation for "sat", we take its query vector, $\mathbf{q_{sat}} = [0, 1]$, and see how it matches with every key vector using the dot product. This score measures relevance.
-    $$
-    \begin{align*}
-        \text{score}(\text{sat, cat}) &= \mathbf{q_{sat}} \cdot \mathbf{k_{cat}} = [0, 1] \cdot [0.5, 0] = 0 \\
-        \text{score}(\text{sat, sat}) &= \mathbf{q_{sat}} \cdot \mathbf{k_{sat}} = [0, 1] \cdot [0, 0.5] = 0.5 \\
-        \text{score}(\text{sat, mat}) &= \mathbf{q_{sat}} \cdot \mathbf{k_{mat}} = [0, 1] \cdot [0.5, 0.5] = 0.5
-    \end{align*}
-    $$
+1. **Input Embeddings:** We begin with an input matrix **X**, where each row **x**<sub>i</sub> is a vector (an "embedding") representing a single amino acid residue. These initial embeddings are learned and encode fundamental properties. For our simplified 3-residue sequence (Alanine, Lysine, Aspartate), let's assume a 4-dimensional embedding (d<sub>model</sub>=4). The dimensions could conceptually represent properties like size, hydrophobicity, positive charge, and negative charge.
 
-4.  **Scale and Normalize:** The scores are scaled (e.g., by $\sqrt{d_k}$) and then a softmax function is applied to turn them into positive weights that sum to 1.
-    $$
-    \begin{align*}
-        \text{Attention Weights} &\approx [0.26, 0.37, 0.37]
-    \end{align*}
-    $$
-    These weights show that to understand "sat", the model should pull about 26% of its information from "cat" and 37% each from "sat" itself and "mat".
+   $$
+   \mathbf{X} =
+   \begin{bmatrix}
+   \mathbf{x}_{\text{Ala}} \\
+   \mathbf{x}_{\text{Lys}} \\
+   \mathbf{x}_{\text{Asp}}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+   0.2 & 0.1 & 0.0 & 0.0 \\ 
+   0.8 & 0.4 & 1.0 & 0.0 \\ 
+   0.5 & 0.3 & 0.0 & 1.0   
+   \end{bmatrix}
+   $$
 
-5.  **Produce the Final Output:** The new representation for "sat" is the weighted sum of all the **Value** vectors.
-    $$
-    \begin{align*}
-        \text{output}_{\text{sat}} &= (0.26 \times [1, 0]) + (0.37 \times [0, 1]) + (0.37 \times [1, 1]) = [0.63, 0.74]
-    \end{align*}
-    $$
+2. **Projecting to Query, Key, and Value Spaces:** The model learns three distinct weight matrices (**W**<sub>Q</sub>, **W**<sub>K</sub>, **W**<sub>V</sub>) to project each input embedding into three different roles. This projection allows the model to extract specific features relevant for establishing relationships.
 
-The final vector, $[0.63, 0.74]$, is the new, context-aware representation for "sat". To handle different kinds of relationships simultaneously (e.g., local vs. long-range), **Multi-Head Attention** performs this calculation multiple times in parallel with different weight matrices and combines the results.
+   - A **Query** vector (**q**): Asks, "Given my properties, who should I pay attention to?" For Lysine, its query vector will be trained to effectively ask, "I have a positive charge; where is a corresponding negative charge?"
+   - A **Key** vector (**k**): States, "Here are the properties I offer for others to query." For Aspartate, its key vector will be trained to state, "I possess a negative charge."
+   - A **Value** vector (**v**): Contains the information of that residue to be passed on to others. If a residue receives high attention, it will heavily incorporate this value vector.
 
+   Let's define our learned weight matrices, which project from d<sub>model</sub>=4 to a smaller dimension d<sub>k</sub>=d<sub>v</sub>=2.
+
+   $$
+   \mathbf{W}_Q = \begin{bmatrix} 0 & 1 \\ 0 & 1 \\ 1 & 0 \\ 0 & 0 \end{bmatrix} \quad
+   \mathbf{W}_K = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \\ 1 & 0 \end{bmatrix} \quad
+   \mathbf{W}_V = \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ 1 & 1 \\ 0 & 1 \end{bmatrix}
+   $$
+
+   We calculate the **Q**, **K**, and **V** matrices by multiplying our input **X** with these weight matrices.
+
+   $$
+   \begin{align}
+   \mathbf{Q} &= \mathbf{X}\mathbf{W}_Q = \begin{bmatrix} 0.2 & 0.3 \\ 0.8 & 1.2 \\ 0.5 & 0.8 \end{bmatrix} \\
+   \mathbf{K} &= \mathbf{X}\mathbf{W}_K = \begin{bmatrix} 0.2 & 0.1 \\ 0.8 & 0.4 \\ 1.5 & 0.3 \end{bmatrix} \\
+   \mathbf{V} &= \mathbf{X}\mathbf{W}_V = \begin{bmatrix} 0.1 & 0.4 \\ 1.2 & 1.8 \\ 0.3 & 1.8 \end{bmatrix}
+   \end{align}
+   $$
+
+3. **Calculate Raw Scores (Attention Logits):** To determine how much attention Lysine should pay to other residues, we take its query vector, **q**<sub>Lys</sub> = [0.8, 1.2], and compute its dot product with the key vector of every residue in the sequence. The dot product is a measure of similarity; a higher value signifies greater relevance.
+
+   $$
+   \begin{align}
+   \text{score}(\text{Lys, Ala}) &= \mathbf{q}_{\text{Lys}} \cdot \mathbf{k}_{\text{Ala}} = [0.8, 1.2] \cdot [0.2, 0.1] = (0.8)(0.2) + (1.2)(0.1) = 0.28 \\
+   \text{score}(\text{Lys, Lys}) &= \mathbf{q}_{\text{Lys}} \cdot \mathbf{k}_{\text{Lys}} = [0.8, 1.2] \cdot [0.8, 0.4] = (0.8)(0.8) + (1.2)(0.4) = 1.12 \\
+   \text{score}(\text{Lys, Asp}) &= \mathbf{q}_{\text{Lys}} \cdot \mathbf{k}_{\text{Asp}} = [0.8, 1.2] \cdot [1.5, 0.3] = (0.8)(1.5) + (1.2)(0.3) = 1.56
+   \end{align}
+   $$
+
+   As designed, the score for the interacting Lys-Asp pair is the highest, indicating a strong potential relationship.
+
+4. **Scale and Normalize (Softmax):** The scores [0.28, 1.12, 1.56] are first scaled. This is a critical step for stabilizing training. As the dimension of the key vectors (d<sub>k</sub>) increases, the variance of the dot products also increases, which can push the softmax function into saturated regions with extremely small gradients. To counteract this, we scale the scores by dividing by √d<sub>k</sub>. Here, d<sub>k</sub>=2, so we scale by √2 ≈ 1.414.
+
+   $$
+   \text{Scaled Scores} = \left[ \frac{0.28}{\sqrt{2}}, \frac{1.12}{\sqrt{2}}, \frac{1.56}{\sqrt{2}} \right] \approx [0.198, 0.792, 1.103]
+   $$
+
+   Next, these scaled scores are passed through a softmax function, which converts them into a probability distribution of positive weights that sum to 1. These are the final **attention weights** (α).
+
+   $$
+   \begin{align}
+   \alpha_{\text{Lys}} &= \text{softmax}([0.198, 0.792, 1.103]) \\
+   &= \left[ \frac{e^{0.198}}{e^{0.198} + e^{0.792} + e^{1.103}}, \frac{e^{0.792}}{e^{0.198} + e^{0.792} + e^{1.103}}, \frac{e^{1.103}}{e^{0.198} + e^{0.792} + e^{1.103}} \right] \\
+   &= \left[ \frac{1.22}{1.22 + 2.21 + 3.01}, \frac{2.21}{1.22 + 2.21 + 3.01}, \frac{3.01}{1.22 + 2.21 + 3.01} \right] \\
+   &\approx [0.19, 0.34, \mathbf{0.47}]
+   \end{align}
+   $$
+
+   The weights clearly show that to update its representation, Lysine should draw 47% of its new information from Aspartate.
+
+5. **Produce the Final Output:** The new, context-aware representation for Lysine, denoted **z**<sub>Lys</sub>, is the weighted sum of all the **Value** vectors in the sequence, using the attention weights we just calculated.
+
+   $$
+   \begin{align}
+   \mathbf{z}_{\text{Lys}} &= (\alpha_{\text{Lys,Ala}} \times \mathbf{v}_{\text{Ala}}) + (\alpha_{\text{Lys,Lys}} \times \mathbf{v}_{\text{Lys}}) + (\alpha_{\text{Lys,Asp}} \times \mathbf{v}_{\text{Asp}}) \\
+   &= (0.19 \times [0.1, 0.4]) + (0.34 \times [1.2, 1.8]) + (0.47 \times [0.3, 1.8]) \\
+   &= [0.019, 0.076] + [0.408, 0.612] + [0.141, 0.846] \\
+   &= [0.568, 1.534]
+   \end{align}
+   $$
+
+The final output vector for Lysine, **z**<sub>Lys</sub>=[0.568, 1.534], has now powerfully incorporated information from Aspartate, effectively encoding their likely interaction directly into its features. This new vector is then passed to the next layer of the Transformer.
+
+### Multi-Head Attention
+
+A single attention calculation (as shown above) allows the model to focus on one type of relationship at a time (e.g., electrostatic interactions). However, protein structures are governed by many concurrent interactions (hydrophobic interactions, hydrogen bonds, steric constraints, etc.).
+
+**Multi-Head Attention** addresses this limitation by performing the entire self-attention process multiple times in parallel. Each parallel run is called a "head," and each head has its own independently learned weight matrices (**W**<sub>Q</sub><sup>(i)</sup>, **W**<sub>K</sub><sup>(i)</sup>, **W**<sub>V</sub><sup>(i)</sup>). This is analogous to having multiple specialist "heads" analyzing the sequence simultaneously:
+
+- **Head 1** might learn to identify salt bridges.
+- **Head 2** might focus on hydrophobic interactions.
+- **Head 3** might track backbone hydrogen bond patterns.
+- etc.
+
+The resulting output vectors from all heads (**z**<sup>(1)</sup>, **z**<sup>(2)</sup>, ...) are concatenated and then passed through a final linear projection matrix, **W**<sub>O</sub>, to produce the final, unified output. This creates a representation that is simultaneously rich with information about many different kinds of structural and chemical relationships.
 ***
 
 ## References
