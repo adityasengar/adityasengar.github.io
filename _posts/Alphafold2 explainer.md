@@ -87,9 +87,11 @@ Second, in a particularly elegant move, the model extracts the known backbone to
 
 To be precise, the main MSA representation, $\mathbf{M}{\mathrm{msa}}$, has shape $(N{\mathrm{clust}} \times N_{\mathrm{res}} \times c_m)$, where $N_{\mathrm{clust}}$ is the number of clustered sequences and $c_m = 256$ is the number of channels. The template torsion angle features are first passed through a small MLP to create a template representation, $\mathbf{M}{\mathrm{templ}}$, with a compatible shape of $(N{\mathrm{templ}} \times N_{\mathrm{res}} \times c_m)$. The concatenation happens along the sequence dimension:
 
+
 $$
 \mathbf{M}_{\mathrm{final}} = \mathrm{concat} \left( \left[ \mathbf{M}_{\mathrm{msa}}, \mathbf{M}_{\mathrm{templ}} \right], \, \mathrm{axis}=0 \right)
 $$
+
 
 The resulting matrix, $\mathbf{M}{\mathrm{final}}$, has shape $((N{\mathrm{clust}} + N_{\mathrm{templ}}) \times N_{\mathrm{res}} \times c_m)$. This larger matrix, where $N_{\mathrm{seq}} = N_{\mathrm{clust}} + N_{\mathrm{templ}}$, is what the Evoformer processes.
 
