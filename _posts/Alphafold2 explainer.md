@@ -116,7 +116,7 @@ As illustrated in the figure below, the model uses two distinct mechanisms to pa
 
 <br>
 
-![The triangular operations at the heart of the Evoformer. (b) A triplet of residues (i, j, k) corresponds to a set of edges in the pair representation. (c) The information on edge (i,j) (highlighted in yellow) is updated by systematically incorporating information from the other two edges in the triangle. This is done sequentially via multiplicative updates and self-attention, considering both "outgoing" edges (from node i) and "incoming" edges (to node j).](space-for-triangle_update.png)
+![The triangular operations at the heart of the Evoformer. (b) A triplet of residues (i, j, k) corresponds to a set of edges in the pair representation. (c) The information on edge (i,j) (highlighted in yellow) is updated by systematically incorporating information from the other two edges in the triangle. This is done sequentially via multiplicative updates and self-attention, considering both "outgoing" edges (from node i) and "incoming" edges (to node j).](/images/triangle_update.png)
 *The triangular operations at the heart of the Evoformer.*
 <br>
 
@@ -157,7 +157,7 @@ Its architecture follows a standard transformer design: the first linear layer e
 
 #### Stage 3: The Bidirectional Dialogue (The Communication Hub)
 
-![The core logic of an AlphaFold2 Evoformer block. Information is exchanged between the 1D MSA representation and the 2D pair representation. The key innovation is the triangular self-attention mechanism within the pair representation, which enforces geometric consistency by reasoning about triplets of residues (i, j, k).](space-for-Evoformer.png)
+![The core logic of an AlphaFold2 Evoformer block. Information is exchanged between the 1D MSA representation and the 2D pair representation. The key innovation is the triangular self-attention mechanism within the pair representation, which enforces geometric consistency by reasoning about triplets of residues (i, j, k).](/images/Evoformer.png)
 *The core logic of an AlphaFold2 Evoformer block.*
 <br>
 
@@ -190,7 +190,7 @@ After 48 Evoformer iterations the network possesses two mature tensors: a per-re
 
 <br>
 
-![The AlphaFold2 Structure Module. (d) The module takes the final single and pair representations and uses an Invariant Point Attention (IPA) module to iteratively update a set of local reference frames for each residue. (e) These local frames define the orientation of each amino acid. (f) The final output is a complete 3D structure, shown here superimposed on the ground truth.](space-for-structure_module.png)
+![The AlphaFold2 Structure Module. (d) The module takes the final single and pair representations and uses an Invariant Point Attention (IPA) module to iteratively update a set of local reference frames for each residue. (e) These local frames define the orientation of each amino acid. (f) The final output is a complete 3D structure, shown here superimposed on the ground truth.](/images/structure_module.png)
 *The AlphaFold2 Structure Module.*
 <br>
 
