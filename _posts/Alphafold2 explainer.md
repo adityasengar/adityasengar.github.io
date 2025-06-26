@@ -70,8 +70,7 @@ Next, the model explicitly injects information about the 1D sequence separation.
 
 The final initial pair representation is the sum of these two components:
 
-$$\mathbf{z}_{ij}^{\text{initial}} = \mathbf{z}_{ij}^{\text{pairs}} + \mathbf{p}_{ij}$$
-
+$$z_{ij}^{\text{initial}} = z_{ij}^{\text{pairs}} + p_{ij}$$
 
 This initial grid is like digital graph paper, with basic 1D relationships sketched out. The job of the Evoformer is to enrich this grid, filling its 128 channels with sophisticated 3D information like residue-pair distances and orientations.
 
