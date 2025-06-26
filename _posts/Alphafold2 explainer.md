@@ -21,7 +21,7 @@ When the paper and code were finally released (eight months later), the "secret 
 
 <br>
 
-![High-level overview of the AlphaFold2 architecture. The model is conceptually divided into three stages. First, input features are generated from the primary sequence, a Multiple Sequence Alignment (MSA), and optional structural templates. Second, the Evoformer block iteratively refines an MSA representation and a pair representation in a deep communication network. Finally, the Structure Module translates the refined representations into the final 3D atomic coordinates.](/assets/images/AF2.png)
+![High-level overview of the AlphaFold2 architecture. The model is conceptually divided into three stages. First, input features are generated from the primary sequence, a Multiple Sequence Alignment (MSA), and optional structural templates. Second, the Evoformer block iteratively refines an MSA representation and a pair representation in a deep communication network. Finally, the Structure Module translates the refined representations into the final 3D atomic coordinates.](/images/AF2.png)
 *High-level overview of the AlphaFold2 architecture.*
 <br>
 
