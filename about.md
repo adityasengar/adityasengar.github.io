@@ -26,11 +26,11 @@ Beyond academia, I have applied my expertise through my data science consulting 
 
 You can find more about my work or connect with me on the following platforms:
 
-* **[My Website](https://www.sengarresearchhub.com/))**
+* **[My Website](https://www.sengarresearchhub.com/)**
 * **[LinkedIn](https://www.linkedin.com/in/aditya-sengar-phd)**
 * **[Google Scholar](https://scholar.google.com/citations?hl=en&user=XO4RbVQAAAAJ)**
 * **[GitHub](https://github.com/adityasengar)**
-*  **[Linkedin](https://www.linkedin.com/in/aditya-sengar-phd/))**
+*  **[Linkedin](https://www.linkedin.com/in/aditya-sengar-phd/)**
  
 
 Feel free to reach out via email at `adityasengariitd@gmail.com`.
