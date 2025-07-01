@@ -5,6 +5,23 @@ layout: default
 <article class="post">
   <h1>{{ page.title }}</h1>
 
+  {% if page.series %}
+    <div class="series-box">
+      <h3>In this series: {{ page.series }}</h3>
+      <ul>
+        {% assign posts_in_series = site.posts | where: "series", page.series | sort: "part" %}
+        {% for post_in_series in posts_in_series %}
+          <li>
+            {% if post_in_series.url == page.url %}
+              <strong>Part {{ post_in_series.part }}: {{ post_in_series.title }} (You are here)</strong>
+            {% else %}
+              <a href="{{ site.baseurl }}{{ post_in_series.url }}">Part {{ post_in_series.part }}: {{ post_in_series.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
   <div class="entry">
     {{ content }}
   </div>
