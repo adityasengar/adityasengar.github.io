@@ -5,8 +5,6 @@ hidden: true
 ---
 # From Noise to Art: A Deep Dive into Diffusion Models and the EDM Revolution
 
-*July 2, 2025*
-
 If you've been anywhere near the AI space recently, you've seen the stunning images produced by models like DALL-E 3, Midjourney, and Stable Diffusion. The technology behind many of these state-of-the-art generators is a class of models known as **Diffusion Models**.
 
 At first glance, their inner workings seem almost magical. They start with pure random noise and meticulously sculpt it into a coherent, often beautiful, image. But how? This post will break down the core concepts behind diffusion models, from the foundational forward and reverse processes to the game-changing insights from the landmark "Elucidating the Design Space of Diffusion-Based Generative Models" (EDM) paper by Karras et al. from NVIDIA.
