@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "This is a Trial Post"
-published: false
+hidden: true
 ---
 
 ## Welcome to My Draft Post
