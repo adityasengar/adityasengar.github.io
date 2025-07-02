@@ -102,3 +102,6 @@ Together, these sampling improvements meant they could generate state-of-the-art
 Diffusion models represent a paradigm shift in generative AI. Their power lies in a simple, scalable training objective: predict the noise.
 
 The EDM paper's legacy is in showing that by treating the entire diffusion pipeline as an engineering system—and by meticulously optimizing every single component from the network architecture and preconditioning to the ODE solver and sampling schedule—we can achieve a level of quality and efficiency that was previously unimaginable. They didn't just build a better model; they gave the entire field a clearer blueprint for how to build them.
+
+
+*Written on July 2, 2025*
