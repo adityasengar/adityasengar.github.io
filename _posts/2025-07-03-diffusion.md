@@ -188,9 +188,7 @@ Here is a final summary of the evolution from DDPM to EDM:
 
 ## Part 5: Beyond Generation - What Your Trained Model Knows
 
-A common question is: if I trained my model to just predict noise, can I use it for more complex tasks like estimating probabilities without retraining?
-
-The answer is a resounding **yes**. Your trained noise prediction model `ϵ_θ` is more powerful than it seems.
+A common question is: if I trained my model to just predict noise, can I use it for more complex tasks without retraining? The answer is a resounding **yes**. Your trained noise prediction model `ϵ_θ` is more powerful than it seems.
 
 ### Getting the Score Function for Free
 
@@ -204,17 +202,43 @@ $$
 
 It's crucial to distinguish between what's easy to get (the score) and what's hard (the log-probability value itself).
 
-* **What you get (The Compass):** The score, `∇_{x_t} log p(x_t)`, is the **gradient** of the log-probability. Your model gives you a perfect compass that, at any location `x_t` on the probability landscape, tells you exactly which way is "uphill".
+* **What you get (The Compass):** The score, `∇_{x_t} \log p(x_t)`, is the **gradient** of the log-probability. Your model gives you a perfect compass that, at any location `x_t` on the probability landscape, tells you exactly which way is "uphill".
 
-* **What is hard to get (The Altimeter):** The log-probability value, `log p(x_t)`, is your exact altitude. Calculating this value is generally **intractable** because it requires integrating over the entire unknown distribution of real data.
+* **What is hard to get (The Altimeter):** The log-probability value, `log p(x_t)`, is your exact altitude. Calculating this value is generally **intractable**.
 
 For most practical applications like guiding generation, having the compass (the score) is exactly what you need.
 
-### What You *Can* Estimate
+### Application: Simulating Physical Systems with Learned Forces ⚛️
 
-While getting `log p(x_t)` is intractable, you *can* use your trained model `ϵ_θ` to calculate the full Variational Lower Bound (`L_vlb`). This gives you a tight estimate of the log-likelihood of the **original clean image**, `log p(x_0)`, which is a standard method for evaluating a diffusion model's final performance.
+This connection between the score function and a guiding field is not just an analogy—it has profound implications in the physical sciences. As you noted, score-based models are now being used to simulate complex molecular systems.
+
+The core idea is to draw a parallel between physics and statistics:
+
+* In physics, a **force field** can often be described as the negative gradient of a potential energy function: $F = -\nabla U(x)$. The force pushes particles towards states of lower energy.
+* In our model, the **score function** is the gradient of the log-probability function: $\text{score} = \nabla \log p(x)$. The score pushes samples towards states of higher probability.
+
+Therefore, we can establish an equivalence where high probability corresponds to low energy: $\log p(x) \Leftrightarrow -U(x)$. This means our learned score function is a direct proxy for a physical force field!
+
+$$
+\text{Force} \quad F(x) = -\nabla U(x) \Leftrightarrow \nabla \log p(x) = \text{score}_\theta(x)
+$$
+
+This allows scientists to train a diffusion model on a dataset of known stable molecular conformations. The trained model learns the "score" or the implicit "force field" that holds those molecules together. They can then plug this learned force field into a **Langevin dynamics simulation**—a method for simulating how particles move under forces and random thermal fluctuations.
+
+The update rule for Langevin dynamics is essentially:
+`next_position = current_position + force_field_drift + random_noise_kick`
+
+This is precisely what the original NCSN and DDPM samplers do! They are a form of Langevin dynamics where the "force field" is provided by the learned score network. This powerful connection allows researchers to simulate and generate new, stable protein structures, design drugs, and explore molecular dynamics in ways that were previously computationally prohibitive.
 
 ---
+
+### References
+
+[^1]: Hyvärinen, A. (2005). *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
+[^2]: Vincent, P. (2011). *A Connection Between Score Matching and Denoising Autoencoders.* Neural Computation.
+[^3]: Song, Y., & Ermon, S. (2019). *Generative Modeling by Estimating Gradients of the Data Distribution.* Advances in Neural Information Processing Systems 32 (NeurIPS).
+[^4]: Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models.* Advances in Neural Information Processing Systems 33 (NeurIPS).
+[^5]: Karras, T., Aittala, M., Aila,T., & Laine, S. (2022). *Elucidating the Design Space of Diffusion-Based Generative Models.* Advances in Neural Information Processing Systems 35 (NeurIPS).
 
 ### References
 
