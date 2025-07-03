@@ -85,3 +85,61 @@ $$
 *This is the missing link!* The model's primary job is to denoise (`D`), and from that, we can instantly get the guiding field (the score) we need for generation.
 
 To make the denoiser `D(x; σ)` work reliably across all noise levels, EDM introduces **principled preconditioning**. The final denoiser is a wrapper around the U-Net `F_θ`:
+```
+    D(x; σ) = c_skip(σ) * x + c_out(σ) * F_θ(c_in(σ) * x; σ)
+```
+This structure makes the U-Net's job vastly simpler and more stable, allowing it to learn a much more accurate score representation.
+
+### The Reverse Process: Precision Engineering with ODE Solvers
+
+Instead of the slow, stochastic Langevin-style sampling, EDM advocates for treating generation as solving a **probability flow ODE**. This is a deterministic path from noise to image, guided by the score field. To walk this path efficiently, we can use advanced numerical solvers.
+
+Here is a step-by-step of the **deterministic Heun method** used in EDM:
+
+1.  **Setup:** Start with pure noise `x_0` at noise level `σ_0`. Choose `N` evaluation steps, giving a schedule of noise levels `σ_0, σ_1, ..., σ_N=0`.
+
+2.  **Iterate for i = 0 to N-1:** To get from `x_i` to `x_{i+1}`:
+
+    a. **Calculate the Score (Derivative) at the current point:** First, get the denoised estimate using your model, then calculate the score `d_i`.
+    $$
+    d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i}
+    $$
+
+    b. **Predictor Step:** Take a simple "Euler" step to a temporary point `x_hat`. This is your first guess for the next location.
+    $$
+    x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)
+    $$
+
+    c. **Calculate the Score at the predicted point:** Now, evaluate the score `d_hat` at this new temporary location.
+    $$
+    d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}}
+    $$
+
+    d. **Corrector Step:** Average the two scores and take a much more accurate, final step from your original position `x_i` to get `x_{i+1}`.
+    $$
+    x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)
+    $$
+
+3.  **Final Image:** After `N` steps, `x_N` is the final, clean image. This 2nd-order method is far more accurate than DDPM's 1st-order sampler, enabling high-quality results in as few as 20-40 steps.
+
+---
+
+## Part 4: The Complete Comparison & Practical Guide
+
+Here is a final summary of the evolution from DDPM to EDM:
+
+| Aspect | DDPM | EDM |
+| :--- | :--- | :--- |
+| **Core Theory** | Probabilistic model, discrete time. | Unified score-based and probabilistic model, continuous time. |
+| **Training Model** | Simple U-Net `ϵ_θ(x_t, t)` predicts `ϵ`, implicitly learning the score. | Preconditioned denoiser `D(x; σ)` explicitly enables score calculation. |
+| **Forward Params** | `T`, `beta_start`, `beta_end`, `scheduler`. | `σ_min`, `σ_max`, `ρ`. |
+| **Sampling Logic** | Stochastic ancestral sampling (1st-order Langevin-style). | Solving an ODE (typically 2nd-order Heun). |
+| **Determinism** | Inherently **stochastic**. | Inherently **deterministic** (but can be made stochastic). |
+| **Speed/Steps** | Slow, requires many steps (`T`=1000+). | Fast, requires few steps (`N`=20-80). |
+
+### Practical Guide to the EDM Toolkit
+
+* **The Solver:** Start with the **deterministic Heun solver**. It offers the best balance of speed, quality, and reproducibility.
+* **Number of Steps (`N`):** For fast previews, try `N = 20-25`. For high quality, `N = 40-80` is often sufficient.
+* **The Timestep Schedule (`ρ`):** `ρ = 7` is an excellent default. It concentrates steps at low `σ` values, which is crucial for fine details.
+* **Stochasticity (`S_churn`):** Start with `S_churn = 0` (fully deterministic). Only introduce churn for advanced fine-tuning or troubleshooting.
