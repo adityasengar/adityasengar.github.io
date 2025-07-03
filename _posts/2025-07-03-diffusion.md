@@ -58,7 +58,7 @@ Imagine the space of all possible images. Within this space, there's a complex, 
 
 4.  **The Intuitive Answer:** The most direct way to undo the random kick from our rocket (`ϵ`) is to fire an identical rocket in the exact opposite direction (`-ϵ`). This `-ϵ` vector points straight back toward where we started.
 
-This is the core of the intuition. The score `∇_{x_t} log p(x_t)` represents the "gravitational pull" of the entire data manifold. For any specific noisy point `x_t`, the single most defining reason it is "improbable" is the specific random noise `ϵ` that was added to it. Therefore, the most effective way to make it more probable is simply to remove that noise. The direction for that is `-ϵ`.
+This is the core of the intuition. The score `∇_{x_t} \log p(x_t)` represents the "gravitational pull" of the entire data manifold. For any specific noisy point `x_t`, the single most defining reason it is "improbable" is the specific random noise `ϵ` that was added to it. Therefore, the most effective way to make it more probable is simply to remove that noise. The direction for that is `-ϵ`.
 
 This insight is powerful because it transforms an impossibly abstract problem ("calculate the gradient of a log probability") into a concrete engineering task ("predict the noise").
 
@@ -88,23 +88,40 @@ DDPM defines a fixed forward process over `T` discrete timesteps. This is a **Va
 The goal is to learn the reverse transition $p_\theta(x_{t-1} | x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
 
 #### Perspective 1: The Probabilistic View (`L_vlb`)
-The DDPM paper (Ho et al., 2020) starts from a rigorous probabilistic view, treating the model as a **Variational Autoencoder**. The goal is to maximize the Evidence Lower Bound (or Variational Lower Bound, `L_vlb`), which is a sum of KL Divergence terms measuring how well the model's reverse step matches the true (but unknown) reverse step. This is the most complex but most theoretically pure formulation.
+
+The DDPM paper (Ho et al., 2020) started from a rigorous probabilistic view, treating the model as a **Variational Autoencoder**. The goal is to maximize the Evidence Lower Bound (or Variational Lower Bound, `L_vlb`). This loss is a sum of KL Divergence terms that, for each step, measure how well the model’s predicted reverse step matches the true reverse step. This is the most complex but most theoretically pure formulation.
+
+The full loss is composed of a term for the final step ($L_0$), a term for the noise prior ($L_T$), and a sum of terms for all intermediate steps ($L_{t-1}$):
+
+$$\mathcal{L}_{vlb} = L_0 + L_T + \sum_{t=1}^{T} L_{t-1}$$
+
+Each intermediate term $L_{t-1}$ is a KL divergence comparing the model's prediction to the true posterior:
+
+$$L_{t-1} = D_{KL}(q(x_{t-1} | x_t, x_0) || p_\theta(x_{t-1} | x_t))$$
 
 #### Perspective 2: The Simple & Practical View (`L_simple`)
-The DDPM paper's crucial finding was that optimizing the full `L_vlb` was less stable and produced worse samples than optimizing a simplified, re-weighted version. This simplified loss function is the one most commonly associated with DDPMs: a simple Mean Squared Error between the true and predicted noise.
-$$
-\mathcal{L}_{\text{simple}} = \mathbb{E}_{t, x_0, \epsilon} \left[ || \epsilon - \epsilon_\theta(x_t, t) ||^2 \right]
-$$
-This is the practical implementation of Denoising Score Matching: by learning to predict the noise `ϵ`, the model is implicitly learning the score function.
+
+The DDPM paper’s crucial finding was that optimizing the full `L_vlb` was less stable and produced worse samples than optimizing a simplified, re-weighted version. This simplified loss function is the one most commonly associated with diffusion models: a simple Mean Squared Error between the true and predicted noise.
+
+$$\mathcal{L}_{\text{simple}} = \mathbb{E}_{t, x_0, \epsilon} \left[ || \epsilon - \epsilon_\theta(x_t, t) ||^2 \right]$$
+
+This is the practical implementation of **Denoising Score Matching**: by learning to predict the noise `ϵ`, the model is implicitly learning the score function.
 
 #### Perspective 3: The Explicit Score Matching View (`L_score`)
-If we were to train a model `s_θ` to *explicitly* predict the score, the loss function would directly compare the true score with the model's predicted score:
-$$
-\mathcal{L}_{\text{score}} = \mathbb{E}_t \left[ \lambda(t) || \nabla_{x_t} \log p(x_t) - s_\theta(x_t, t) ||^2 \right]
-$$
-This looks different, but it's mathematically equivalent to `L_simple`. Given that the true score is $\nabla_{x_t} \log p(x_t) = -\epsilon / \sigma_t$ and we can define our model's score prediction as $s_\theta(x_t, t) = -\epsilon_\theta(x_t, t) / \sigma_t$, substituting these into `L_score` with an appropriate weighting `λ(t)` recovers the simple noise prediction loss.
 
-**Summary:** All three loss functions are different mathematical framings of the same core objective. The simple noise prediction loss is not just a heuristic; it is a stable and effective simplification of the more complex variational and score-matching objectives.
+If we were to train a model `s_θ` to **explicitly** predict the score, the loss function would directly compare the true score with the model’s predicted score. This comes from the foundational theory of score-based models.
+
+$$\mathcal{L}_{\text{score}} = \mathbb{E}_t \left[ \lambda(t) || \nabla_{x_t} \log p(x_t) - s_\theta(x_t, t) ||^2 \right]$$
+
+This looks different, but it’s mathematically equivalent to `L_simple`. Given that the true score is:
+
+$$\nabla_{x_t} \log p(x_t) = -\frac{\epsilon}{\sigma_t}$$
+
+and we can define our model’s score prediction in terms of its noise prediction as:
+
+$$s_\theta(x_t, t) = -\frac{\epsilon_\theta(x_t, t)}{\sigma_t}$$
+
+Substituting these into `L_score` with an appropriate weighting `λ(t)` recovers the simple noise prediction loss.
 
 ---
 
@@ -115,7 +132,6 @@ The **EDM (Elucidating Diffusion Models)** paper brilliantly unified these persp
 ### Unifying Theory: The Denoiser IS the Score Estimator
 
 EDM makes the connection between denoising and score matching explicit. It defines a **denoiser function** `D(x; σ)` that aims to predict the clean image `x₀` from a noisy input `x` with noise level `σ`. To make this denoiser work reliably, EDM introduces **principled preconditioning**:
-
 
 ```
     D(x; σ) = c_skip(σ) * x + c_out(σ) * F_θ(c_in(σ) * x; σ)
@@ -129,22 +145,22 @@ EDM treats generation as solving an **ODE**, using advanced numerical solvers. H
 1.  **Setup:** Start with pure noise `x_0` at `σ_0`. Choose `N` steps, giving a schedule `σ_0, σ_1, ..., σ_N=0`.
 
 2.  **Iterate for i = 0 to N-1:**
-    a. **Calculate Score at current point (`d_i`):**
-    $$
-    d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i}
-    $$
-    b. **Predictor Step to a temporary point (`x_hat`):**
-    $$
-    x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)
-    $$
-    c. **Calculate Score at the predicted point (`d_hat`):**
-    $$
-    d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}}
-    $$
-    d. **Corrector Step to find the final `x_{i+1}`:**
-    $$
-    x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)
-    $$
+    a.  **Calculate Score at current point (`d_i`):**
+        $$
+        d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i}
+        $$
+    b.  **Predictor Step to a temporary point (`x_hat`):**
+        $$
+        x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)
+        $$
+    c.  **Calculate Score at the predicted point (`d_hat`):**
+        $$
+        d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}}
+        $$
+    d.  **Corrector Step to find the final `x_{i+1}`:**
+        $$
+        x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)
+        $$
 3.  **Final Image:** After `N` steps, `x_N` is the final image.
 
 ---
@@ -153,14 +169,14 @@ EDM treats generation as solving an **ODE**, using advanced numerical solvers. H
 
 Here is a final summary of the evolution from DDPM to EDM:
 
-| Aspect | DDPM | EDM |
-| :--- | :--- | :--- |
-| **Core Theory** | Probabilistic model, discrete time. | Unified score-based and probabilistic model, continuous time. |
+| Aspect                 | DDPM                                                       | EDM                                                                  |
+| :--------------------- | :--------------------------------------------------------- | :------------------------------------------------------------------- |
+| **Core Theory** | Probabilistic model, discrete time.                        | Unified score-based and probabilistic model, continuous time.        |
 | **Training Model** | Simple U-Net `ϵ_θ(x_t, t)` predicts `ϵ`, implicitly learning the score. | Preconditioned denoiser `D(x; σ)` explicitly enables score calculation. |
-| **Forward Params** | `T`, `beta_start`, `beta_end`, `scheduler`. | `σ_min`, `σ_max`, `ρ`. |
-| **Sampling Logic** | Stochastic ancestral sampling (1st-order Langevin-style). | Solving an ODE (typically 2nd-order Heun). |
-| **Determinism** | Inherently **stochastic**. | Inherently **deterministic** (but can be made stochastic). |
-| **Speed/Steps** | Slow, requires many steps (`T`=1000+). | Fast, requires few steps (`N`=20-80). |
+| **Forward Params** | `T`, `beta_start`, `beta_end`, `scheduler`.                | `σ_min`, `σ_max`, `ρ`.                                                 |
+| **Sampling Logic** | Stochastic ancestral sampling (1st-order Langevin-style).   | Solving an ODE (typically 2nd-order Heun).                           |
+| **Determinism** | Inherently **stochastic**.                                 | Inherently **deterministic** (but can be made stochastic).           |
+| **Speed/Steps** | Slow, requires many steps (`T`=1000+).                     | Fast, requires few steps (`N`=20-80).                                  |
 
 ### Practical Guide to the EDM Toolkit
 
@@ -170,6 +186,7 @@ Here is a final summary of the evolution from DDPM to EDM:
 * **Stochasticity (`S_churn`):** Start with `S_churn = 0`.
 
 ---
+
 ### References
 
 * **Hyvärinen, A. (2005).** *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
