@@ -10,7 +10,7 @@ date: 2025-07-03
 
 If you've been anywhere near the AI space recently, you've seen the stunning images produced by models like DALL-E 3, Midjourney, and Stable Diffusion. The technology behind many of these state-of-the-art generators is a class of models known as **Diffusion Models**.
 
-At first glance, their inner workings seem almost magical. They start with pure random noise and meticulously sculpt it into a coherent, often beautiful, image. But how? This post offers a comprehensive guide, from the foundational theory of **score matching** to the practical implementations in **DDPMs**, and finally to the unified, high-performance framework of **EDM** (Elucidating Diffusion Models).
+At first glance, their inner workings seem almost magical. They start with pure random noise and meticulously sculpt it into a coherent, often beautiful, image. But how? This post offers a comprehensive guide, from the foundational theory of **score matching** to the practical implementations in **DDPMs**, and finally to the unified, high-performance framework of **EDM** (Elucidating Diffusion Models). While many excellent and more polished blogs on this topic exist, this post is primarily intended as a comprehensive personal reference.
 
 ---
 
@@ -34,9 +34,9 @@ The problem is, we can't get the score function for the true data distribution $
 
 ### The Solution: Denoising Score Matching 💡
 
-This is where a series of brilliant insights comes together. The original concept of **Score Matching** (Hyvärinen, 2005) provided a way to learn a score function without knowing the normalization constant. However, it required calculating a term (the trace of the Hessian) that was still too computationally expensive for large neural networks.
+This is where a series of brilliant insights comes together. The original concept of **Score Matching** [^1] provided a way to learn a score function without knowing the normalization constant. However, it required calculating a term (the trace of the Hessian) that was still too computationally expensive for large neural networks.
 
-The crucial breakthrough was **Denoising Score Matching** (Vincent, 2011). This work revealed an incredible connection: the complex score matching objective is mathematically equivalent to a much simpler task—**training a model to denoise corrupted data**.
+The crucial breakthrough was **Denoising Score Matching** [^2]. This work revealed an incredible connection: the complex score matching objective is mathematically equivalent to a much simpler task—**training a model to denoise corrupted data**.
 
 Here's the idea: instead of trying to model the score of clean, perfect data, what if we model the score of data corrupted by various levels of Gaussian noise?
 
@@ -62,7 +62,7 @@ This is the core of the intuition. The score `∇_{x_t} \log p(x_t)` represents 
 
 This insight is powerful because it transforms an impossibly abstract problem ("calculate the gradient of a log probability") into a concrete engineering task ("predict the noise").
 
-The pioneering work that applied this to create large-scale generative models was **Noise Conditional Score Networks (NCSN)** (Song & Ermon, 2019), which laid the direct foundation for what followed.
+The pioneering work that applied this to create large-scale generative models was **Noise Conditional Score Networks (NCSN)** [^3], which laid the direct foundation for what followed.
 
 ---
 
@@ -85,11 +85,11 @@ DDPM defines a fixed forward process over `T` discrete timesteps. This is a **Va
 
 ### The Reverse Process & Loss Function: Three Roads to the Same Destination
 
-The goal is to learn the reverse transition $p_\theta(x_{t-1} , x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
+The goal is to learn the reverse transition $p_\theta(x_{t-1} | x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
 
 #### Perspective 1: The Probabilistic View (`L_vlb`)
 
-The DDPM paper (Ho et al., 2020) started from a rigorous probabilistic view, treating the model as a **Variational Autoencoder**. The goal is to maximize the Evidence Lower Bound (or Variational Lower Bound, `L_vlb`). This loss is a sum of KL Divergence terms that, for each step, measure how well the model’s predicted reverse step matches the true reverse step. This is the most complex but most theoretically pure formulation.
+The DDPM paper [^4] started from a rigorous probabilistic view, treating the model as a **Variational Autoencoder**. The goal is to maximize the Evidence Lower Bound (or Variational Lower Bound, `L_vlb`). This loss is a sum of KL Divergence terms that, for each step, measure how well the model’s predicted reverse step matches the true reverse step. This is the most complex but most theoretically pure formulation.
 
 The full loss is composed of a term for the final step ($L_0$), a term for the noise prior ($L_T$), and a sum of terms for all intermediate steps ($L_{t-1}$):
 
@@ -101,7 +101,7 @@ $$L_{t-1} = D_{KL}(q(x_{t-1} | x_t, x_0) || p_\theta(x_{t-1} | x_t))$$
 
 #### Perspective 2: The Simple & Practical View (`L_simple`)
 
-The DDPM paper’s crucial finding was that optimizing the full `L_vlb` was less stable and produced worse samples than optimizing a simplified, re-weighted version. This simplified loss function is the one most commonly associated with diffusion models: a simple Mean Squared Error between the true and predicted noise.
+The DDPM paper’s crucial finding was that optimizing the full `L_vlb` was less stable and produced worse samples than optimizing a simplified, re-weighted version. This simplified loss function is the one most commonly associated with DDPMs: a simple Mean Squared Error between the true and predicted noise.
 
 $$\mathcal{L}_{\text{simple}} = \mathbb{E}_{t, x_0, \epsilon} \left[ || \epsilon - \epsilon_\theta(x_t, t) ||^2 \right]$$
 
@@ -127,7 +127,7 @@ Substituting these into `L_score` with an appropriate weighting `λ(t)` recovers
 
 ## Part 3: The Unified Framework - EDM's Breakthroughs
 
-The **EDM (Elucidating Diffusion Models)** paper brilliantly unified these perspectives into a single, high-performance framework.
+The **EDM (Elucidating Diffusion Models)** paper [^5] brilliantly unified these perspectives into a single, high-performance framework.
 
 ### Unifying Theory: The Denoiser IS the Score Estimator
 
@@ -189,9 +189,8 @@ Here is a final summary of the evolution from DDPM to EDM:
 
 ### References
 
-* **Hyvärinen, A. (2005).** *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
-* **Vincent, P. (2011).** *A Connection Between Score Matching and Denoising Autoencoders.* Neural Computation.
-* **Song, Y., & Ermon, S. (2019).** *Generative Modeling by Estimating Gradients of the Data Distribution.* Advances in Neural Information Processing Systems 32 (NeurIPS).
-* **Ho, J., Jain, A., & Abbeel, P. (2020).** *Denoising Diffusion Probabilistic Models.* Advances in Neural Information Processing Systems 33 (NeurIPS).
-* **Karras, T., Aittala, M., Aila, T., & Laine, S. (2022).** *Elucidating the Design Space of Diffusion-Based Generative Models.* Advances in Neural Information Processing Systems 35 (NeurIPS).
-
+[^1]: Hyvärinen, A. (2005). *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
+[^2]: Vincent, P. (2011). *A Connection Between Score Matching and Denoising Autoencoders.* Neural Computation.
+[^3]: Song, Y., & Ermon, S. (2019). *Generative Modeling by Estimating Gradients of the Data Distribution.* Advances in Neural Information Processing Systems 32 (NeurIPS).
+[^4]: Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models.* Advances in Neural Information Processing Systems 33 (NeurIPS).
+[^5]: Karras, T., Aittala, M., Aila, T., & Laine, S. (2022). *Elucidating the Design Space of Diffusion-Based Generative Models.* Advances in Neural Information Processing Systems 35 (NeurIPS).
