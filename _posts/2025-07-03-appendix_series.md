@@ -1,4 +1,3 @@
-
 ---
 title: "Appendix"
 series: "From AlphaFold2 to Boltz-2: The Protein Prediction Revolution"
