@@ -14,30 +14,41 @@ If you've been anywhere near the AI space recently, you've seen the stunning ima
 At first glance, their inner workings seem almost magical. They start with pure random noise and meticulously sculpt it into a coherent, often beautiful, image. But how? This post offers a comprehensive guide, from the foundational theory of **score matching** to the practical implementations in **DDPMs**, and finally to the unified, high-performance framework of **EDM** (Elucidating Diffusion Models).
 
 ---
-
 ## Part 1: The Core Theory - Score-Based Generation
 
-Before we can denoise an image, we must first understand what our model is fundamentally trying to learn. The goal of any generative model is to learn the probability distribution of the training data, $p(x)$. If we can learn this distribution, we can sample from it to create new data.
+Before we can denoise an image, we must first understand what our model is fundamentally trying to learn. The goal of any generative model is to learn the probability distribution of the training data, $p(x)$. If we could perfectly model this distribution, we could sample from it to create new data that is indistinguishable from the real thing.
 
 ### The Score Function: A Guiding Field for Creativity
 
-The challenge is that $p(x)$ is incredibly complex. A more tractable quantity to work with is its **score function**, which is the gradient of the log-probability of the data with respect to the input:
+The challenge is that for high-dimensional data like images, the function $p(x)$ is intractably complex. A more accessible quantity to work with is its **score function**, which is the gradient of the log-probability of the data with respect to the input itself:
 
-$$
-\text{score} = \nabla_x \log p(x)
-$$
+$$\text{score} = \nabla_x \log p(x)$$
 
 Think of the data distribution as a landscape with mountains where the data is dense (e.g., images of cats) and valleys where it's sparse. The **score function at any point `x` is a vector that points in the direction of the steepest ascent up the nearest mountain**. It's a guiding field that always points toward regions of higher data density.
 
-If we had this magical guiding field, we could start with a random point (random noise) and take small steps in the direction of the score, eventually climbing a mountain and arriving at a plausible data sample (a realistic image). This is the core idea behind sampling with methods like **Langevin dynamics**.
+If we had this magical guiding field, we could start from a random point (pure noise) and take small steps in the direction of the score, eventually climbing a "probability mountain" and arriving at a plausible data sample (a realistic image). This is the core idea behind sampling with methods like **Langevin dynamics**.
 
-### The Problem and the Solution: Denoising Score Matching
+### The Problem: Why The True Score is Unattainable
 
-The problem is, we can't get the score function for the true data distribution $p(x)$ directly. This is where a key insight comes in: **Denoising Score Matching**.
+The problem is, we can't get the score function for the true data distribution $p(x)$ directly. The function $p(x)$ has an unknown and intractable normalization constant (also called the partition function), which would require integrating over the entire, astronomically large space of all possible images. Without this constant, we can't compute $\log p(x)$ and therefore cannot compute its gradient, the score.
 
-Instead of trying to model the score of clean data, what if we model the score of data corrupted by various levels of Gaussian noise? It turns out that for a noisy data point $x_t$ (created by adding noise with variance $\sigma^2$ to a clean point $x_0$), there's a beautiful connection: the score of the noised data distribution, $\nabla_{x_t} \log p(x_t)$, is equivalent to predicting the noise that was added.
+### The Solution: Denoising Score Matching 💡
 
-This reframes the problem entirely! Instead of a complex score estimation task, we just need a model that can look at a noisy image and estimate the noise that was added. The pioneering work in this area was **NCSN (Noise Conditional Score Networks)**.
+This is where a series of brilliant insights comes together. The original concept of **Score Matching** (Hyvärinen, 2005) provided a way to learn a score function without knowing the normalization constant. However, it required calculating a term (the trace of the Hessian) that was still too computationally expensive for large neural networks.
+
+The crucial breakthrough was **Denoising Score Matching** (Vincent, 2011). This work revealed an incredible connection: the complex score matching objective is mathematically equivalent to a much simpler task—**training a model to denoise corrupted data**.
+
+Here's the idea: instead of trying to model the score of clean, perfect data, what if we model the score of data corrupted by various levels of Gaussian noise?
+
+It turns out that for a clean data point $x_0$ and a noisy version $x_t$ (created by adding Gaussian noise $\epsilon$), there’s a beautiful relationship: the score of the noised data distribution, $\nabla_{x_t} \log p(x_t)$, is directly proportional to the negative of the noise that was added.
+
+$$\nabla_{x_t} \log p(x_t) \propto -\epsilon$$
+
+**This changes everything!**
+
+The impossibly complex task of "estimating the gradient of the log-probability of the data distribution" becomes the simple, intuitive task of "looking at a noisy image and predicting the noise." This reframes the problem entirely into a standard supervised learning setup where the objective is to minimize the error between the true noise and the predicted noise.
+
+The pioneering work that applied this insight to create large-scale generative models was **Noise Conditional Score Networks (NCSN)** (Song & Ermon, 2019). They trained a single deep neural network conditioned on the noise level `σ` to estimate the score for data at all different noise levels. For sampling, they used Langevin dynamics, directly using the learned scores to guide a random sample towards the data manifold, starting with high noise and gradually "annealing" to lower noise levels. This work laid the direct theoretical and practical foundation for the diffusion models that followed.
 
 ---
 
