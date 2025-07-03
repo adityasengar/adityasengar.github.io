@@ -1,5 +1,5 @@
 ---
-title: "Appendix"
+title: "Appendix (From Alphafold 2 to Boltz-2)"
 series: "From AlphaFold2 to Boltz-2: The Protein Prediction Revolution"
 author: "Aditya Sengar"
 part: 4
