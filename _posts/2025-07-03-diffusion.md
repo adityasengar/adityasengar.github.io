@@ -14,6 +14,7 @@ If you've been anywhere near the AI space recently, you've seen the stunning ima
 At first glance, their inner workings seem almost magical. They start with pure random noise and meticulously sculpt it into a coherent, often beautiful, image. But how? This post offers a comprehensive guide, from the foundational theory of **score matching** to the practical implementations in **DDPMs**, and finally to the unified, high-performance framework of **EDM** (Elucidating Diffusion Models).
 
 ---
+
 ## Part 1: The Core Theory - Score-Based Generation
 
 Before we can denoise an image, we must first understand what our model is fundamentally trying to learn. The goal of any generative model is to learn the probability distribution of the training data, $p(x)$. If we could perfectly model this distribution, we could sample from it to create new data that is indistinguishable from the real thing.
@@ -44,11 +45,29 @@ It turns out that for a clean data point $x_0$ and a noisy version $x_t$ (create
 
 $$\nabla_{x_t} \log p(x_t) \propto -\epsilon$$
 
-**This changes everything!**
+#### An Intuitive Look: The "Center of Gravity" Analogy 🌌
 
-The impossibly complex task of "estimating the gradient of the log-probability of the data distribution" becomes the simple, intuitive task of "looking at a noisy image and predicting the noise." This reframes the problem entirely into a standard supervised learning setup where the objective is to minimize the error between the true noise and the predicted noise.
+This relationship is the most important concept to grasp. Let's build an intuition for it.
 
-The pioneering work that applied this insight to create large-scale generative models was **Noise Conditional Score Networks (NCSN)** (Song & Ermon, 2019). They trained a single deep neural network conditioned on the noise level `σ` to estimate the score for data at all different noise levels. For sampling, they used Langevin dynamics, directly using the learned scores to guide a random sample towards the data manifold, starting with high noise and gradually "annealing" to lower noise levels. This work laid the direct theoretical and practical foundation for the diffusion models that followed.
+Imagine the space of all possible images. Within this space, there's a complex, beautifully structured shape called the **"manifold of real images."** Think of this as a galaxy. Every point on this galaxy (`x₀`) is a perfect, clean image of a cat, a dog, a car, etc.
+
+1.  **The Setup:** This galaxy has a "gravitational pull." Points on the galaxy are stable and "highly probable." Points far away are "improbable." The **score function** is the vector field that describes this pull at every point in space.
+
+2.  **The Perturbation (Adding Noise):** Now, we take a specific star (`x₀`) in our galaxy. We give it a single, random "kick" with a rocket. The path of this rocket is the noise vector `ϵ`. The star is pushed off the galaxy to a new, isolated position in empty space, `x_t`.
+
+    ![Analogy Diagram](https://i.imgur.com/r62sK6l.png)
+
+3.  **The Question:** We are now at the location `x_t`. We've forgotten where we came from, but we can still feel the galaxy's gravitational pull. Which direction does the gravity pull us? It pulls us back towards the galaxy. **What is the most direct path back?**
+
+4.  **The Intuitive Answer:** The most direct way to undo the random kick from our rocket (`ϵ`) is to fire an identical rocket in the exact opposite direction (`-ϵ`). This `-ϵ` vector points straight back toward where we started.
+
+This is the core of the intuition. The score `∇_{x_t} log p(x_t)` represents the "gravitational pull" of the entire data manifold. For any specific noisy point `x_t`, the single most defining reason it is "improbable" is the specific random noise `ϵ` that was added to it. Therefore, the most effective way to make it more probable is simply to remove that noise. The direction for that is `-ϵ`.
+
+This intuition holds up mathematically because `x_t` is a sample from a Gaussian distribution whose mean is based on `x_0`. The score of *any* Gaussian distribution always points from a sample point directly back towards the distribution's mean. In our case, the vector from the mean to the sample `x_t` is exactly the noise vector `ϵ`, so the vector pointing *back* to the mean is `-ϵ`.
+
+This insight is powerful because it transforms an impossibly abstract problem ("calculate the gradient of a log probability") into a concrete engineering task ("predict the noise").
+
+The pioneering work that applied this to create large-scale generative models was **Noise Conditional Score Networks (NCSN)** (Song & Ermon, 2019). They trained a single deep neural network conditioned on the noise level `σ` to estimate the score, laying the direct theoretical and practical foundation for the diffusion models that followed.
 
 ---
 
@@ -92,17 +111,10 @@ The **EDM (Elucidating Diffusion Models)** paper brilliantly unified the score-b
 
 ### Unifying Theory: The Denoiser IS the Score Estimator
 
-EDM makes the connection between denoising and score matching explicit. It defines a **denoiser function** `D(x; σ)` that aims to predict the clean image `x₀` from a noisy input `x` with noise level `σ`.
-
-The estimated score can then be derived directly from this denoiser's output:
-
-$$
-\nabla_{x} \log p(x; \sigma) \approx \frac{D(x; \sigma) - x}{\sigma^2}
-$$
-
-*This is the missing link!* The model's primary job is to denoise (`D`), and from that, we can instantly get the guiding field (the score) we need for generation.
+EDM makes the connection between denoising and score matching explicit. It defines a **denoiser function** `D(x; σ)` that aims to predict the clean image `x₀` from a noisy input `x` with noise level `σ`. The estimated score can then be derived directly from this denoiser's output.
 
 To make the denoiser `D(x; σ)` work reliably across all noise levels, EDM introduces **principled preconditioning**. The final denoiser is a wrapper around the U-Net `F_θ`:
+
 ```
     D(x; σ) = c_skip(σ) * x + c_out(σ) * F_θ(c_in(σ) * x; σ)
 ```
