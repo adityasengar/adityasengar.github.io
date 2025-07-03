@@ -223,7 +223,7 @@ $$
 \text{Force} \quad F(x) = -\nabla U(x) \Leftrightarrow \nabla \log p(x) = \text{score}_\theta(x)
 $$
 
-This allows scientists to train a diffusion model on a dataset of known stable molecular conformations. The trained model learns the "score" or the implicit "force field" that holds those molecules together. They can then plug this learned force field into a **Langevin dynamics simulation**—a method for simulating how particles move under forces and random thermal fluctuations.
+This allows scientists to train a diffusion model on a dataset of known stable molecular conformations. The trained model learns the "score" or the implicit "force field" that holds those molecules together. They can then plug this learned force field into a **Langevin dynamics simulation**—a method for simulating how particles move under forces and random thermal fluctuations [^6].
 
 The update rule for Langevin dynamics is essentially:
 `next_position = current_position + force_field_drift + random_noise_kick`
@@ -239,11 +239,4 @@ This is precisely what the original NCSN and DDPM samplers do! They are a form o
 [^3]: Song, Y., & Ermon, S. (2019). *Generative Modeling by Estimating Gradients of the Data Distribution.* Advances in Neural Information Processing Systems 32 (NeurIPS).
 [^4]: Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models.* Advances in Neural Information Processing Systems 33 (NeurIPS).
 [^5]: Karras, T., Aittala, M., Aila,T., & Laine, S. (2022). *Elucidating the Design Space of Diffusion-Based Generative Models.* Advances in Neural Information Processing Systems 35 (NeurIPS).
-
-### References
-
-[^1]: Hyvärinen, A. (2005). *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
-[^2]: Vincent, P. (2011). *A Connection Between Score Matching and Denoising Autoencoders.* Neural Computation.
-[^3]: Song, Y., & Ermon, S. (2019). *Generative Modeling by Estimating Gradients of the Data Distribution.* Advances in Neural Information Processing Systems 32 (NeurIPS).
-[^4]: Ho, J., Jain, A., & Abbeel, P. (2020). *Denoising Diffusion Probabilistic Models.* Advances in Neural Information Processing Systems 33 (NeurIPS).
-[^5]: Karras, T., Aittala, M., Aila, T., & Laine, S. (2022). *Elucidating the Design Space of Diffusion-Based Generative Models.* Advances in Neural Information Processing Systems 35 (NeurIPS).
+[^6]: Arts, M., Garcia Satorras, V., Huang, C. W., Zugner, D., Federici, M., Clementi, C., ... & van den Berg, R. (2023). Two for one: Diffusion models and force fields for coarse-grained molecular dynamics. Journal of Chemical Theory and Computation, 19(18), 6151-6159.
