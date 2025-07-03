@@ -186,6 +186,36 @@ Here is a final summary of the evolution from DDPM to EDM:
 
 ---
 
+## Part 5: Beyond Generation - What Your Trained Model Knows
+
+A common question is: if I trained my model to just predict noise, can I use it for more complex tasks like estimating probabilities without retraining?
+
+The answer is a resounding **yes**. Your trained noise prediction model `ϵ_θ` is more powerful than it seems.
+
+### Getting the Score Function for Free
+
+You do not need to retrain your model to get the score function. The connection is direct: since your model learned to predict the noise, you can use its output to calculate the score at any timestep `t`. For a standard DDPM, the formula is:
+
+$$
+\text{score} = \nabla_{x_t} \log p(x_t) \approx -\frac{\epsilon_\theta(x_t, t)}{\sqrt{1 - \bar{\alpha}_t}}
+$$
+
+### The Compass vs. The Altimeter: Score vs. Log-Probability
+
+It's crucial to distinguish between what's easy to get (the score) and what's hard (the log-probability value itself).
+
+* **What you get (The Compass):** The score, `∇_{x_t} log p(x_t)`, is the **gradient** of the log-probability. Your model gives you a perfect compass that, at any location `x_t` on the probability landscape, tells you exactly which way is "uphill".
+
+* **What is hard to get (The Altimeter):** The log-probability value, `log p(x_t)`, is your exact altitude. Calculating this value is generally **intractable** because it requires integrating over the entire unknown distribution of real data.
+
+For most practical applications like guiding generation, having the compass (the score) is exactly what you need.
+
+### What You *Can* Estimate
+
+While getting `log p(x_t)` is intractable, you *can* use your trained model `ϵ_θ` to calculate the full Variational Lower Bound (`L_vlb`). This gives you a tight estimate of the log-likelihood of the **original clean image**, `log p(x_0)`, which is a standard method for evaluating a diffusion model's final performance.
+
+---
+
 ### References
 
 [^1]: Hyvärinen, A. (2005). *Estimation of Non-Normalized Statistical Models by Score Matching.* Journal of Machine Learning Research.
