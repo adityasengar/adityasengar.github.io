@@ -85,7 +85,7 @@ DDPM defines a fixed forward process over `T` discrete timesteps. This is a **Va
 
 ### The Reverse Process & Loss Function: Three Roads to the Same Destination
 
-The goal is to learn the reverse transition $p_\theta(x_{t-1} | x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
+The goal is to learn the reverse transition $p_\theta(x_{t-1} , x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
 
 #### Perspective 1: The Probabilistic View (`L_vlb`)
 
