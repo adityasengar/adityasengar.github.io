@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "diffusion"
-hidden: true
 date: 2025-07-03
 ---
 # From Noise to Art: The Complete Guide to Diffusion Models
