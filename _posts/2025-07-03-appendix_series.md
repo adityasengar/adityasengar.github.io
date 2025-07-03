@@ -122,7 +122,7 @@ The resulting output vectors from all heads ($z^{(1)}, z^{(2)}, \dots$) are conc
 
 
 
-# Appendix: The Physics and Mathematics of Conditional Diffusion
+# B. The Physics and Mathematics of Conditional Diffusion
 
 The Diffusion Module at the heart of AlphaFold 3 is a concept of profound elegance, drawing its power from the principles of non-equilibrium thermodynamics and statistical physics. The core idea is to master the creation of order by first mastering its destruction. Imagine a drop of ink in water—a low-entropy, high-information state. Over time, random molecular motion (Brownian motion) causes it to spread into a uniform, high-entropy state of maximum disorder. The diffusion model asks: can we learn the exact, time-reversed path to command every single ink molecule to re-form into the original, complex droplet?
 
