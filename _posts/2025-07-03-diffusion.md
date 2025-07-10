@@ -39,10 +39,14 @@ The crucial breakthrough was **Denoising Score Matching** [^2]. This work reveal
 
 Here's the idea: instead of trying to model the score of clean, perfect data, what if we model the score of data corrupted by various levels of Gaussian noise?
 
-It turns out that for a clean data point $x_0$ and a noisy version $x_t$, there is a direct analytical expression for the score of the *conditional* data distribution, $p(x_t|x_0)$. Given that $x_t = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon$, the score is exactly:
+It turns out that for a clean data point $x_0$ and a noisy version $x_t$, there is a direct analytical expression for the score of the *conditional* data distribution, $p(x_t|x_0)$. 
+
+Given that $x_t = \sqrt{\bar{\alpha}_t} x_0 + \sqrt{1 - \bar{\alpha}_t} \epsilon$, the score is exactly:
+
 $$
 \nabla_{x_t} \log p(x_t|x_0) = -\frac{\epsilon}{\sqrt{1 - \bar{\alpha}_t}}
 $$
+
 The key insight of denoising score matching is that this easily computed conditional score is a great proxy for the score of the full marginal distribution, $\nabla_{x_t} \log p(x_t)$, which is what we need for generation. This transforms the problem: to learn the score, we just need to predict the noise $\epsilon$ that was added.
 
 
