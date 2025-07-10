@@ -79,7 +79,6 @@ The pioneering work that applied this to create large-scale generative models wa
 ### The Forward Process: Creating the Noisy Data
 
 DDPM defines a fixed forward process over `T` discrete timesteps. This is a **Variance Preserving (VP)** process defined by a noise schedule `βt`.
-
 * The single-step transition is:
     $$
     x_t = \sqrt{1 - \beta_t} \cdot x_{t-1} + \sqrt{\beta_t} \cdot \epsilon_{t-1} \quad \text{where} \quad \epsilon \sim \mathcal{N}(0, I)
@@ -88,13 +87,19 @@ DDPM defines a fixed forward process over `T` discrete timesteps. This is a **Va
     $$
     x_t = \sqrt{\bar{\alpha}_t} \cdot x_0 + \sqrt{1 - \bar{\alpha}_t} \cdot \epsilon
     $$
+This formulation is a crucial mechanism known as the **reparameterization trick**. It allows us to generate a sample $x_t$ in a way that is differentiable. Instead of sampling from a distribution whose parameters are learned (a stochastic step that blocks gradients), we sample a standard normal noise $\epsilon$ and deterministically transform it. This allows gradients to flow back through the sampling process, which is essential for training with gradient descent.
 
 ### The Reverse Process & Loss Function: Three Roads to the Same Destination
 
-The goal is to learn the reverse transition $p_\theta(x_{t-1} , x_t)$. How we frame this learning objective is key. There are three equivalent perspectives.
+The goal is to learn a model $p_\theta(x_{t-1} | x_t)$ that approximates the true (but intractable) posterior $q(x_{t-1} | x_t, x_0)$. DDPMs achieve this by defining the reverse transition as a Gaussian whose variance is fixed ($\sigma_t^2 = \beta_t$) and whose mean $\mu_\theta(x_t, t)$ is learned by a neural network.
+
+By deriving the mean from the predicted noise $\epsilon_\theta(x_t, t)$, we get:
+$$
+\mu_\theta(x_t, t) = \frac{1}{\sqrt{\alpha_t}} \left( x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_\theta(x_t, t) \right)
+$$
+This equation reveals that predicting the noise $\epsilon$ with a network $\epsilon_\theta$ directly provides the parameters for the reverse diffusion step. This insight dramatically simplifies the optimization objective, as seen in the perspectives below.
 
 #### Perspective 1: The Probabilistic View (`L_vlb`)
-
 The DDPM paper [^4] started from a rigorous probabilistic view, treating the model as a **Variational Autoencoder**. The goal is to maximize the Evidence Lower Bound (or Variational Lower Bound, `L_vlb`). This loss is a sum of KL Divergence terms that, for each step, measure how well the model’s predicted reverse step matches the true reverse step. This is the most complex but most theoretically pure formulation.
 
 The full loss is composed of a term for the final step ($L_0$), a term for the noise prior ($L_T$), and a sum of terms for all intermediate steps ($L_{t-1}$):
