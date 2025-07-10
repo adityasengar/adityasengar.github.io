@@ -94,6 +94,7 @@ This formulation is a crucial mechanism known as the **reparameterization trick*
 The goal is to learn a model $p_\theta(x_{t-1} | x_t)$ that approximates the true (but intractable) posterior $q(x_{t-1} | x_t, x_0)$. DDPMs achieve this by defining the reverse transition as a Gaussian whose variance is fixed ($\sigma_t^2 = \beta_t$) and whose mean $\mu_\theta(x_t, t)$ is learned by a neural network.
 
 By deriving the mean from the predicted noise $\epsilon_\theta(x_t, t)$, we get:
+
 $$
 \mu_\theta(x_t, t) = \frac{1}{\sqrt{\alpha_t}} \left( x_t - \frac{\beta_t}{\sqrt{1 - \bar{\alpha}_t}} \epsilon_\theta(x_t, t) \right)
 $$
