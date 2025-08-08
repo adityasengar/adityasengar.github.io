@@ -2,7 +2,7 @@
 
 ---
 
-### 1. Developing a Generative AI Framework for All-Atom Protein Dynamics
+## . Developing a Generative AI Framework for All-Atom Protein Dynamics
 
 ![LD-FPG Figure](/images/LDFPG.png)
 
@@ -57,7 +57,7 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 ---
 
 
-### 2. Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
+## Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
 
 ![Multiscale Catalyst Modeling](/images/reactor.jpg)
 
