@@ -2,11 +2,13 @@
 
 ### 1. Developing a Generative AI Framework for All-Atom Protein Dynamics
 
-![Placeholder for LD-FPG figure](path/to/image.png)
+![Placeholder for LD-FPG figure](/images/LDFPG.png)
 
 A significant challenge in computational biology is modeling the complete range of motion of proteins, as their function is intrinsically linked to their dynamics. To address this, I co-conceived and led the development of a novel generative AI framework, **Latent Diffusion for Full Protein Generation (LD-FPG)** [1].  
 
 My specific contribution was central to this project: I designed and implemented the core machine learning pipeline, which integrates a **spectral graph neural network autoencoder** with a **latent diffusion model**. I also performed the rigorous validation of our method on a complex and medically relevant drug target — the **human dopamine D2 receptor (D2R)**, a G-protein-coupled receptor (GPCR).
+
+
 
 Our work demonstrated, for the first time, that a latent diffusion model can generate complete, all-atom conformational ensembles directly from molecular dynamics data with high fidelity. The framework successfully reproduced not only the **global backbone architecture** but also the **distributions of side-chain dihedral angles** — dynamics essential for molecular recognition.
 
