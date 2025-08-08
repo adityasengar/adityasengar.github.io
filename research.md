@@ -23,6 +23,9 @@ This achievement provides the scientific community with a powerful and computati
 ---
 ## Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
 
+![LD-FPG Figure](/images/oxdna.jpg)
+
+
 I combined method development, simulations, and theoretical analysis to advance our understanding of DNA nanotechnology using the oxDNA framework. This work, showcased at five international conferences and through several posters, tackled fundamental challenges in DNA design and function.
 
 ### 1. Free-Energy Mapping of Four-Way DNA Junctions (with Bulges)
