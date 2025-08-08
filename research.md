@@ -1,5 +1,7 @@
-## Major Achievements
-
+---
+layout: page
+title: Research
+permalink: /research/
 ---
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics
