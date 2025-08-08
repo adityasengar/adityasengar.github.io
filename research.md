@@ -18,5 +18,26 @@ This achievement provides the scientific community with a powerful and computati
 
 ---
 
+### 2. Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
+
+![Multiscale Catalyst Modeling](/images/molecule_to_reactor.png)
+
+My research has focused on overcoming a critical barrier in chemical engineering: the inability of traditional models to bridge the vast gap between molecular-level surface events and macroscopic reactor performance. To address this, I established a foundational, particle-based computational fluid dynamics (CFD) framework that provides a unified, multiscale view of catalytic processes. The core innovation of this framework was its ability to explicitly resolve essential small-scale physics—such as diffusion and surface reactions—while seamlessly operating at the larger scales of industrial reactors [2]. This model was rigorously designed and validated to switch between reaction, diffusion, and convection-dominated regimes, a versatility that was previously out of reach for real-time simulations. I further advanced this platform by integrating complex, nonlinear surface reaction kinetics, enabling highly accurate and scalable simulations of multicomponent systems and their mass transfer fluxes under non-equilibrium conditions [1].
+
+Building on this robust modeling platform, I directed its predictive power toward solving a pressing industrial problem: **catalyst deactivation in the production of sustainable aviation fuels**, a primary cause of economic loss and process inefficiency. I developed and compared two distinct theoretical models that quantitatively connect molecular-scale deactivation mechanisms with observable reactor-scale performance degradation [3]. By applying these models to analyze industrial alkylation reaction data, my investigation yielded a crucial breakthrough: the identification of a previously unknown molecular compound that acts as a potent deactivating agent. Furthermore, the models revealed that the deactivation rate is highly sensitive to proton mobility on the catalyst surface. This analysis provided a concrete, physics-based strategy for extending catalyst lifetime by optimizing these proton interactions, offering a clear path to minimize operational downtime and improve the economic viability of sustainable fuel production [4].
+
+Collectively, this work constitutes a complete "molecule-to-reactor" predictive pipeline, demonstrating a clear progression from **fundamental method development** to **high-impact industrial application**. The multiscale model was selected as the **cover article of Chemical Engineering Science** [2], and the deactivation research earned me an invitation to present at the **Faraday Discussions** [5], a leading international forum for groundbreaking research. These results have been shared at multiple international conferences and directly with industry leaders, including a presentation at **Albemarle**, fostering collaborations that bridge academic theory and industrial practice.
+
+---
+
+**Cited Works**  
+[1] Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Physical Review E, 96(2), 022115.  
+[2] Sengar, A., Kuipers, J. A. M., van Santen, R. A., & Padding, J. T. (2019). *Towards a particle based approach for multiscale modeling of heterogeneous catalytic reactors*. Chemical Engineering Science, 198, 184-197.  
+[3] Sengar, A., Van Santen, R. A., Steur, E., Kuipers, J. A., & Padding, J. (2018). *Deactivation kinetics of solid acid catalyst with laterally interacting protons*. ACS Catalysis, 8(10), 9016-9033.  
+[4] Sengar, A., Van Santen, R. A., & Kuipers, J. A. (2020). *Deactivation kinetics of the catalytic alkylation reaction*. ACS Catalysis, 10(13), 6988-7006.  
+[5] Van Santen, R. A., Sengar, A., & Steur, E. (2018). *The challenge of catalyst prediction*. Faraday Discussions, 208, 35-52. Royal Society of Chemistry.
+
+
+
 **Cited Works**  
 [1] Sengar, A., Hariri, A., Probst, D., Barth, P., & Vandergheynst, P. (2025). *Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings*. arXiv preprint [arXiv:2506.17064](https://doi.org/10.48550/arXiv.2506.17064).
