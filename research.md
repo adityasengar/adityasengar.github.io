@@ -1,5 +1,7 @@
 ## Major Achievements
 
+---
+
 ### 1. Developing a Generative AI Framework for All-Atom Protein Dynamics
 
 ![LD-FPG Figure](/images/LDFPG.png)
@@ -31,13 +33,13 @@ Collectively, this work constitutes a complete "molecule-to-reactor" predictive 
 ---
 
 **Cited Works**  
-[1] Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Physical Review E, 96(2), 022115.  
-[2] Sengar, A., Kuipers, J. A. M., van Santen, R. A., & Padding, J. T. (2019). *Towards a particle based approach for multiscale modeling of heterogeneous catalytic reactors*. Chemical Engineering Science, 198, 184-197.  
-[3] Sengar, A., Van Santen, R. A., Steur, E., Kuipers, J. A., & Padding, J. (2018). *Deactivation kinetics of solid acid catalyst with laterally interacting protons*. ACS Catalysis, 8(10), 9016-9033.  
-[4] Sengar, A., Van Santen, R. A., & Kuipers, J. A. (2020). *Deactivation kinetics of the catalytic alkylation reaction*. ACS Catalysis, 10(13), 6988-7006.  
-[5] Van Santen, R. A., Sengar, A., & Steur, E. (2018). *The challenge of catalyst prediction*. Faraday Discussions, 208, 35-52. Royal Society of Chemistry.
 
+**For Catalytic Engineering**  
+[1] [Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Physical Review E, 96(2), 022115.](https://doi.org/10.1103/PhysRevE.96.022115)  
+[2] [Sengar, A., Kuipers, J. A. M., van Santen, R. A., & Padding, J. T. (2019). *Towards a particle based approach for multiscale modeling of heterogeneous catalytic reactors*. Chemical Engineering Science, 198, 184-197.](https://doi.org/10.1016/j.ces.2018.12.021)  
+[3] [Sengar, A., Van Santen, R. A., Steur, E., Kuipers, J. A., & Padding, J. (2018). *Deactivation kinetics of solid acid catalyst with laterally interacting protons*. ACS Catalysis, 8(10), 9016-9033.](https://doi.org/10.1021/acscatal.8b02163)  
+[4] [Sengar, A., Van Santen, R. A., & Kuipers, J. A. (2020). *Deactivation kinetics of the catalytic alkylation reaction*. ACS Catalysis, 10(13), 6988-7006.](https://doi.org/10.1021/acscatal.0c00767)  
+[5] [Van Santen, R. A., Sengar, A., & Steur, E. (2018). *The challenge of catalyst prediction*. Faraday Discussions, 208, 35-52.](https://doi.org/10.1039/C7FD00208E)  
 
-
-**Cited Works**  
-[1] Sengar, A., Hariri, A., Probst, D., Barth, P., & Vandergheynst, P. (2025). *Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings*. arXiv preprint [arXiv:2506.17064](https://doi.org/10.48550/arXiv.2506.17064).
+**For Protein Dynamics**  
+[1] [Sengar, A., Hariri, A., Probst, D., Barth, P., & Vandergheynst, P. (2025). *Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings*. arXiv preprint, arXiv:2506.17064.](https://doi.org/10.48550/arXiv.2506.17064)
