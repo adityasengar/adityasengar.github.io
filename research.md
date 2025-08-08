@@ -30,9 +30,8 @@ Building on this robust modeling platform, I directed its predictive power towar
 
 Collectively, this work constitutes a complete "molecule-to-reactor" predictive pipeline, demonstrating a clear progression from **fundamental method development** to **high-impact industrial application**. The multiscale model was selected as the **cover article of Chemical Engineering Science** [2], and the deactivation research earned me an invitation to present at the **Faraday Discussions** [5], a leading international forum for groundbreaking research. These results have been shared at multiple international conferences and directly with industry leaders, including a presentation at **Albemarle**, fostering collaborations that bridge academic theory and industrial practice.
 
----
 
-**Cited Works**  
+**Resources**  
 
 **For Catalytic Engineering**  
 [1] [Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Physical Review E, 96(2), 022115.](https://doi.org/10.1103/PhysRevE.96.022115)  
@@ -44,5 +43,3 @@ Collectively, this work constitutes a complete "molecule-to-reactor" predictive 
 
 [5] [Van Santen, R. A., Sengar, A., & Steur, E. (2018). *The challenge of catalyst prediction*. Faraday Discussions, 208, 35-52.](https://pubs.rsc.org/en/content/articlelanding/2018/fd/c7fd00208d)
 
-**For Protein Dynamics**  
-[1] [Sengar, A., Hariri, A., Probst, D., Barth, P., & Vandergheynst, P. (2025). *Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings*. arXiv preprint, arXiv:2506.17064.](https://doi.org/10.48550/arXiv.2506.17064)
