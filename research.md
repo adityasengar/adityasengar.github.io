@@ -53,11 +53,6 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 - 📄 [Paper 2: “Kinetic Proofreading Can Enhance Specificity in a Nonenzymatic DNA Strand Displacement Network” (J. Am. Chem. Soc., 2024)](https://pubs.acs.org/doi/full/10.1021/jacs.3c14673)  
 - 📄 [Paper 3: “A Primer on the oxDNA Model of DNA…” (Frontiers in Molecular Biosciences, 2021)](https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2021.693710/full)  
 
----
-
-
-Let me know if you'd prefer inline icons (e.g., `📄`, `💻`) beside the paper links or want to integrate repository links if available. We can also adapt the tone to match your target format—site portfolio, CV, or research statement—whatever fits best!
-::contentReference[oaicite:0]{index=0}
 
 ---
 
