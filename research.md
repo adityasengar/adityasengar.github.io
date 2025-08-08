@@ -33,8 +33,8 @@ Collectively, this work constitutes a complete "molecule-to-reactor" predictive 
 
 **Resources**  
 
-**For Catalytic Engineering**  
 [1] [Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Physical Review E, 96(2), 022115.](https://doi.org/10.1103/PhysRevE.96.022115)  
+
 [2] [Sengar, A., Kuipers, J. A. M., van Santen, R. A., & Padding, J. T. (2019). *Towards a particle based approach for multiscale modeling of heterogeneous catalytic reactors*. Chemical Engineering Science, 198, 184-197.](https://www.sciencedirect.com/science/article/pii/S0009250918307607)
 
 [3] [Sengar, A., Van Santen, R. A., Steur, E., Kuipers, J. A., & Padding, J. (2018). *Deactivation kinetics of solid acid catalyst with laterally interacting protons*. ACS Catalysis, 8(10), 9016-9033.](https://pubs.acs.org/doi/10.1021/acscatal.8b01511) 
