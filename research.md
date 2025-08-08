@@ -21,6 +21,45 @@ This achievement provides the scientific community with a powerful and computati
 
 
 ---
+## Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
+
+I combined method development, simulations, and theoretical analysis to advance our understanding of DNA nanotechnology using the oxDNA framework. This work, showcased at five international conferences and through several posters, tackled fundamental challenges in DNA design and function.
+
+### 1. Free-Energy Mapping of Four-Way DNA Junctions (with Bulges)
+
+In [1], I developed enhanced sampling techniques based on oxDNA to map the free-energy landscape of four-way DNA junctions—crucial intermediates in strand displacement reactions. My simulations revealed a surprising result: introducing two bulges actually **destabilized** the structure due to increased entropy penalties. This finding challenges conventional design assumptions and provides valuable insights for improving DNA nanostructure robustness.
+
+### 2. Kinetic Proofreading in Nonenzymatic DNA Strand Displacement
+
+In [2], I applied oxDNA to model a **kinetic proofreading (KP)** mechanism in nonenzymatic DNA strand-displacement systems. This work provided quantitative reaction-rate estimates and showed that operating under out-of-equilibrium conditions significantly enhances molecular recognition—especially in discriminating single-nucleotide mismatches. These insights can inform highly specific applications such as SNP detection and DNA-based diagnostics.
+
+### 3. Extending oxDNA: Emergent Behaviors & Fast Kinetics Sampling
+
+In [3], I demonstrated oxDNA’s broader utility in revealing emergent behaviors within biomolecular systems and non-equilibrium settings. I also developed a **fast kinetics sampling technique** tailored for studying dynamic phenomena, such as DNA bubble formation. This method is now being adopted by researchers at institutions including the University of Cambridge and MIT.
+
+---
+
+### Resources  
+
+- 📄 [Paper 1: “Overcoming the speed limit of four-way DNA branch migration with bulges in toeholds” (bioRxiv, 2023)](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
+- 📄 [Paper 2: “Kinetic Proofreading Can Enhance Specificity in a Nonenzymatic DNA Strand Displacement Network” (J. Am. Chem. Soc., 2024)](https://pubs.acs.org/doi/full/10.1021/jacs.3c14673)  
+- 📄 [Paper 3: “A Primer on the oxDNA Model of DNA…” (Frontiers in Molecular Biosciences, 2021)](https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2021.693710/full)  
+
+---
+
+### Suggested Visuals
+
+- **For Paper 1**: A comparative energy landscape plot illustrating how junction stability shifts with and without bulges.  
+- **For Paper 2**: A schematic of the kinetic proofreading mechanism, highlighting improved mismatch discrimination.  
+- **For Paper 3**: A representation of DNA bubble dynamics or emergent structural behaviors, alongside a schematic of the sampling algorithm.
+
+---
+
+Let me know if you'd prefer inline icons (e.g., `📄`, `💻`) beside the paper links or want to integrate repository links if available. We can also adapt the tone to match your target format—site portfolio, CV, or research statement—whatever fits best!
+::contentReference[oaicite:0]{index=0}
+
+---
+
 
 ### 2. Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
 
