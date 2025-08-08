@@ -20,7 +20,7 @@ This achievement provides the scientific community with a powerful and computati
 
 ### 2. Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
 
-![Multiscale Catalyst Modeling](/images/molecule_to_reactor.png)
+![Multiscale Catalyst Modeling](/images/reactor.jpg)
 
 My research has focused on overcoming a critical barrier in chemical engineering: the inability of traditional models to bridge the vast gap between molecular-level surface events and macroscopic reactor performance. To address this, I established a foundational, particle-based computational fluid dynamics (CFD) framework that provides a unified, multiscale view of catalytic processes. The core innovation of this framework was its ability to explicitly resolve essential small-scale physics—such as diffusion and surface reactions—while seamlessly operating at the larger scales of industrial reactors [2]. This model was rigorously designed and validated to switch between reaction, diffusion, and convection-dominated regimes, a versatility that was previously out of reach for real-time simulations. I further advanced this platform by integrating complex, nonlinear surface reaction kinetics, enabling highly accurate and scalable simulations of multicomponent systems and their mass transfer fluxes under non-equilibrium conditions [1].
 
