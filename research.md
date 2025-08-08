@@ -2,7 +2,7 @@
 
 ---
 
-## . Developing a Generative AI Framework for All-Atom Protein Dynamics
+## Developing a Generative AI Framework for All-Atom Protein Dynamics
 
 ![LD-FPG Figure](/images/LDFPG.png)
 
