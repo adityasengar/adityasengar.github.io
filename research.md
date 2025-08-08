@@ -17,6 +17,8 @@ This achievement provides the scientific community with a powerful and computati
 **Resources**  
 - 📄 [Read the Paper](https://doi.org/10.48550/arXiv.2506.17064)  
 - 💻 [View the Code on GitHub](https://github.com/adityasengar/LD-FPG/tree/main)  
+- 📊 [View the Dataset on Zenodo](https://zenodo.org/records/15479781)
+
 
 ---
 
