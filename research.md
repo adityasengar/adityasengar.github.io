@@ -36,9 +36,14 @@ In [1], I developed enhanced sampling techniques based on oxDNA to map the free-
 
 In [2], I applied oxDNA to model a **kinetic proofreading (KP)** mechanism in nonenzymatic DNA strand-displacement systems. This work provided quantitative reaction-rate estimates and showed that operating under out-of-equilibrium conditions significantly enhances molecular recognition—especially in discriminating single-nucleotide mismatches. These insights can inform highly specific applications such as SNP detection and DNA-based diagnostics.
 
-### 3. Extending oxDNA: Emergent Behaviors & Fast Kinetics Sampling
+### 3) oxDNA primer: when to use it, how to simulate, how to interpret
 
-In [3], I demonstrated oxDNA’s broader utility in revealing emergent behaviors within biomolecular systems and non-equilibrium settings. I also developed a **fast kinetics sampling technique** tailored for studying dynamic phenomena, such as DNA bubble formation. This method is now being adopted by researchers at institutions including the University of Cambridge and MIT.
+In [3], we produced a comprehensive **primer and tutorial** on the oxDNA coarse-grained DNA model. The paper explains model variants (oxDNA1/oxDNA2), force-field details, sequence-dependent parameterization, and mapping to experimental units. It also walks through simulation protocols—**Langevin dynamics**, **Monte Carlo**, and advanced accelerated sampling methods such as **Virtual Move Monte Carlo (VMMC)**—demonstrating how these can speed up equilibration of large, strongly interacting DNA structures.  
+
+We included worked examples where VMMC efficiently explores conformations of DNA origami and multi-strand assemblies, and showed how to combine it with umbrella sampling to obtain free-energy profiles. The paper also details analysis workflows for computing structural observables, thermodynamic quantities, and reaction pathways, providing a benchmark reference for reproducible oxDNA studies.
+
+#### Additional method (independent of [3])  
+I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic events such as DNA bubble formation; this approach has since been adopted by groups at the University of Cambridge and MIT (submitted).
 
 ---
 
