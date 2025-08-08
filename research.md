@@ -51,11 +51,20 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 ### Resources  
 
-- 📄 [Paper 1: “Overcoming the speed limit of four-way DNA branch migration with bulges in toeholds” (bioRxiv, 2023)](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
-- 📄 [Paper 2: “Kinetic Proofreading Can Enhance Specificity in a Nonenzymatic DNA Strand Displacement Network” (J. Am. Chem. Soc., 2024)](https://pubs.acs.org/doi/full/10.1021/jacs.3c14673)  
-- 📄 [Paper 3: “A Primer on the oxDNA Model of DNA…” (Frontiers in Molecular Biosciences, 2021)](https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2021.693710/full)  
+**[1] Free-energy mapping of four-way DNA junctions**  
+- 📄 [Paper — bioRxiv (2023)](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
+- 💻 [Code on GitHub](https://github.com/adityasengar/Four_way_BM)  
+- 📊 [Dataset on Zenodo](https://zenodo.org/records/15623394)  
 
+**[2] Kinetic proofreading in nonenzymatic strand displacement**  
+- 📄 [Paper — JACS (2024)](https://pubs.acs.org/doi/full/10.1021/jacs.3c14673)  
+- 📊 [Dataset on Zenodo](https://zenodo.org/records/8132461)  
 
+**[3] oxDNA primer: when to use it, how to simulate, how to interpret**  
+- 📄 [Paper — Frontiers in Mol. Biosci. (2021)](https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2021.693710/full)  
+- 📊 [Dataset on Zenodo](https://zenodo.org/records/4809769)  
+- 💻 [oxDNA simulation engine on GitHub](https://github.com/lorenzo-rovigatti/oxDNA)
+- 
 ---
 
 
