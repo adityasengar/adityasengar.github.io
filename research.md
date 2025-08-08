@@ -50,13 +50,6 @@ In [3], I demonstrated oxDNA’s broader utility in revealing emergent behaviors
 
 ---
 
-### Suggested Visuals
-
-- **For Paper 1**: A comparative energy landscape plot illustrating how junction stability shifts with and without bulges.  
-- **For Paper 2**: A schematic of the kinetic proofreading mechanism, highlighting improved mismatch discrimination.  
-- **For Paper 3**: A representation of DNA bubble dynamics or emergent structural behaviors, alongside a schematic of the sampling algorithm.
-
----
 
 Let me know if you'd prefer inline icons (e.g., `📄`, `💻`) beside the paper links or want to integrate repository links if available. We can also adapt the tone to match your target format—site portfolio, CV, or research statement—whatever fits best!
 ::contentReference[oaicite:0]{index=0}
