@@ -23,7 +23,7 @@ This achievement provides the scientific community with a powerful and computati
 
 ---
 
-## 2. Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
+## 2. My time at Imperial as a PostDoc — DNA Nanotechnology & Biomolecular Systems
 
 ![oxDNA Figure](/images/oxdna.jpg)
 
