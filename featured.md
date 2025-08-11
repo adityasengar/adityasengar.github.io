@@ -1,18 +1,18 @@
 ---
 layout: page
-title: "Featured Mentions"
+title: "Featured Mentions & Projects"
 permalink: /featured/
 ---
 
-## Featured Mentions & Collaborations
+## Featured Mentions & Projects
 
-Here are a few places where my work and research have been featured or discussed.
+Here are a few places where my work has been featured, along with some key projects and collaborations.
 
 ***
 
-### Completion of PhD Cum Laude – MCEC Research Center
+### Completion of PhD Cum Laude
 
-**Source:** Netherlands Center for Multiscale Catalytic Energy Conversion (MCEC)
+**Source:** MCEC Research Center
 
 **Summary:** This article announces the completion of my PhD with the distinction of "cum laude" from TU/e at the age of 25. It highlights my doctoral research on mesoscale modeling, which successfully bridged the gap between nanoscale chemical reactions and the microscale perspective of chemical reactor engineers.
 
@@ -34,6 +34,34 @@ Here are a few places where my work and research have been featured or discussed
 
 **Source:** ATMANA
 
-**Summary:** This page details a collaborative project focused on creating simulations of humanity's future in the presence of AI. As a mathematician on the project, my work involved simulating outcomes based on whether human consciousness was focused internally (meditation) or externally, exploring the resulting dynamics between the human population and artificial intelligence.
+**Summary:** This page details a collaborative project focused on creating simulations of humanity's future in the presence of AI. As a mathematician on the project, my work involved simulating outcomes based on whether human consciousness was focused internally or externally, exploring the resulting dynamics between the human population and artificial intelligence.
 
 [**Read about the project at ATMANA &rarr;**](https://atmana.net/the-lab)
+
+***
+
+### Keynote Speaker at ICBSGBM 2025
+
+**Source:** LNCT University
+
+**Summary:** I was honored to be a keynote speaker at the prestigious International Conference on Building Sustainable Global Business Models hosted by LNCT University. My talk focused on emerging trends and applications of AI in building sustainable and efficient research pipelines.
+
+[**Read the conference summary at LNCT &rarr;**](https://lnct.ac.in/lnct-hosts-prestigious-international-conference-on-building-sustainable-global-business-models/)
+
+***
+
+### Freelance Data Science & ML Consulting
+
+**Source:** Kolabtree Freelancer Platform
+
+**Summary:** My freelance profile on Kolabtree showcases my work as a data science and machine learning consultant for startups and researchers globally. With a 5-star rating, I have completed over 30 projects in computational biotechnology, drug discovery, and software development.
+
+[**View my profile at Kolabtree &rarr;**](https://www.kolabtree.com/find-an-expert/aditya-s.27618)
+
+***
+
+### Innousuisse Entrepreneurship Course Project
+
+**Source:** Innousuisse (Swiss Innovation Agency)
+
+**Summary:** As part of a business course with Innousuisse, I was on a team that finished as runners-up for our project. Our work focused on developing a business model for a novel gene therapy approach targeting Parkinson's disease.
