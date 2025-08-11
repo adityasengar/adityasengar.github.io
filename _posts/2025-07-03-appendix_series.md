@@ -3,7 +3,6 @@ title: "Appendix (From Alphafold 2 to Boltz-2)"
 series: "From AlphaFold2 to Boltz-2: The Protein Prediction Revolution"
 author: "Aditya Sengar"
 part: 4
-date: 2025-06-26
 ---
 
 # A. A Deeper Look at Self-Attention
