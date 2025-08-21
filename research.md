@@ -150,7 +150,7 @@ storing and managing beneficiary data, with smart contracts automating transacti
 applied this framework to India’s flagship employment scheme, **MGNREGA**, which has an annual budget of around US$8 
 billion (2018–2019).  By leveraging cryptographic integrity and immutability, the system ensures that funds are 
 disbursed only to verified recipients and that all transactions are auditable—improving accountability and reducing 
-fraud【151030001578701†L51-L60】.
+
 
 **Resources**
 
