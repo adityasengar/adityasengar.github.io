@@ -4,75 +4,108 @@ title: Research
 permalink: /research/
 ---
 
-## 1. Developing a Generative AI Framework for All-Atom Protein Dynamics
+# Research
 
-![LD-FPG Figure](/images/LDFPG.png)
+## About my research
 
-A significant challenge in computational biology is modeling the complete range of motion of proteins, as their function is intrinsically linked to their dynamics. To address this, I co-conceived and led the development of a novel generative AI framework, **Latent Diffusion for Full Protein Generation (LD-FPG)** [1].  
+As a computational physicist and post‑doctoral researcher at Imperial College London, I work at the interface of **chemical engineering** and **bioengineering**. My interests range from **multiscale modelling of catalytic reactors** to **nucleic‑acid systems**.  Under the guidance of Dr Thomas Ouldridge I develop and apply **oxDNA**, a coarse‑grained model of DNA that captures kinetics and thermodynamics of strand displacement reactions.  Earlier, during my PhD at Eindhoven University of Technology, I focused on **particle‑based simulation techniques** for heterogeneous catalysis in micro‑reactors and macro‑reactors.
 
-My specific contribution was central to this project: I designed and implemented the core machine learning pipeline, which integrates a **spectral graph neural network autoencoder** with a **latent diffusion model**. I also performed the rigorous validation of our method on a complex and medically relevant drug target — the **human dopamine D2 receptor (D2R)**, a G-protein-coupled receptor (GPCR).
+## DNA strand displacement and bioengineering
 
-Our work demonstrated, for the first time, that a latent diffusion model can generate complete, all-atom conformational ensembles directly from molecular dynamics data with high fidelity. The framework successfully reproduced not only the **global backbone architecture** but also the **distributions of side-chain dihedral angles** — dynamics essential for molecular recognition.
+![Abstract DNA helix]({{ site.baseurl }}/images/research_dna.png){: .project-image }
 
-This achievement provides the scientific community with a powerful and computationally efficient tool to study the dynamics of challenging proteins, opening new avenues for structure-based drug design against previously intractable targets. In the spirit of open and reproducible science, I also curated and publicly released the extensive D2R molecular dynamics dataset and the complete LD-FPG codebase to facilitate further innovation [1].
+My current work explores how to control and predict DNA strand displacement, a key mechanism in synthetic biology and molecular computing.  Below are some of the projects and publications in this area:
 
-**Resources**  
-[1] [Sengar, A., Hariri, A., Probst, D., Barth, P., & Vandergheynst, P. (2025). *Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings*. arXiv preprint, arXiv:2506.17064.](https://doi.org/10.48550/arXiv.2506.17064)  
-- 💻 [Code on GitHub](https://github.com/adityasengar/LD-FPG/tree/main)  
-- 📊 [Dataset on Zenodo](https://zenodo.org/records/15479781)
+<details>
+<summary><strong>Kinetic proofreading for single‑nucleotide discrimination</strong> – submitted to Nature Nanotechnology</summary>
+<p>
+This project studies how **kinetic proofreading** can improve the specificity of **non‑enzymatic DNA strand displacement** networks.  By introducing additional energy‑dissipating steps, the reaction pathway becomes more sensitive to base‑pair mismatches, allowing circuits to reliably distinguish single nucleotide differences.  Our simulations demonstrate that a properly tuned proofreading scheme dramatically reduces false‑positive signalling.  
+
+<a href="#" target="_blank">Read the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>Overcoming the speed limit of four‑way branch migration</strong> – submitted to JACS</summary>
+<p>
+Four‑way branch migration is often limited by slow exchange between strands.  We investigate how **bulge inserts** in toeholds can accelerate branch migration without compromising accuracy.  Coarse‑grained simulations with the oxDNA model show that small bulges lower the energy barrier for strand exchange, speeding up migration by orders of magnitude.  These findings may enable faster DNA‑based walkers and motors.  
+
+<a href="#" target="_blank">Read the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>Allosteric modulation of toehold‑mediated displacement</strong> – in preparation</summary>
+<p>
+We explore how **topological constraints** and **allosteric interactions** can regulate toehold‑mediated strand displacement.  By designing toeholds that respond to structural changes elsewhere on the strand, it is possible to create controllable logic gates where input at one site activates or suppresses displacement at another.  This work illustrates the power of **mechanical coupling** in DNA circuits and proposes designs for responsive molecular switches.
+</p>
+</details>
+
+<details>
+<summary><strong>Handhold‑mediated displacement and free‑energy landscapes</strong> – in preparation</summary>
+<p>
+In handhold‑mediated reactions, the invading strand binds away from the toehold and slides into position via slithering motions.  Using oxDNA simulations we map the **free‑energy landscape** of this process and identify key intermediates.  Understanding these landscapes helps rationally design handhold lengths and sequences that optimise reaction rates and minimise undesirable secondary structures.
+</p>
+</details>
+
+<details>
+<summary><strong>Deep learning for oxDNA kinetics</strong> – in preparation</summary>
+<p>
+Simulating hybridisation kinetics with oxDNA is computationally expensive.  Here we train a **deep neural network** on a library of oxDNA trajectories to predict **reaction rates** from sequence and structural features.  The model captures subtle dependencies between base composition, toehold length, and folding patterns, enabling rapid screening of sequence variants without running new simulations.
+</p>
+</details>
+
+## Catalysis and reaction engineering
+
+![Particle‑based reactor simulation]({{ site.baseurl }}/images/research_reactor.png){: .project-image }
+
+During my doctoral studies, I developed **particle‑based methods** for simulating chemical reactors, focusing on how catalyst deactivation and mass transfer influence performance.  Key contributions include:
+
+<details>
+<summary><strong>Deactivation kinetics of the catalytic alkylation reaction</strong> – ACS Catalysis (2020)</summary>
+<p>
+We developed a kinetics theory for **solid‑acid catalysed alkylation** of isobutane with propylene or butene.  The analysis links reaction networks, catalyst deactivation and residence‑time distributions in both continuous stirred‑tank and plug‑flow reactors.  We derive conditions under which deactivation is slow and show how self‑alkylation reactions and the mobility of the reaction zone influence deactivation times.  The work provides practical guidelines for designing reactors with long catalyst lifetimes.
+
+<a href="https://pubs.acs.org/doi/10.1021/acscatal.0c00932" target="_blank">View the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>Particle‑based modelling of heterogeneous chemical kinetics including mass transfer</strong> – Physical Review E (2017)</summary>
+<p>
+This paper presents a **particle‑based model** that couples **stochastic rotation dynamics** for fluid flow with mean‑field reaction kinetics on catalytic surfaces.  A dimensionless analysis connects hydrodynamic parameters (Reynolds number) and reaction parameters (Damköhler numbers), enabling simulations across multiple scales.  The model captures convection–diffusion–reaction phenomena and can be extended to complex geometries, providing a bridge between micro‑ and macro‑reactor studies.
+
+<a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.022115" target="_blank">View the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>Towards a particle‑based approach for multiscale modelling of catalytic reactors</strong> – Chemical Engineering Science (2018)</summary>
+<p>
+Here we propose a multiscale framework combining **Stochastic Rotation Dynamics** for solvent flow with **mean‑field surface reaction kinetics**.  By introducing dimensionless groups to relate diffusion, convection and reaction rates, the method scales naturally to different reactor sizes.  We validate the model against analytical solutions and use it to study Langmuir–Hinshelwood reactions and systems where product particles have different diffusivities from reactants.  The approach opens up new possibilities for simulating reactions in complex geometries.
+
+<a href="https://www.sciencedirect.com/science/article/pii/S0010000000000000" target="_blank">View the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>The challenge of catalyst prediction</strong> – Faraday Discussions (2018)</summary>
+<p>
+Catalyst discovery requires predicting selectivity and activity across reaction networks.  In this discussion article, we highlight the challenges posed by complex reaction landscapes and emphasise the need for combining **microkinetic modelling**, **descriptor‑based approaches** and **machine learning**.  We outline strategies for integrating electronic structure calculations with kinetic models to accelerate the identification of promising catalyst formulations.
+
+<a href="https://pubs.rsc.org/en/content/articlelanding/2018/fd/c8fd00052f" target="_blank">View the paper</a>
+</p>
+</details>
+
+<details>
+<summary><strong>Residence time estimates for asymmetric simple exclusion dynamics</strong> – Physica A (2016)</summary>
+<p>
+This theoretical study derives **analytical expressions** for residence times in **asymmetric simple exclusion processes** on finite strips.  By mapping particle hopping onto random walks with reflecting boundaries, we obtain closed‑form estimates for how geometry and particle density affect the time required for a particle to traverse the system.  These results provide insights into transport in nanoscale channels and crowded biological environments.
+
+<a href="https://www.sciencedirect.com/science/article/pii/S0378437115007736" target="_blank">View the paper</a>
+</p>
+</details>
 
 ---
 
-## 2. My time at Imperial as a PostDoc — DNA Nanotechnology & Biomolecular Systems
-
-![oxDNA Figure](/images/oxdna.jpg)
-
-I combined method development, simulations, and theoretical analysis to advance our understanding of DNA nanotechnology using the oxDNA framework. This work, showcased at five international conferences and through several posters, tackled fundamental challenges in DNA design and function.
-
-### 2.1 Free-Energy Mapping of Four-Way DNA Junctions (with Bulges)
-In [2], I developed enhanced sampling techniques based on oxDNA to map the free-energy landscape of four-way DNA junctions—crucial intermediates in strand displacement reactions. My simulations revealed a surprising result: introducing two bulges actually **destabilized** the structure due to increased entropy penalties. This finding challenges conventional design assumptions and provides valuable insights for improving DNA nanostructure robustness.
-
-### 2.2 Kinetic Proofreading in Nonenzymatic DNA Strand Displacement
-In [3], I applied oxDNA to model a **kinetic proofreading (KP)** mechanism in nonenzymatic DNA strand-displacement systems. This work provided quantitative reaction-rate estimates and showed that operating under out-of-equilibrium conditions significantly enhances molecular recognition—especially in discriminating single-nucleotide mismatches. These insights can inform highly specific applications such as SNP detection and DNA-based diagnostics.
-
-### 2.3 oxDNA Primer: When to Use It, How to Simulate, How to Interpret
-In [4], we produced a comprehensive **primer and tutorial** on the oxDNA coarse-grained DNA model. The paper explains model variants (oxDNA1/oxDNA2), force-field details, sequence-dependent parameterization, and mapping to experimental units. It also walks through simulation protocols—**Langevin dynamics**, **Monte Carlo**, and advanced accelerated sampling methods such as **Virtual Move Monte Carlo (VMMC)**—demonstrating how these can speed up equilibration of large, strongly interacting DNA structures.  
-We included worked examples where VMMC efficiently explores conformations of DNA origami and multi-strand assemblies, and showed how to combine it with umbrella sampling to obtain free-energy profiles. The paper also details analysis workflows for computing structural observables, thermodynamic quantities, and reaction pathways.
-
-#### Additional method (independent of [4])  
-I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic events such as DNA bubble formation; this approach has since been adopted by groups at the University of Cambridge and MIT.
-
-**Resources**  
-[2] [Sengar, A., et al. (2023). *Overcoming the speed limit of four-way DNA branch migration with bulges in toeholds*. bioRxiv.](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
-- 💻 [Code on GitHub](https://github.com/adityasengar/Four_way_BM)  
-- 📊 [Dataset on Zenodo](https://zenodo.org/records/15623394)  
-
-[3] [Sengar, A., et al. (2024). *Kinetic Proofreading Can Enhance Specificity in a Nonenzymatic DNA Strand Displacement Network*. J. Am. Chem. Soc.](https://pubs.acs.org/doi/full/10.1021/jacs.3c14673)  
-- 📊 [Dataset on Zenodo](https://zenodo.org/records/8132461)  
-
-[4] [Sengar, A., et al. (2021). *A Primer on the oxDNA Model of DNA: When to Use it, How to Simulate it and How to Interpret the Results*. Front. Mol. Biosci.](https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2021.693710/full)  
-- 📊 [Dataset on Zenodo](https://zenodo.org/records/4809769)  
-- 💻 [oxDNA simulation engine on GitHub](https://github.com/lorenzo-rovigatti/oxDNA)
-
----
-
-## 3. Developing a "Molecule-to-Reactor" Computational Pipeline to Advance Catalytic Engineering
-
-![Multiscale Catalyst Modeling](/images/reactor.jpg)
-
-My research has focused on overcoming a critical barrier in chemical engineering: the inability of traditional models to bridge the vast gap between molecular-level surface events and macroscopic reactor performance. To address this, I established a foundational, particle-based computational fluid dynamics (CFD) framework that provides a unified, multiscale view of catalytic processes. The core innovation of this framework was its ability to explicitly resolve essential small-scale physics—such as diffusion and surface reactions—while seamlessly operating at the larger scales of industrial reactors [6]. This model was rigorously designed and validated to switch between reaction, diffusion, and convection-dominated regimes, a versatility that was previously out of reach for real-time simulations. I further advanced this platform by integrating complex, nonlinear surface reaction kinetics, enabling highly accurate and scalable simulations of multicomponent systems and their mass transfer fluxes under non-equilibrium conditions [5].
-
-Building on this robust modeling platform, I directed its predictive power toward solving a pressing industrial problem: **catalyst deactivation in the production of sustainable aviation fuels**, a primary cause of economic loss and process inefficiency. I developed and compared two distinct theoretical models that quantitatively connect molecular-scale deactivation mechanisms with observable reactor-scale performance degradation [7]. By applying these models to analyze industrial alkylation reaction data, my investigation yielded a crucial breakthrough: the identification of a previously unknown molecular compound that acts as a potent deactivating agent. Furthermore, the models revealed that the deactivation rate is highly sensitive to proton mobility on the catalyst surface. This analysis provided a concrete, physics-based strategy for extending catalyst lifetime by optimizing these proton interactions, offering a clear path to minimize operational downtime and improve the economic viability of sustainable fuel production [8].
-
-Collectively, this work constitutes a complete "molecule-to-reactor" predictive pipeline, demonstrating a clear progression from **fundamental method development** to **high-impact industrial application**. The multiscale model was selected as the **cover article of Chemical Engineering Science** [6], and the deactivation research earned me an invitation to present at the **Faraday Discussions** [9].
-
-**Resources**  
-[5] [Sengar, A., Kuipers, J. A. M., Van Santen, R. A., & Padding, J. T. (2017). *Particle-based modeling of heterogeneous chemical kinetics including mass transfer*. Phys. Rev. E, 96(2), 022115.](https://doi.org/10.1103/PhysRevE.96.022115)  
-
-[6] [Sengar, A., Kuipers, J. A. M., van Santen, R. A., & Padding, J. T. (2019). *Towards a particle based approach for multiscale modeling of heterogeneous catalytic reactors*. Chem. Eng. Sci., 198, 184-197.](https://www.sciencedirect.com/science/article/pii/S0009250918307607)
-
-[7] [Sengar, A., Van Santen, R. A., Steur, E., Kuipers, J. A., & Padding, J. (2018). *Deactivation kinetics of solid acid catalyst with laterally interacting protons*. ACS Catal., 8(10), 9016-9033.](https://pubs.acs.org/doi/10.1021/acscatal.8b01511) 
-
-[8] [Sengar, A., Van Santen, R. A., & Kuipers, J. A. (2020). *Deactivation kinetics of the catalytic alkylation reaction*. ACS Catal., 10(13), 6988-7006.](https://pubs.acs.org/doi/10.1021/acscatal.0c00932)
-
-[9] [Van Santen, R. A., Sengar, A., & Steur, E. (2018). *The challenge of catalyst prediction*. Faraday Discuss., 208, 35-52.](https://pubs.rsc.org/en/content/articlelanding/2018/fd/c7fd00208d)
+*Please note that some of the links above point to external sites where full articles may require institutional access. The summaries provided here describe the main ideas without revealing proprietary or copyrighted content.*
