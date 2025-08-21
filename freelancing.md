@@ -4,8 +4,6 @@ title: Freelancing Projects
 permalink: /freelancing/
 ---
 
-# Freelancing Projects
-
 Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report.
 
 ## Machine learning projects
@@ -228,7 +226,6 @@ I conducted a market study for a nanoscale temperature sensor aimed at biomedica
 
 <p><img src="{{ site.baseurl }}/images/thermometer.png" alt="Nanoscale thermometer market analysis" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">Link to report (to be added)</a></p>
 </details>
 
 <details>
@@ -238,7 +235,6 @@ This project assessed the commercial landscape for a platform enabling personali
 
 <p><img src="{{ site.baseurl }}/images/immunotherapy.png" alt="Immunotherapy market analysis" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">Link to report (to be added)</a></p>
 </details>
 
 <details>
@@ -248,5 +244,4 @@ In addition to data science consulting, I contributed to studies on photovoltaic
 
 <p><img src="{{ site.baseurl }}/images/solar_energy.png" alt="Solar energy and carbon capture research" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">Link to report (to be added)</a></p>
 </details>
