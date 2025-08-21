@@ -23,7 +23,7 @@ where \(\mathbf{w}\) contains learned weights and \(\mathbf{x}\) is a feature ve
 
 <p><img src="{{ site.baseurl }}/images/credit_risk.png" alt="Counterfactual explanations for credit risk" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/Counterfactual" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -39,7 +39,7 @@ with \(\sigma\) denoting a nonlinear activation and \(\mathcal{N}(v)\) the neigh
 
 <p><img src="{{ site.baseurl }}/images/personalized_medicine.png" alt="Graph neural network for personalised medicine" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><em>No public repository available</em></p>
 </details>
 
 <details>
@@ -55,7 +55,7 @@ while the decoder predicts the next token \(y_t\) using an attention‑weighted 
 
 <p><img src="{{ site.baseurl }}/images/seq2seq_chatbot.png" alt="Sequence‑to‑sequence model architecture" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/Chatbot" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -71,7 +71,7 @@ where \(\psi\) is a message function and \(\phi\) an update function.  Input gra
 
 <p><img src="{{ site.baseurl }}/images/molecular_solubility.png" alt="Graph neural network for solubility prediction" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/GNN_Pytorch_ESOL" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -93,7 +93,7 @@ where \(r\) is the reward and \(\gamma\) the discount factor.  Experiments showe
 
 <p><img src="{{ site.baseurl }}/images/evolutionary_games.png" alt="Simulated population dynamics" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/Hoffman_games" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -103,7 +103,7 @@ Protecting APIs requires identifying unusual patterns in request streams.  I eng
 
 <p><img src="{{ site.baseurl }}/images/anomaly_detection.png" alt="Anomaly detection representation" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/ML-for-threat-prediction" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -119,7 +119,7 @@ and the probability of a scoreline \((k,\ell)\) was given by the product of two 
 
 <p><img src="{{ site.baseurl }}/images/football_prediction.png" alt="Football outcome prediction" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/Football_prediction" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -129,7 +129,7 @@ This study examined the relationship between currency pairs (e.g., EUR/USD) and 
 
 <p><img src="{{ site.baseurl }}/images/forex_silver.png" alt="Forex and silver market dynamics" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/commodity_price_prediction" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -145,7 +145,7 @@ with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After tr
 
 <p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="LSTM stock price prediction" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/LSTM_Stock_Prediction" target="_blank">GitHub repository</a></p>
 </details>
 
 ## Algorithm design projects
@@ -163,7 +163,7 @@ where \(E_i\) includes van der Waals, electrostatics and solvation terms.  I als
 
 <p><img src="{{ site.baseurl }}/images/drug_discovery.png" alt="Drug design simulation" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><em>No public repository available</em></p>
 </details>
 
 <details>
@@ -179,7 +179,7 @@ with \(\varepsilon\) representing random error.  Residual analysis indicated sys
 
 <p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="Big Mac index analysis" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/bigmac" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
@@ -195,39 +195,28 @@ The analysis identified significant predictors and underscored the need for publ
 
 <p><img src="{{ site.baseurl }}/images/sleep_study.png" alt="Sleep deprivation analysis" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><em>No public repository available</em></p>
 </details>
 
 <details>
 <summary><strong>Dynamic Risk Assessment in Cybersecurity</strong> – modelling evolving threats</summary>
 
-Cyber threats evolve over time, and static risk models quickly become outdated.  I constructed a Bayesian network to represent dependencies among system vulnerabilities, threat actors and countermeasures.  The posterior risk given evidence \(E\) is computed using Bayes’ rule:
 
-\[
-P(R \mid E) \propto P(E \mid R) P(R),
-\]
-
-where \(R\) is the event of a security breach.  The network was updated with data on incident reports, enabling dynamic risk scoring and prioritisation of mitigation efforts.
+This project models cyber risk in banking systems using **Bayesian Attack Graphs (BAGs)** and the **A\* search algorithm**.  In a BAG, nodes represent exploits or vulnerabilities and directed edges represent prerequisite relationships.  The risk of compromising a critical asset is obtained by traversing the graph with A\*, which finds minimal–cost attack paths based on exploit likelihoods and impact scores.  Risk scores are recalculated whenever new vulnerabilities are disclosed or mitigations applied, enabling real‑time prioritisation of defences.  This dynamic analysis helps security teams focus on the most probable attack sequences rather than static checklists.
 
 <p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Dynamic cybersecurity risk model" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/Cybersecurity-risk-assessment" target="_blank">GitHub repository</a></p>
 </details>
 
 <details>
 <summary><strong>Cybersecurity Risk Assessment in Banking Systems</strong> – quantifying exposure</summary>
 
-For a banking client I developed a quantitative risk assessment framework that aggregated vulnerabilities across multiple systems.  Each asset was assigned a vulnerability score \(V_i\) and breach probability \(P_i\).  The overall risk index was computed as
-
-\[
-\text{Risk} = \sum_i w_i \times V_i \times P_i,
-\]
-
-with weights \(w_i\) reflecting asset importance.  The framework helped the client prioritise investments in security controls and satisfy regulatory requirements.
+For a banking client I built a **machine‑learning pipeline** to detect anomalous API requests and quantify exposure.  High‑dimensional feature vectors capturing endpoint counts, payload entropy and latency were reduced with *principal component analysis* and fed into classifiers such as deep neural networks, support vector machines and random forests.  Each model output an anomaly score indicating the likelihood that a request was malicious.  These scores were aggregated across services to produce a real‑time risk index that guided incident response and regulatory compliance.
 
 <p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Banking cybersecurity assessment" style="width:60%; border-radius:8px;"></p>
 
-<p><a href="#">GitHub link (to be added)</a></p>
+<p><a href="https://github.com/adityasengar/ML-for-threat-prediction" target="_blank">GitHub repository</a></p>
 </details>
 
 ## Market research projects
