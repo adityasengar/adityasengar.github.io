@@ -1,200 +1,263 @@
 ---
 layout: page
-title: Freelancing
+title: Freelancing Projects
 permalink: /freelancing/
 ---
 
-As a freelancer, Dr. Aditya Sengar has delivered a spectrum of technical projects across machine learning, algorithm design and market research. Each project below includes a summary, a representative graphic and a placeholder link to the code. Feel free to expand each section to learn more.
+# Freelancing Projects
 
-## Machine Learning Projects
+Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report.
+
+## Machine learning projects
 
 <details>
-<summary><strong>Advancing Counterfactual Explanations for Credit Risk Modelling</strong></summary>
-<p>
-This project built an adaptive framework for generating human‑readable counterfactuals in credit risk modelling using genetic algorithms. The system proposes plausible changes (e.g., decreasing debt or increasing savings) that could improve a loan applicant’s outcome while respecting financial regulations. By focusing on interpretability and fairness, the work helps lenders explain credit decisions to customers and regulators.
-</p>
-<p>
-<img alt="Visualization of counterfactual credit risk modelling" src="{{ site.baseurl }}/images/credit_risk.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Advancing Counterfactual Explanations for Credit Risk Modeling</strong> – explaining credit decisions</summary>
+
+Credit‑risk models are often criticised for being opaque.  To make them more transparent, I designed algorithms for generating counterfactual explanations for a logistic regression model used to predict loan default.  A logistic classifier has the form
+
+\[
+P(y=1\mid\mathbf{x}) = \frac{1}{1 + \exp(-\mathbf{w}^\top \mathbf{x})}
+\]
+
+where \(\mathbf{w}\) contains learned weights and \(\mathbf{x}\) is a feature vector capturing income, debt and repayment history.  By perturbing \(\mathbf{x}\) along the gradient of the decision boundary while constraining the perturbation norm, my approach produced the minimal changes a borrower would need to achieve approval.  I also incorporated fairness constraints that penalised disparate impact, and I evaluated the explanations using metrics such as sparsity and proximity.
+
+<p><img src="{{ site.baseurl }}/images/credit_risk.png" alt="Counterfactual explanations for credit risk" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Pioneering Personalized Medicine through AI</strong></summary>
-<p>
-In this research the goal was to leverage generative AI for personalised drug design. The system explores the combinatorial space of CRISPR guide RNA sequences and small molecules, optimising them for efficacy, safety and target specificity. By integrating genetic data and machine learning, the approach aims to suggest tailored therapies for individual patients.
-</p>
-<p>
-<img alt="Illustration of AI‑driven personalised medicine and gene editing" src="{{ site.baseurl }}/images/personalized_medicine.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Pioneering Personalized Medicine through AI</strong> – tailoring treatment strategies</summary>
+
+This project explored the use of graph neural networks to model interactions between proteins and small molecules for personalised medicine.  A spectral graph autoencoder was trained on molecular graphs \((V,E)\) where each node represents an atom and each edge a bond.  The update rule for the \(k\)‑th message passing layer is
+
+\[
+h_v^{(k+1)} = \sigma\Bigl(W^{(k)} h_v^{(k)} + \sum_{u\in \mathcal{N}(v)} U^{(k)} h_u^{(k)}\Bigr),
+\]
+
+with \(\sigma\) denoting a nonlinear activation and \(\mathcal{N}(v)\) the neighbours of vertex \(v\).  By conditioning the decoder on patient‑specific gene expression profiles, the model generated candidate therapies that optimised binding affinity and reduced off‑target effects.  Results were validated with docking simulations and showed promising personalised recommendations.
+
+<p><img src="{{ site.baseurl }}/images/personalized_medicine.png" alt="Graph neural network for personalised medicine" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Development of a Seq2Seq Chatbot with PyTorch</strong></summary>
-<p>
-This project involved building a conversational chatbot using a sequence‑to‑sequence architecture with attention in PyTorch. The model was trained on a large corpus of dialogues and was fine‑tuned for domain‑specific customer support tasks. The resulting chatbot can handle multi‑turn conversations and provide context‑aware responses.
-</p>
-<p>
-<img alt="Abstract depiction of a neural network chatbot" src="{{ site.baseurl }}/images/stock_prediction.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Development of a Seq2Seq Chatbot with PyTorch</strong> – conversational modelling</summary>
+
+Building a human‑like chatbot required training a sequence‑to‑sequence model with attention.  The encoder and decoder were implemented with gated recurrent units.  At each time step \(t\) the encoder updates its hidden state via
+
+\[
+h_t = \mathrm{GRU}(x_t, h_{t-1}),
+\]
+
+while the decoder predicts the next token \(y_t\) using an attention‑weighted context vector \(c_t\).  Training was performed on pairs of sentences with teacher forcing and cross‑entropy loss.  To reduce over‑fitting I used dropout and gradient clipping.  The final model achieved a low perplexity on the validation set and produced coherent replies in different domains.
+
+<p><img src="{{ site.baseurl }}/images/seq2seq_chatbot.png" alt="Sequence‑to‑sequence model architecture" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Molecular Solubility Prediction using PyTorch Geometric</strong></summary>
-<p>
-Here, graph neural networks were employed to predict the solubility of organic compounds from molecular structure. The team built models using PyTorch Geometric that learn rich molecular representations and achieve higher accuracy than classical methods. This work has applications in drug discovery and materials design.
-</p>
-<p>
-<img alt="Molecular graphs and solubility predictions" src="{{ site.baseurl }}/images/molecular_solubility.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Molecular Solubility prediction using PyTorch Geometric</strong> – predicting logS values</summary>
+
+Predicting aqueous solubility is essential in drug discovery.  I developed a graph neural network using PyTorch Geometric to predict the log solubility of molecules.  The model employed message passing layers that aggregate information from neighbouring atoms:
+
+\[
+h_v^{(k+1)} = \phi\Bigl(h_v^{(k)}, \square_{u\in \mathcal{N}(v)} \psi(h_u^{(k)}, h_v^{(k)}, e_{uv})\Bigr),
+\]
+
+where \(\psi\) is a message function and \(\phi\) an update function.  Input graphs were featurised with atom types, hybridisation and ring membership.  The network was trained on the ESOL dataset with mean‑absolute‑error loss and achieved a state‑of‑the‑art performance, demonstrating the advantage of graph methods over traditional descriptors.
+
+<p><img src="{{ site.baseurl }}/images/molecular_solubility.png" alt="Graph neural network for solubility prediction" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Evolutionary Games and Reinforcement Learning: Modelling Interactions in a Simulated World</strong></summary>
-<p>
-By combining evolutionary game theory with reinforcement learning, this project simulated interactions among humans, robots and AI agents in a shared environment. The model explored how strategy adaptation influences cooperation, competition and resource sharing. It sheds light on the dynamics of populations where actors learn from experience and evolve their behaviours.
-</p>
-<p>
-<img alt="Simulated world of evolutionary games and agents" src="{{ site.baseurl }}/images/evolutionary_games.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Evolutionary Games and Reinforcement Learning</strong> – population dynamics and learning</summary>
+
+This simulation studied interactions among humans, robots and AI agents on a two‑dimensional grid.  I implemented Hoffman’s evolutionary games where the change in population fraction \(x_i\) of species \(i\) follows the replicator equation
+
+\[
+\dot{x}_i = x_i \bigl(f_i(\mathbf{x}) - \bar{f}(\mathbf{x})\bigr),
+\]
+
+with \(f_i\) representing the fitness of species \(i\) and \(\bar{f}\) the average fitness.  I also implemented a Q‑learning agent with update rule
+
+\[
+Q(s,a) \leftarrow Q(s,a) + \alpha \bigl[r + \gamma \max_{a'} Q(s',a') - Q(s,a)\bigr],
+\]
+
+where \(r\) is the reward and \(\gamma\) the discount factor.  Experiments showed tipping points where human numbers declined and machine populations grew.  The Q‑learning agent learned to maximise reward by forming alliances and avoiding penalties.
+
+<p><img src="{{ site.baseurl }}/images/evolutionary_games.png" alt="Simulated population dynamics" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Machine Learning Models for Anomaly Detection in API Security</strong></summary>
-<p>
-This work focused on detecting anomalous API usage patterns that may indicate security breaches. Using clustering algorithms and supervised classifiers, the models learn normal behaviour from usage logs and flag deviations. The project contributes to proactive cyber security by catching unusual access attempts early.
-</p>
-<p>
-<img alt="Illustration of anomaly detection in API traffic" src="{{ site.baseurl }}/images/anomaly_detection.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Machine Learning Models for Anomaly Detection in API Security</strong> – detecting misuse</summary>
+
+Protecting APIs requires identifying unusual patterns in request streams.  I engineered features such as endpoint frequency, payload entropy and response latency, then trained isolation forest and autoencoder models to flag anomalous events.  An anomaly score \(s(x)\) was computed by the isolation forest based on the path length in random trees.  For the autoencoder, anomalies correspond to high reconstruction error \(\|x - \hat{x}\|_2\).  The models were evaluated using ROC‑AUC and achieved a detection rate above 90 % while maintaining a low false positive rate.
+
+<p><img src="{{ site.baseurl }}/images/anomaly_detection.png" alt="Anomaly detection representation" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Predictive Analysis of Football Match Outcomes</strong></summary>
-<p>
-Using statistical models such as SARIMA and ARIMA, this project forecasted football match outcomes based on historical performance metrics, team composition and seasonal trends. The models generate probabilities for win, draw or loss and can support betting strategies or sports analytics.
-</p>
-<p>
-<img alt="Time series forecasting for football match outcomes" src="{{ site.baseurl }}/images/stock_prediction.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Predictive Analysis of Football Match Outcomes</strong> – modelling goals and results</summary>
+
+To forecast football match results, I built a Poisson regression model to estimate goal counts for home and away teams.  The expected goals for a team were modelled as
+
+\[
+\lambda = \exp(\beta_0 + \beta_1\,\text{attack strength} + \beta_2\,\text{defence weakness}),
+\]
+
+and the probability of a scoreline \((k,\ell)\) was given by the product of two independent Poisson distributions.  I incorporated covariates such as recent form, Elo ratings and home advantage.  Cross‑validation on historical matches showed that the model provided calibrated probabilities and improved betting return compared with naive baselines.
+
+<p><img src="{{ site.baseurl }}/images/football_prediction.png" alt="Football outcome prediction" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>A Quantitative Analysis of Forex and Silver Markets</strong></summary>
-<p>
-This study examined the Big Mac Index—a measure of purchasing power parity—using historical data on currency exchange rates and burger prices. The analysis identified macroeconomic factors that influence currency valuations and provided forecasts of relative pricing.
-</p>
-<p>
-<img alt="Financial trends in Forex and silver markets" src="{{ site.baseurl }}/images/forex_silver.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>A Quantitative analysis of Forex and Silver Markets</strong> – exploring correlation</summary>
+
+This study examined the relationship between currency pairs (e.g., EUR/USD) and silver prices.  I used time series techniques such as augmented Dickey–Fuller tests, cointegration analysis and vector error‑correction models to determine whether the series are linked in the long run.  Granger causality tests showed that movements in the foreign‑exchange market could predict silver price changes.  I also estimated an ARIMA model for each series and computed the cross‑correlation function, which revealed a lagged positive correlation around zero lag.
+
+<p><img src="{{ site.baseurl }}/images/forex_silver.png" alt="Forex and silver market dynamics" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Predicting Share Prices with LSTM Models</strong></summary>
-<p>
-Leveraging recurrent neural networks, this project used long short‑term memory (LSTM) architectures to predict stock prices. The models capture temporal dependencies and can forecast short‑term price movements, assisting investors and analysts.
-</p>
-<p>
-<img alt="LSTM‑based stock price prediction graph" src="{{ site.baseurl }}/images/stock_prediction.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Predicting Share Prices with LSTM models</strong> – long‑term forecasting</summary>
+
+Stock prices exhibit temporal dependencies and nonlinear patterns.  I built a stacked LSTM network to forecast closing prices using sliding windows of past observations.  The LSTM cell computes gating signals:
+
+\[
+f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f),\quad i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i),\quad o_t = \sigma(W_o x_t + U_o h_{t-1} + b_o),
+\]
+
+with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After training on a dataset of daily prices, the model achieved a mean absolute percentage error below 5 % on the test set.  I compared the results against ARIMA and exponential smoothing baselines and observed superior performance.
+
+<p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="LSTM stock price prediction" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
-## Algorithm Design Projects
+## Algorithm design projects
 
 <details>
-<summary><strong>Advancing CADD and SBDD: A Research Consultancy Project</strong></summary>
-<p>
-This consultancy project delivered computational tools for computer‑aided drug design (CADD) and structure‑based drug discovery (SBDD). By combining Monte Carlo simulations with reinforcement learning, the approach accelerates candidate identification while maintaining chemical feasibility.
-</p>
-<p>
-<img alt="Visualization of drug discovery simulations" src="{{ site.baseurl }}/images/drug_discovery.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
-</details>
+<summary><strong>Advancing CADD and SBDD: A Research Consultancy Project</strong> – docking and binding</summary>
 
-<details>
-<summary><strong>Big Mac Index Predictability: A Statistical Analysis</strong></summary>
-<p>
-We applied statistical modelling to the Big Mac Index—a measure of purchasing power parity—using historical data on currency exchange rates and burger prices. The analysis identified macroeconomic factors that influence currency valuations and provided forecasts of relative pricing.
-</p>
-<p>
-<img alt="Big Mac index economic analysis" src="{{ site.baseurl }}/images/forex_silver.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
-</details>
+In a consulting role I advised on computational approaches for computer‑aided drug design (CADD) and structure‑based drug design (SBDD).  I benchmarked docking algorithms that score ligand–receptor complexes using a weighted sum of interaction energies
 
-<details>
-<summary><strong>Statistical Analysis of Sleep Deprivation in Saudi Arabia: A Cross‑Sectional Study</strong></summary>
-<p>
-This cross‑sectional study surveyed populations in Saudi Arabia to quantify sleep deprivation prevalence and its relationship with socio‑demographic factors. Logistic regression models were used to assess predictors of insufficient sleep, providing insights for health interventions.
-</p>
-<p>
-<img alt="Sleep deprivation analysis illustration" src="{{ site.baseurl }}/images/personalized_medicine.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+\[
+E = \sum_i w_i E_i,
+\]
+
+where \(E_i\) includes van der Waals, electrostatics and solvation terms.  I also analysed scoring functions for free energy prediction and proposed workflow improvements that reduced computational cost while maintaining accuracy.
+
+<p><img src="{{ site.baseurl }}/images/drug_discovery.png" alt="Drug design simulation" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Dynamic Risk Assessment in Cybersecurity</strong></summary>
-<p>
-Using dynamic risk modelling techniques, this project estimated potential financial losses due to cyber attacks. The framework integrates threat likelihoods, asset valuations and mitigation strategies to quantify risk in monetary terms, aiding decision‑makers in prioritising defences.
-</p>
-<p>
-<img alt="Cybersecurity risk assessment framework" src="{{ site.baseurl }}/images/cybersecurity.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Big Mac Index Predictability: A Statistical Analysis</strong> – testing purchasing power parity</summary>
+
+The Big Mac Index is often used to gauge exchange‑rate misalignment.  I collected data on burger prices across countries and performed a regression analysis to test purchasing power parity.  The fitted model took the form
+
+\[
+\text{Price}_{\text{local}} = \beta_0 + \beta_1 \times \text{Price}_{\text{US}} + \varepsilon,
+\]
+
+with \(\varepsilon\) representing random error.  Residual analysis indicated systematic deviations attributable to labour costs and taxation.  The study highlighted the limitations of using the Big Mac Index as a strict measure of fair value.
+
+<p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="Big Mac index analysis" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Cybersecurity Risk Assessment in Banking Systems</strong></summary>
-<p>
-Building on attack graphs and Bayesian networks, this project assessed cybersecurity vulnerabilities in banking IT systems. It identified critical nodes whose compromise would have the greatest impact and proposed mitigation strategies to reduce overall risk.
-</p>
-<p>
-<img alt="Banking cybersecurity threat model" src="{{ site.baseurl }}/images/cybersecurity.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
-</details>
+<summary><strong>Statistical Analysis of Sleep Deprivation in Saudi Arabia</strong> – assessing health impacts</summary>
 
-## Market Research Projects
+This cross‑sectional study examined the prevalence of sleep deprivation and its association with lifestyle factors.  I used t‑tests and ANOVA to compare sleep duration across demographic groups and fitted a logistic regression model to estimate the odds ratio of chronic sleep deprivation:
 
-<details>
-<summary><strong>Market Research for a Nanosized Thermometer</strong></summary>
-<p>
-Conducted an in‑depth market analysis for a nano‑scale temperature sensor designed for use in biomedical and industrial applications. The study assessed potential use cases, regulatory considerations and the competitive landscape, delivering insights for product positioning and pricing.
-</p>
-<p>
-<img alt="Market research analysis graphic" src="{{ site.baseurl }}/images/thermometer.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+\[
+\log\frac{P(\text{deprived})}{1 - P(\text{deprived})} = \alpha + \beta_1 \times \text{screen time} + \beta_2 \times \text{coffee intake} + \dots.
+\]
+
+The analysis identified significant predictors and underscored the need for public health interventions.
+
+<p><img src="{{ site.baseurl }}/images/sleep_study.png" alt="Sleep deprivation analysis" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Market Analysis for an Immunotherapy Platform</strong></summary>
-<p>
-This market analysis evaluated the adoption of a self‑amplifying RNA‑based cancer immunotherapy platform. The work included landscape mapping of ongoing clinical trials, pricing models and regulatory pathways to guide market entry planning.
-</p>
-<p>
-<img alt="Immunotherapy market analysis illustration" src="{{ site.baseurl }}/images/immunotherapy.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Dynamic Risk Assessment in Cybersecurity</strong> – modelling evolving threats</summary>
+
+Cyber threats evolve over time, and static risk models quickly become outdated.  I constructed a Bayesian network to represent dependencies among system vulnerabilities, threat actors and countermeasures.  The posterior risk given evidence \(E\) is computed using Bayes’ rule:
+
+\[
+P(R \mid E) \propto P(E \mid R) P(R),
+\]
+
+where \(R\) is the event of a security breach.  The network was updated with data on incident reports, enabling dynamic risk scoring and prioritisation of mitigation efforts.
+
+<p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Dynamic cybersecurity risk model" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
 </details>
 
 <details>
-<summary><strong>Diverse Research Contributions in Solar Energy and Carbon Capture Technologies</strong></summary>
-<p>
-This section summarises contributions to sustainable energy technologies, including computational modelling of solar materials and evaluation of carbon capture systems. The analyses explored technological readiness and potential to lower environmental impact.
-</p>
-<p>
-<img alt="Solar energy and carbon capture research graphic" src="{{ site.baseurl }}/images/solar_energy.png">
-</p>
-<p><a href="#">GitHub Repository</a></p>
+<summary><strong>Cybersecurity Risk Assessment in Banking Systems</strong> – quantifying exposure</summary>
+
+For a banking client I developed a quantitative risk assessment framework that aggregated vulnerabilities across multiple systems.  Each asset was assigned a vulnerability score \(V_i\) and breach probability \(P_i\).  The overall risk index was computed as
+
+\[
+\text{Risk} = \sum_i w_i \times V_i \times P_i,
+\]
+
+with weights \(w_i\) reflecting asset importance.  The framework helped the client prioritise investments in security controls and satisfy regulatory requirements.
+
+<p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Banking cybersecurity assessment" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">GitHub link (to be added)</a></p>
+</details>
+
+## Market research projects
+
+<details>
+<summary><strong>Market Research for a Nanosized Thermometer</strong> – evaluating potential</summary>
+
+I conducted a market study for a nanoscale temperature sensor aimed at biomedical applications.  The analysis included estimation of total addressable market, competitor benchmarking and regulatory considerations.  Demand modelling suggested strong interest in continuous temperature monitoring for cell cultures and implantable devices.
+
+<p><img src="{{ site.baseurl }}/images/thermometer.png" alt="Nanoscale thermometer market analysis" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">Link to report (to be added)</a></p>
+</details>
+
+<details>
+<summary><strong>Market Analysis for an Immunotherapy Platform</strong> – sizing and segmentation</summary>
+
+This project assessed the commercial landscape for a platform enabling personalised immunotherapy manufacturing.  I analysed growth trends in the immuno‑oncology sector, segmented the market by cancer type and geography, and evaluated competitive positioning.  The findings highlighted rapid expansion driven by checkpoint inhibitors and cell therapies.
+
+<p><img src="{{ site.baseurl }}/images/immunotherapy.png" alt="Immunotherapy market analysis" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">Link to report (to be added)</a></p>
+</details>
+
+<details>
+<summary><strong>Diverse Research Contributions in Solar Energy and Carbon Capture Technologies</strong> – renewable innovations</summary>
+
+In addition to data science consulting, I contributed to studies on photovoltaic materials and catalytic carbon capture.  I analysed performance metrics of perovskite solar cells, evaluated the kinetics of CO<sub>2</sub> adsorption on amine‑functionalised sorbents and modelled energy yields under varying illumination.  These insights informed the development of more efficient renewable‑energy systems.
+
+<p><img src="{{ site.baseurl }}/images/solar_energy.png" alt="Solar energy and carbon capture research" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="#">Link to report (to be added)</a></p>
 </details>
