@@ -149,8 +149,7 @@ government welfare programs. In this work I proposed using blockchain as a **dis
 storing and managing beneficiary data, with smart contracts automating transactions to reduce human intervention.  We 
 applied this framework to India’s flagship employment scheme, **MGNREGA**, which has an annual budget of around US$8 
 billion (2018–2019).  By leveraging cryptographic integrity and immutability, the system ensures that funds are 
-disbursed only to verified recipients and that all transactions are auditable—improving accountability and reducing 
-
+disbursed only to verified recipients and that all transactions are auditable—improving accountability and reducing fraud and inefficiency.
 
 **Resources**
 
