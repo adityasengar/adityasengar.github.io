@@ -46,7 +46,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 I combined method development, simulations, and theoretical analysis to advance our understanding of DNA nanotechnology using the oxDNA framework. This work, showcased at five international conferences and through several posters, tackled fundamental challenges in DNA design and function.
 
-### 1. Overcoming the speed limit of four‐way DNA branch migration with bulges in toeholds
+### 1. Free‑energy mapping of four‑way DNA junctions
 
 In [1], I developed enhanced sampling techniques based on oxDNA to map the free‑energy landscape of four‑way DNA junctions—crucial intermediates in strand displacement reactions. My simulations revealed a surprising result: introducing two bulges actually **destabilized** the structure due to increased entropy penalties. This finding challenges conventional design assumptions and provides valuable insights for improving DNA nanostructure robustness.
 
@@ -68,7 +68,7 @@ I developed a **fast‑kinetics sampling workflow** in oxDNA to study dynamic ev
 
 ### Resources
 
-**[1] Free‑energy mapping of four‑way DNA junctions**  
+**[1] ** Overcoming the speed limit of four‐way DNA branch migration with bulges in toeholds**  
 -  [Paper — bioRxiv (2023)](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
 -  [Code on GitHub](https://github.com/adityasengar/Four_way_BM)  
 -  [Dataset on Zenodo](https://zenodo.org/records/15623394)
