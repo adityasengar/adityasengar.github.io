@@ -68,7 +68,7 @@ I developed a **fast‑kinetics sampling workflow** in oxDNA to study dynamic ev
 
 ### Resources
 
-**[1] ** Overcoming the speed limit of four‐way DNA branch migration with bulges in toeholds**  
+**[1] Overcoming the speed limit of four‐way DNA branch migration with bulges in toeholds**  
 -  [Paper — bioRxiv (2023)](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)  
 -  [Code on GitHub](https://github.com/adityasengar/Four_way_BM)  
 -  [Dataset on Zenodo](https://zenodo.org/records/15623394)
