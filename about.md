@@ -47,7 +47,7 @@ cyber security, using cutting‑edge models including diffusion models, transfor
 ## Grants & Funding Experience
 
 I have extensive experience in writing grant proposals and securing funding. I have written or co‑written
-successful grant applications for **EU agencies, NIH, SNSF, and UKRI**, spanning topics from machine learning to
+successful grant applications for **EU agencies, NIH, SNSF, NWO and UKRI**, spanning topics from machine learning to
 chemical engineering.
 
 ## Software & Technical Skills
