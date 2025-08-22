@@ -6,10 +6,10 @@ permalink: /about/
 
 ## About Me
 
-I am an interdisciplinary computational researcher with over eight years of experience in software development, machine
+I am an interdisciplinary computational researcher with 10+ years experience in software development, machine
 learning, and molecular simulations. My academic and professional work has spanned multiple scientific domains,
 including nucleic acids research, chemical reaction network theory, and fluid mechanics, with a more recent focus on
-leveraging artificial intelligence for structural biology.
+leveraging **artificial intelligence for structural biology**.
 
 ## Current Research: Generative Models for Protein Dynamics
 
