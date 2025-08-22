@@ -74,4 +74,4 @@ You can find more about my work or connect with me on the following platforms:
 - [GitHub](https://github.com/adityasengar/)
 - [ORCID](https://orcid.org/0000-0003-2223-5604)
 
-Feel free to reach out via email at `adityasengarinitd@gmail.com`.
+Feel free to reach out via email at `adityasengariitd@gmail.com`.
