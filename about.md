@@ -6,10 +6,10 @@ permalink: /about/
 
 ## About Me
 
-I am an interdisciplinary computational researcher with 10+ years experience in software development, machine
+I am an interdisciplinary computational researcher with over eight years of experience in software development, machine
 learning, and molecular simulations. My academic and professional work has spanned multiple scientific domains,
 including nucleic acids research, chemical reaction network theory, and fluid mechanics, with a more recent focus on
-leveraging **artificial intelligence for structural biology**.
+leveraging artificial intelligence for structural biology.
 
 ## Current Research: Generative Models for Protein Dynamics
 
@@ -34,6 +34,10 @@ Beyond academia, I have applied my expertise through my data science consulting 
 I have successfully delivered over 30 projects in areas such as biotechnology, drug discovery, immunotherapy, and
 cyber security, using cutting‑edge models including diffusion models, transformers, and reinforcement learning.
 
+## International & Cross‑Cultural Work
+
+My academic journey has taken me across Europe’s leading institutions — **University of Cambridge**, **University of Surrey**, **Imperial College London**, **TU Delft**, **Utrecht University**, **Eindhoven University of Technology** and **EPFL** — giving me a truly global perspective on research and teaching.  In parallel with academia, my consulting practice has connected me with researchers and entrepreneurs across the **United States**, **Korea**, **Saudi Arabia**, the **European Union** and **India**.  These diverse collaborations have sharpened my ability to communicate complex ideas across cultures and to deliver high‑quality work in a wide range of contexts.
+
 ## Awards & Fellowships
 
 - **Marie Skłodowska‑Curie Postdoctoral Fellowship – Certificate of Excellence (with Prof. Max Welling)**:
@@ -47,7 +51,7 @@ cyber security, using cutting‑edge models including diffusion models, transfor
 ## Grants & Funding Experience
 
 I have extensive experience in writing grant proposals and securing funding. I have written or co‑written
-successful grant applications for **EU agencies, NIH, SNSF, NWO and UKRI**, spanning topics from machine learning to
+successful grant applications for **EU agencies, NIH, SNSF, and UKRI**, spanning topics from machine learning to
 chemical engineering.
 
 ## Software & Technical Skills
