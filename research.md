@@ -58,7 +58,7 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 **Resources**
 
-[4] *Overcoming the speed limit of four-way DNA branch migration with bulges in toeholds* — bioRxiv preprint ([10.1101/2023.05.15.540824](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)). Dataset & analysis code: Zenodo [10.5281/zenodo.15398317](https://doi.org/10.5281/zenodo.15398317).  
+[4] *Overcoming the speed limit of four-way DNA branch migration with bulges in toeholds* — bioRxiv preprint (Accepted in Nano Letters) ([10.1101/2023.05.15.540824](https://www.biorxiv.org/content/10.1101/2023.05.15.540824v1)). Dataset & analysis code: Zenodo [10.5281/zenodo.15398317](https://doi.org/10.5281/zenodo.15398317).  
 [5] *Kinetic Proofreading Can Enhance Specificity in a Nonenzymatic DNA Strand Displacement Network* — **Journal of the American Chemical Society** (2024). DOI: [10.1021/jacs.3c14673](https://pubs.acs.org/doi/10.1021/jacs.3c14673). Open access: [PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC11258683/). Dataset: Zenodo [10.5281/zenodo.8132461](https://doi.org/10.5281/zenodo.8132461).  
 [6] *A Primer on the oxDNA Model of DNA: When to Use it, How to Simulate it and How to Interpret the Results* — **Frontiers in Molecular Biosciences** (2021). DOI: [10.3389/fmolb.2021.693710](https://www.frontiersin.org/articles/10.3389/fmolb.2021.693710/full). Open access: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8256390/). Example files: Zenodo [10.5281/zenodo.4809769](https://doi.org/10.5281/zenodo.4809769).
 
