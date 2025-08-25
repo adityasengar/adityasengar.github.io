@@ -3,6 +3,7 @@ layout: page
 title: Research
 permalink: /research/
 ---
+# My Time at EPFL (current)
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics
 
@@ -43,8 +44,10 @@ I co-authored a new study introducing a structure- and dynamics-driven design ap
 
 [NEW] *Computational design of allosteric pathways reprograms ligand-selective GPCR signaling* — bioRxiv preprint (2025). [PDF](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1.full.pdf) | [Landing page](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1)
 
+---
+---
 
-## Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
+# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
 
 ![oxDNA Primer Figure](/images/oxdna.jpg)
 
@@ -73,6 +76,8 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 [6] *A Primer on the oxDNA Model of DNA: When to Use it, How to Simulate it and How to Interpret the Results* — **Frontiers in Molecular Biosciences** (2021). DOI: [10.3389/fmolb.2021.693710](https://www.frontiersin.org/articles/10.3389/fmolb.2021.693710/full). Open access: [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8256390/). Example files: Zenodo [10.5281/zenodo.4809769](https://doi.org/10.5281/zenodo.4809769).
 
 ---
+---
+# PhD days
 
 ## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering
 
