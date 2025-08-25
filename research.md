@@ -49,10 +49,7 @@ LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself
 **What we’ll measure**
 - Kinetic fidelity: MFPTs/transition rates between metastable sets; pathway usage recovered from generated rollouts.
 - Long-term stability: error growth and drift under long rollouts; distributional mismatch vs reference MD.
-- Structural accuracy after decoding: backbone deviation and side-chain rotamer recovery across sequences/systems.
-
-**Planned figure**
-`/images/ldfpg_propagators_overview.png` — three-panel schematic: (1) encoder to latent **z**, (2) three propagators (score-Langevin, Koopman, neural) rolled out over time, (3) decoder outputs with kinetic/structural metrics side-by-side.
+- Structural accuracy after decoding
 
 **Resources**
 - Comparative study manuscript: in preparation (check back soon)
