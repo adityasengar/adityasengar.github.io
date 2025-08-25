@@ -33,7 +33,32 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 [2] LD-FPG code — [GitHub repository](https://github.com/adityasengar/LD-FPG).  
 [3] All-atom MD dataset (D2R) — Zenodo record [10.5281/zenodo.15479781](https://doi.org/10.5281/zenodo.15479781).
 
+
 ---
+## Extending LD-FPG: Latent-Space Simulators for All-Atom Dynamics
+
+LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself model how structures move between states. I’m extending the framework with a **temporal propagator in the latent space**, and benchmarking three options head-to-head:
+
+- **Score-guided Langevin:** uses a learned score to nudge latent states while injecting controlled noise; grounded in equilibrium statistics.
+- **Koopman (linear) operator:** enforces linear evolution in latent space for long-horizon stability and easier analysis of slow modes.
+- **Neural autoregressive model:** a flexible nonlinear transition function to capture history-dependent effects.
+
+![GPCR pathway design — overview schematic](/images/allocraft.png)
+
+
+**What we’ll measure**
+- Kinetic fidelity: MFPTs/transition rates between metastable sets; pathway usage recovered from generated rollouts.
+- Long-term stability: error growth and drift under long rollouts; distributional mismatch vs reference MD.
+- Structural accuracy after decoding: backbone deviation and side-chain rotamer recovery across sequences/systems.
+
+**Planned figure**
+`/images/ldfpg_propagators_overview.png` — three-panel schematic: (1) encoder to latent **z**, (2) three propagators (score-Langevin, Koopman, neural) rolled out over time, (3) decoder outputs with kinetic/structural metrics side-by-side.
+
+**Resources**
+- Comparative study manuscript: in preparation (check back soon)
+
+---
+
 ## Computationally Reprogramming GPCR Allosteric Pathways
 
 I co-authored a new study introducing a structure- and dynamics-driven design approach that **infers and rewires allosteric signal flow** in GPCRs, enabling **ligand-selective reprogramming** of receptor responses. The method maps communication pathways across the 7TM scaffold and proposes mutations that redirect information flow toward targeted effector routes. In head-to-head tests across multiple ligands, designed variants shifted pathway usage and reshaped signaling preferences, highlighting a path-centric route to bias control and drug design.
@@ -43,6 +68,8 @@ I co-authored a new study introducing a structure- and dynamics-driven design ap
 **Resources**
 
 [NEW] *Computational design of allosteric pathways reprograms ligand-selective GPCR signaling* — bioRxiv preprint (2025). [PDF](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1.full.pdf) | [Landing page](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1)
+
+
 
 ---
 ---
