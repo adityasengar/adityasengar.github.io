@@ -37,6 +37,8 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 I co-authored a new study introducing a structure- and dynamics-driven design approach that **infers and rewires allosteric signal flow** in GPCRs, enabling **ligand-selective reprogramming** of receptor responses. The method maps communication pathways across the 7TM scaffold and proposes mutations that redirect information flow toward targeted effector routes. In head-to-head tests across multiple ligands, designed variants shifted pathway usage and reshaped signaling preferences, highlighting a path-centric route to bias control and drug design.
 
+![GPCR pathway design — overview schematic](/images/allocraft.png)
+
 **Resources**
 
 [NEW] *Computational design of allosteric pathways reprograms ligand-selective GPCR signaling* — bioRxiv preprint (2025). [PDF](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1.full.pdf) | [Landing page](https://www.biorxiv.org/content/10.1101/2025.08.13.670154v1)
