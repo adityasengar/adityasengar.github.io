@@ -118,7 +118,7 @@ To forecast football match results, I built a Poisson regression model to estima
 
 and the probability of a scoreline \((k,\ell)\) was given by the product of two independent Poisson distributions.  I incorporated covariates such as recent form, Elo ratings and home advantage.  Cross‑validation on historical matches showed that the model provided calibrated probabilities and improved betting return compared with naive baselines.
 
-<p><img src="{{ site.baseurl }}/images/football_prediction.png" alt="Football outcome prediction" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/football.png" alt="Football outcome prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/Football_prediction" target="_blank">GitHub repository</a></p>
 </details>
