@@ -99,7 +99,7 @@ where \(r\) is the reward and \(\gamma\) the discount factor.  Experiments showe
 
 Protecting APIs requires identifying unusual patterns in request streams.  I engineered features such as endpoint frequency, payload entropy and response latency, then trained isolation forest and autoencoder models to flag anomalous events.  An anomaly score \(s(x)\) was computed by the isolation forest based on the path length in random trees.  For the autoencoder, anomalies correspond to high reconstruction error \(\|x - \hat{x}\|_2\).  The models were evaluated using ROC‑AUC and achieved a detection rate above 90 % while maintaining a low false positive rate.
 
-<p><img src="{{ site.baseurl }}/images/anomaly_detection.png" alt="Anomaly detection representation" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/api.png" alt="Anomaly detection representation" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/ML-for-threat-prediction" target="_blank">GitHub repository</a></p>
 </details>
