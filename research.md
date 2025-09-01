@@ -3,6 +3,10 @@ layout: page
 title: Research
 permalink: /research/
 ---
+
+I am currently building generative models for all-atom protein motion at EPFL. I created LD-FPG, coupling a spectral GNN autoencoder with latent diffusion to generate realistic backbone and side-chain ensembles for GPCRs, with open code and datasets. I’m now adding latent-space dynamics (Langevin, Koopman, autoregressive) to recover kinetics and pathway usage for design tasks. Previously, I worked on oxDNA-based DNA nanotechnology (branch migration, proofreading) and a molecule-to-reactor simulation pipeline for catalysis.
+
+
 # My Time at EPFL (current)
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics
