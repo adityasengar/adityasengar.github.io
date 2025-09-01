@@ -67,7 +67,7 @@ h_v^{(k+1)} = \phi\Bigl(h_v^{(k)}, \square_{u\in \mathcal{N}(v)} \psi(h_u^{(k)},
 
 where \(\psi\) is a message function and \(\phi\) an update function.  Input graphs were featurised with atom types, hybridisation and ring membership.  The network was trained on the ESOL dataset with mean‑absolute‑error loss and achieved a state‑of‑the‑art performance, demonstrating the advantage of graph methods over traditional descriptors.
 
-<p><img src="{{ site.baseurl }}/images/molecular_solubility.png" alt="Graph neural network for solubility prediction" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/esol.png" alt="Graph neural network for solubility prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/GNN_Pytorch_ESOL" target="_blank">GitHub repository</a></p>
 </details>
