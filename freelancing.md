@@ -159,7 +159,7 @@ E = \sum_i w_i E_i,
 
 where \(E_i\) includes van der Waals, electrostatics and solvation terms.  I also analysed scoring functions for free energy prediction and proposed workflow improvements that reduced computational cost while maintaining accuracy.
 
-<p><img src="{{ site.baseurl }}/images/drug_discovery.png" alt="Drug design simulation" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/dock.png" alt="Drug design simulation" style="width:60%; border-radius:8px;"></p>
 
 <p><em>No public repository available</em></p>
 </details>
@@ -175,7 +175,7 @@ The Big Mac Index is often used to gauge exchange‑rate misalignment.  I colle
 
 with \(\varepsilon\) representing random error.  Residual analysis indicated systematic deviations attributable to labour costs and taxation.  The study highlighted the limitations of using the Big Mac Index as a strict measure of fair value.
 
-<p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="Big Mac index analysis" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/big_mac.png" alt="Big Mac index analysis" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/bigmac" target="_blank">GitHub repository</a></p>
 </details>
@@ -202,7 +202,7 @@ The analysis identified significant predictors and underscored the need for publ
 
 This project models cyber risk in banking systems using **Bayesian Attack Graphs (BAGs)** and the **A\* search algorithm**.  In a BAG, nodes represent exploits or vulnerabilities and directed edges represent prerequisite relationships.  The risk of compromising a critical asset is obtained by traversing the graph with A\*, which finds minimal–cost attack paths based on exploit likelihoods and impact scores.  Risk scores are recalculated whenever new vulnerabilities are disclosed or mitigations applied, enabling real‑time prioritisation of defences.  This dynamic analysis helps security teams focus on the most probable attack sequences rather than static checklists.
 
-<p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Dynamic cybersecurity risk model" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/bag.png" alt="Dynamic cybersecurity risk model" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/Cybersecurity-risk-assessment" target="_blank">GitHub repository</a></p>
 </details>
