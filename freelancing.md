@@ -24,6 +24,27 @@ where \(\mathbf{w}\) contains learned weights and \(\mathbf{x}\) is a feature ve
 <p><a href="https://github.com/adityasengar/Counterfactual" target="_blank">GitHub repository</a></p>
 </details>
 
+
+
+<details>
+<summary><strong>Strategic Consulting in AI and Quantum Computing for Oncology</strong> – pioneering next-generation drug discovery</summary>
+
+This project involved strategic consulting on the application of advanced computational methods in personalized medicine. The work focused on designing a roadmap for integrating **Artificial Intelligence** into cancer research and exploring the use of **Quantum Computing** to accelerate drug discovery pipelines. A key technical area was the assessment of hybrid quantum-classical algorithms, such as the Variational Quantum Eigensolver (VQE), for calculating molecular properties with high precision. The VQE finds the ground-state energy of a molecule by minimizing the expectation value of its Hamiltonian \(H\):
+
+\[
+E(\theta) = \langle \psi(\theta) | H | \psi(\theta) \rangle
+\]
+
+Beyond the technical research, the engagement included **business development** for the AI oncology platform, managing legal aspects such as non-disclosure agreements, and overseeing project timelines to deliver a forward-looking strategy for therapeutic development.
+
+<p><img src="{{ site.baseurl }}/images/quantum_oncology.png" alt="Quantum computing in oncology" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="https://accenius.ai/dr-aditya-sengar/" target="_blank">View Consulting Profile</a></p>
+</details>
+
+
+
+
 <details>
 <summary><strong>Pioneering Personalized Medicine through AI</strong> – tailoring treatment strategies</summary>
 
