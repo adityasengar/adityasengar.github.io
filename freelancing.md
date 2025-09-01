@@ -37,29 +37,11 @@ E(\theta) = \langle \psi(\theta) | H | \psi(\theta) \rangle
 
 Beyond the technical research, the engagement included **business development** for the AI oncology platform, managing legal aspects such as non-disclosure agreements, and overseeing project timelines to deliver a forward-looking strategy for therapeutic development.
 
-<p><img src="{{ site.baseurl }}/images/quantum_oncology.png" alt="Quantum computing in oncology" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/accenius.png" alt="Quantum computing in oncology" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://accenius.ai/dr-aditya-sengar/" target="_blank">View Consulting Profile</a></p>
 </details>
 
-
-
-
-<details>
-<summary><strong>Pioneering Personalized Medicine through AI</strong> – tailoring treatment strategies</summary>
-
-This project explored the use of graph neural networks to model interactions between proteins and small molecules for personalised medicine.  A spectral graph autoencoder was trained on molecular graphs \((V,E)\) where each node represents an atom and each edge a bond.  The update rule for the \(k\)‑th message passing layer is
-
-\[
-h_v^{(k+1)} = \sigma\Bigl(W^{(k)} h_v^{(k)} + \sum_{u\in \mathcal{N}(v)} U^{(k)} h_u^{(k)}\Bigr),
-\]
-
-with \(\sigma\) denoting a nonlinear activation and \(\mathcal{N}(v)\) the neighbours of vertex \(v\).  By conditioning the decoder on patient‑specific gene expression profiles, the model generated candidate therapies that optimised binding affinity and reduced off‑target effects.  Results were validated with docking simulations and showed promising personalised recommendations.
-
-<p><img src="{{ site.baseurl }}/images/personalized_medicine.png" alt="Graph neural network for personalised medicine" style="width:60%; border-radius:8px;"></p>
-
-<p><em>No public repository available</em></p>
-</details>
 
 <details>
 <summary><strong>Development of a Seq2Seq Chatbot with PyTorch</strong> – conversational modelling</summary>
