@@ -125,7 +125,7 @@ and the probability of a scoreline \((k,\ell)\) was given by the product of two 
 
 This study examined the relationship between currency pairs (e.g., EUR/USD) and silver prices.  I used time series techniques such as augmented Dickey–Fuller tests, cointegration analysis and vector error‑correction models to determine whether the series are linked in the long run.  Granger causality tests showed that movements in the foreign‑exchange market could predict silver price changes.  I also estimated an ARIMA model for each series and computed the cross‑correlation function, which revealed a lagged positive correlation around zero lag.
 
-<p><img src="{{ site.baseurl }}/images/forex_silver.png" alt="Forex and silver market dynamics" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/silver.png" alt="Forex and silver market dynamics" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/commodity_price_prediction" target="_blank">GitHub repository</a></p>
 </details>
