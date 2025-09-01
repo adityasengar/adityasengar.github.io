@@ -236,7 +236,7 @@ I conducted a market study for a nanoscale temperature sensor aimed at biomedica
 
 This project assessed the commercial landscape for a platform enabling personalised immunotherapy manufacturing.  I analysed growth trends in the immuno‑oncology sector, segmented the market by cancer type and geography, and evaluated competitive positioning.  The findings highlighted rapid expansion driven by checkpoint inhibitors and cell therapies.
 
-<p><img src="{{ site.baseurl }}/images/immunotherapy.png" alt="Immunotherapy market analysis" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/personalize.png" alt="Immunotherapy market analysis" style="width:60%; border-radius:8px;"></p>
 
 </details>
 
