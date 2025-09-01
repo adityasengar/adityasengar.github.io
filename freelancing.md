@@ -141,7 +141,7 @@ f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f),\quad i_t = \sigma(W_i x_t + U_i h_{t-
 
 with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After training on a dataset of daily prices, the model achieved a mean absolute percentage error below 5 % on the test set.  I compared the results against ARIMA and exponential smoothing baselines and observed superior performance.
 
-<p><img src="{{ site.baseurl }}/images/stock_prediction.png" alt="LSTM stock price prediction" style="width:60%; border-radius:8px;"></p>
+<p><img src="{{ site.baseurl }}/images/lstm.png" alt="LSTM stock price prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/LSTM_Stock_Prediction" target="_blank">GitHub repository</a></p>
 </details>
