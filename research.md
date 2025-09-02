@@ -109,13 +109,19 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 ## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering
 
+
+
 ![Multiscale Catalyst Modeling](/images/reactor.jpg)
+
+**![Chemical Engineering Science Cover Vol. 198](/images/ces.png){:style="float: right; width: 220px; margin-left: 20px; margin-bottom: 10px; border: 1px solid #ddd;"}**
 
 My research has addressed a core barrier in chemical engineering: connecting molecular-level surface events to macroscopic reactor performance. I developed a particle-based computational-fluid-dynamics framework that provides a unified, multiscale view of catalytic processes. The core innovation was resolving small-scale physics — diffusion and surface reactions — while seamlessly operating at the scale of industrial reactors. The model was designed and validated to switch between reaction-, diffusion- and convection-dominated regimes, a versatility previously out of reach for real-time simulations. I further advanced this platform by incorporating complex, nonlinear surface kinetics, enabling accurate and scalable simulations of multicomponent systems and their mass-transfer fluxes under nonequilibrium conditions.
 
 Building on this platform, I applied the model to a pressing industrial problem: **catalyst deactivation** in sustainable aviation-fuel production. I developed and compared two theoretical models that connect molecular-scale deactivation mechanisms with observable reactor-scale performance degradation. By analyzing industrial alkylation-reaction data, I identified a previously unknown molecular compound that acts as a potent deactivating agent. The models also revealed that the deactivation rate is highly sensitive to proton mobility on the catalyst surface. This analysis offers a strategy for extending catalyst lifetime by optimizing proton interactions, providing a clear path to reduce downtime and improve the economic viability of sustainable fuel production.
 
-Collectively, this work constitutes a complete “molecule-to-reactor” predictive pipeline, demonstrating a progression from method development to high-impact industrial application. The multiscale model was featured as a cover image in *Chemical Engineering Science*, and the deactivation research earned me an invitation to present at **Faraday Discussions**, a leading international forum for groundbreaking research.
+Collectively, this work constitutes a complete “molecule-to-reactor” predictive pipeline, demonstrating a progression from method development to high-impact industrial application. **In recognition of its novelty, the multiscale model [8] was featured on the cover of *Chemical Engineering Science* (Vol. 198)**, and the deactivation research earned me an invitation to present at **Faraday Discussions**, a leading international forum for groundbreaking research.
+
+
 
 **Resources**
 
