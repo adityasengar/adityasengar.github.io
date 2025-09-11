@@ -162,7 +162,7 @@ S_{total} = w_{geom}S_{geom} + w_{energy}\Delta G_{bind} + w_{chem}S_{chem},
 
 where (S) represents the component scores and (w) their respective weights. The resulting methodology provided a robust framework for identifying likely off-target interactions, a critical step in de-risking drug candidates.
 
-<p><img src="{{ site.baseurl }}/images/frag.png" alt="Fragment-based drug design" style="width:60%; border-radius:8px;"></p> 
+<p><img src="{{ site.baseurl }}/images/dock.png" alt="Fragment-based drug design" style="width:60%; border-radius:8px;"></p> 
 
 <p><em>No public repository available</em></p> 
 
