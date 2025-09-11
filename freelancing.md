@@ -4,7 +4,7 @@ title: Freelancing Projects
 permalink: /freelancing/
 ---
 
-Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report. More information about my professional background and services is available on my <a href="[https://github.com/adityasengar/Counterfactual](https://www.kolabtree.com/find-an-expert/aditya-s.27618)" target="_blank">Kolabtree profile</a>.
+Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report. More information about my professional background and services is available on my <a href="https://www.kolabtree.com/find-an-expert/aditya-s.27618" target="_blank">Kolabtree profile</a>.
 
 ## Machine learning projects
 
