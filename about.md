@@ -11,13 +11,6 @@ learning, and molecular simulations. My academic and professional work has spann
 including nucleic acids research, chemical reaction network theory, and fluid mechanics, with a more recent focus on
 leveraging artificial intelligence for structural biology.
 
-## Current Research: Generative Models for Protein Dynamics
-
-I am currently a *Postdoctoral Researcher at EPFL* in Switzerland, where my focus is on developing generative models
-for protein dynamics. Our latest research introduces a new framework capable of generating protein dynamics at the
-all‑atom level as easily as state‑of‑the‑art models generate images. By coupling latent diffusion models with
-ChebNet graph neural networks (GNNs), we can now recover full protein ensembles, capturing the complex interplay of
-side‑chain conformations—an important step forward in understanding protein function.
 
 ## Background & Experience
 
