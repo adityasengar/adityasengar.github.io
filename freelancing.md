@@ -4,7 +4,7 @@ title: Freelancing Projects
 permalink: /freelancing/
 ---
 
-Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report.
+Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report. More information about my professional background and services is available on my <a href="[https://github.com/adityasengar/Counterfactual](https://www.kolabtree.com/find-an-expert/aditya-s.27618)" target="_blank">Kolabtree profile</a>.
 
 ## Machine learning projects
 
@@ -152,20 +152,11 @@ with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After tr
 ## Algorithm design projects
 
 <details>
-<summary><strong>Advancing CADD and SBDD: A Research Consultancy Project</strong> – docking and binding</summary>
+<summary><strong>Enhancing Drug Selectivity via Fragment-Based Design: A Scoring Algorithm Project</strong></summary>
 
-In a consulting role I advised on computational approaches for computer‑aided drug design (CADD) and structure‑based drug design (SBDD).  I benchmarked docking algorithms that score ligand–receptor complexes using a weighted sum of interaction energies
+In a consulting role, I developed a novel scoring function for fragment-based drug design (FBDD) to enhance compound selectivity. I designed and benchmarked algorithms to rank fragment pattern similarity by integrating geometric fit (RMSD), binding free energy, and other physicochemical properties. The scoring function took the form of a weighted sum of these components:
 
-\[
-E = \sum_i w_i E_i,
-\]
-
-where \(E_i\) includes van der Waals, electrostatics and solvation terms.  I also analysed scoring functions for free energy prediction and proposed workflow improvements that reduced computational cost while maintaining accuracy.
-
-<p><img src="{{ site.baseurl }}/images/dock.png" alt="Drug design simulation" style="width:60%; border-radius:8px;"></p>
-
-<p><em>No public repository available</em></p>
-</details>
+$$S_{total} = w_{geom}S_{geom} + w_{energy}\Delta G_{bind} + w_{chem}S_{chem}, \]where (S) represents the component scores and (w) their respective weights. The resulting methodology provided a robust framework for identifying likely off-target interactions, a critical step in de-risking drug candidates. <p><img src="{{ site.baseurl }}/images/frag.png" alt="Fragment-based drug design" style="width:60%; border-radius:8px;"></p> <p><em>No public repository available</em></p> </details>$$
 
 <details>
 <summary><strong>Big Mac Index Predictability: A Statistical Analysis</strong> – testing purchasing power parity</summary>
