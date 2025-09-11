@@ -156,7 +156,21 @@ with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After tr
 
 In a consulting role, I developed a novel scoring function for fragment-based drug design (FBDD) to enhance compound selectivity. I designed and benchmarked algorithms to rank fragment pattern similarity by integrating geometric fit (RMSD), binding free energy, and other physicochemical properties. The scoring function took the form of a weighted sum of these components:
 
-$$S_{total} = w_{geom}S_{geom} + w_{energy}\Delta G_{bind} + w_{chem}S_{chem}, \]where (S) represents the component scores and (w) their respective weights. The resulting methodology provided a robust framework for identifying likely off-target interactions, a critical step in de-risking drug candidates. <p><img src="{{ site.baseurl }}/images/frag.png" alt="Fragment-based drug design" style="width:60%; border-radius:8px;"></p> <p><em>No public repository available</em></p> </details>$$
+\[
+S_{total} = w_{geom}S_{geom} + w_{energy}\Delta G_{bind} + w_{chem}S_{chem}, 
+\]
+
+where (S) represents the component scores and (w) their respective weights. The resulting methodology provided a robust framework for identifying likely off-target interactions, a critical step in de-risking drug candidates.
+
+<p><img src="{{ site.baseurl }}/images/frag.png" alt="Fragment-based drug design" style="width:60%; border-radius:8px;"></p> 
+
+<p><em>No public repository available</em></p> 
+
+</details>
+
+
+
+
 
 <details>
 <summary><strong>Big Mac Index Predictability: A Statistical Analysis</strong> – testing purchasing power parity</summary>
