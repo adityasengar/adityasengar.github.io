@@ -56,7 +56,8 @@ LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself
 - Structural accuracy after decoding
 
 **Resources**
-- *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Spac* — preprint (arXiv: [2506.17064](https://arxiv.org/abs/2509.02196)). 
+- *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Spac* — preprint (arXiv: [2506.17064](https://arxiv.org/abs/2509.02196)).
+- Code - [GitHub repository](https://github.com/adityasengar/latent-dynamics-propagators/)
 
 ---
 
