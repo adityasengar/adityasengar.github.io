@@ -9,7 +9,7 @@ I work on generative models for all-atom protein motion that learn from molecula
 
 # My Time at EPFL (current)
 
-## Developing a Generative AI Framework for All-Atom Protein Dynamics
+## Developing a Generative AI Framework for All-Atom Protein Dynamics (Accepted at NeurIPS 2025)
 
 ![LD-FPG Figure](/images/LDFPG.png)
 
@@ -33,7 +33,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 **Resources**
 
-[1] *Latent Diffusion for Full Protein Generation (LD-FPG)* — preprint (arXiv: [2506.17064](https://arxiv.org/abs/2506.17064)).  
+[1] *Latent Diffusion for Full Protein Generation (LD-FPG)* — (NeurIPS 2025) preprint (arXiv: [2506.17064](https://arxiv.org/abs/2506.17064)).  
 [2] LD-FPG code — [GitHub repository](https://github.com/adityasengar/LD-FPG).  
 [3] All-atom MD dataset (D2R) — Zenodo record [10.5281/zenodo.15479781](https://doi.org/10.5281/zenodo.15479781).
 
@@ -56,7 +56,7 @@ LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself
 - Structural accuracy after decoding
 
 **Resources**
-- Comparative study manuscript: in preparation (check back soon)
+- *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Spac* — preprint (arXiv: [2506.17064](https://arxiv.org/abs/2509.02196)). 
 
 ---
 
