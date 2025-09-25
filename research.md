@@ -39,6 +39,61 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 
 ---
+
+## Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space
+
+**TL;DR.** We fix the LD-FPG encoder–decoder and swap only the latent **propagator** to study what truly drives long-horizon rollouts. We compare three options—**score-guided Langevin**, a **Koopman** linear operator, and a **neural autoregressive** model—on ADP → 7JFL → A\_1AR and recover the A\_2AR activation surface. The neural model is most stable over long horizons; Langevin gives the sharpest side-chain rotamers; Koopman is an interpretable, lightweight baseline.
+
+**Key takeaways**
+- **Controlled comparison:** same latent, same decoder; only the propagator changes.
+- **Backbone vs side-chains:** autoregressive > backbone fidelity; Langevin > side-chain rotamers.
+- **Scaling:** works from small peptides to GPCRs; reproduces A\_2AR activation surface.
+
+**Resources**
+- Paper: *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space* — arXiv: [2509.02196](https://arxiv.org/abs/2509.02196)  
+- Code: **GLDP** — [github.com/adityasengar/GLDP](https://github.com/adityasengar/GLDP)
+
+### Rollout clips (decoder reconstructions)
+
+<figure>
+  <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/A2AR-nn_low_res.jpg" aria-label="A2AR rollout with neural propagator">
+    <source src="{{ site.baseurl }}/images/A2AR-nn_low_res.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><strong>A<sub>2A</sub>R (GPCR):</strong> neural propagator maintains long-horizon stability and tracks the TM6/TM7 activation corridor.</figcaption>
+</figure>
+
+<figure>
+  <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/alaninie-dipep-neural.jpg" aria-label="Alanine dipeptide rollout with neural propagator">
+    <source src="{{ site.baseurl }}/images/alaninie-dipep-neural.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><strong>Alanine dipeptide:</strong> neural propagator captures $(\phi,\psi)$ basin transitions with stable per-frame displacements.</figcaption>
+</figure>
+
+<figure>
+  <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/7jfl-nn.jpg" aria-label="7JFL protein rollout with neural propagator">
+    <source src="{{ site.baseurl }}/images/7jfl-nn.mov" type="video/quicktime">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><strong>7JFL (ATLAS):</strong> neural propagator preserves global contacts while matching backbone/side-chain fluctuation scales.</figcaption>
+</figure>
+
+#### What we measure
+- Kinetic signals: MFPTs / pathway usage from generated rollouts  
+- Stability: error growth and drift over long trajectories  
+- Ensemble match: dihedrals, RMSF, contact-map correlation; A\_2AR activation surface (TM3–6 / TM3–7)
+
+---
+
+
+
+
+
+
+
+
+
 ## Extending LD-FPG: Latent-Space Simulators for All-Atom Dynamics
 
 LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself model how structures move between states. I’m extending the framework with a **temporal propagator in the latent space**, and benchmarking three options head-to-head:
