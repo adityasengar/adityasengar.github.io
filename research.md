@@ -44,6 +44,9 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 **TL;DR.** We fix the LD-FPG encoder–decoder and swap only the latent **propagator** to study what truly drives long-horizon rollouts. We compare three options—**score-guided Langevin**, a **Koopman** linear operator, and a **neural autoregressive** model—on ADP → 7JFL → A\_1AR and recover the A\_2AR activation surface. The neural model is most stable over long horizons; Langevin gives the sharpest side-chain rotamers; Koopman is an interpretable, lightweight baseline.
 
+![GPCR pathway design — overview schematic](/images/neurips_AI4Science.png)
+
+
 **Key takeaways**
 - **Controlled comparison:** same latent, same decoder; only the propagator changes.
 - **Backbone vs side-chains:** autoregressive > backbone fidelity; Langevin > side-chain rotamers.
@@ -81,35 +84,6 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 ---
 
-
-
-
-
-
-
-
-
-## Extending LD-FPG: Latent-Space Simulators for All-Atom Dynamics
-
-LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself model how structures move between states. I’m extending the framework with a **temporal propagator in the latent space**, and benchmarking three options head-to-head:
-
-- **Score-guided Langevin:** uses a learned score to nudge latent states while injecting controlled noise; grounded in equilibrium statistics.
-- **Koopman (linear) operator:** enforces linear evolution in latent space for long-horizon stability and easier analysis of slow modes.
-- **Neural autoregressive model:** a flexible nonlinear transition function to capture history-dependent effects.
-
-![GPCR pathway design — overview schematic](/images/neurips_AI4Science.png)
-
-
-**What we’ll measure**
-- Kinetic fidelity: MFPTs/transition rates between metastable sets; pathway usage recovered from generated rollouts.
-- Long-term stability: error growth and drift under long rollouts; distributional mismatch vs reference MD.
-- Structural accuracy after decoding
-
-**Resources**
-- *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Spac* — preprint (arXiv: [2506.17064](https://arxiv.org/abs/2509.02196)).
-- Code - [GitHub repository](https://github.com/adityasengar/latent-dynamics-propagators/)
-
----
 
 ## Computationally Reprogramming GPCR Allosteric Pathways
 
