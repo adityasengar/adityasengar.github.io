@@ -47,7 +47,7 @@ LD-FPG learns to generate full-atom ensembles from MD, but it does not by itself
 - **Koopman (linear) operator:** enforces linear evolution in latent space for long-horizon stability and easier analysis of slow modes.
 - **Neural autoregressive model:** a flexible nonlinear transition function to capture history-dependent effects.
 
-![GPCR pathway design — overview schematic](/images/neurips_workshop.png)
+![GPCR pathway design — overview schematic](/images/neurips_AI4Science.png)
 
 
 **What we’ll measure**
