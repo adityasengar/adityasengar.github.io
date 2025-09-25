@@ -65,7 +65,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 <figure>
   <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/alaninie-dipep-neural.jpg" aria-label="Alanine dipeptide rollout with neural propagator">
-    <source src="{{ site.baseurl }}/images/alaninie-dipep-neural.mov" type="video/quicktime">
+    <source src="{{ site.baseurl }}/images/alaninie-dipep-neural.mp4" type="video/quicktime">
     Your browser does not support the video tag.
   </video>
   <figcaption><strong>Alanine dipeptide:</strong> neural propagator captures $(\phi,\psi)$ basin transitions with stable per-frame displacements.</figcaption>
@@ -73,7 +73,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 <figure>
   <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/7jfl-nn.jpg" aria-label="7JFL protein rollout with neural propagator">
-    <source src="{{ site.baseurl }}/images/7jfl-nn.mov" type="video/quicktime">
+    <source src="{{ site.baseurl }}/images/7jfl-nn.mp4" type="video/quicktime">
     Your browser does not support the video tag.
   </video>
   <figcaption><strong>7JFL (ATLAS):</strong> neural propagator preserves global contacts while matching backbone/side-chain fluctuation scales.</figcaption>
