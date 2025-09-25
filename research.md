@@ -79,11 +79,6 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
   <figcaption><strong>7JFL (ATLAS):</strong> neural propagator preserves global contacts while matching backbone/side-chain fluctuation scales.</figcaption>
 </figure>
 
-#### What we measure
-- Kinetic signals: MFPTs / pathway usage from generated rollouts  
-- Stability: error growth and drift over long trajectories  
-- Ensemble match: dihedrals, RMSF, contact-map correlation; A\_2AR activation surface (TM3–6 / TM3–7)
-
 ---
 
 
