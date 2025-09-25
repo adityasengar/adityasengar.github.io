@@ -40,7 +40,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 
 ---
 
-## Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space
+## Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space (Accepted at NeurIPS AI4Science)
 
 **TL;DR.** We fix the LD-FPG encoder–decoder and swap only the latent **propagator** to study what truly drives long-horizon rollouts. We compare three options—**score-guided Langevin**, a **Koopman** linear operator, and a **neural autoregressive** model—on ADP → 7JFL → A\_1AR and recover the A\_2AR activation surface. The neural model is most stable over long horizons; Langevin gives the sharpest side-chain rotamers; Koopman is an interpretable, lightweight baseline.
 
@@ -56,7 +56,7 @@ To illustrate the power of our **Latent Diffusion for Full Protein Generation** 
 - Paper: *Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space* — arXiv: [2509.02196](https://arxiv.org/abs/2509.02196)  
 - Code: **GLDP** — [github.com/adityasengar/GLDP](https://github.com/adityasengar/GLDP)
 
-### Rollout clips (decoder reconstructions)
+### Rollout clips
 
 <figure>
   <video controls preload="metadata" style="width:70%; border-radius:8px;" poster="{{ site.baseurl }}/images/posters/A2AR-nn_low_res.jpg" aria-label="A2AR rollout with neural propagator">
