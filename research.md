@@ -165,7 +165,7 @@ Collectively, this work constitutes a complete “molecule-to-reactor” predict
 
 ## Residence Time in Asymmetric Simple Exclusion Dynamics
 
-I co-authored this study on particle transport, modeling how particles move through a crowded 2D strip using an Asymmetric Simple Exclusion Process (ASEP). We used Mean Field and Birth-and-Death models to predict the particle **residence time**, comparing these theories to Monte Carlo simulations. While our models perfectly captured positive-drift dynamics, we found a complex, non-monotonic behavior in the zero-drift "bouncing back" regime. Here, a small amount of horizontal diffusion surprisingly *reduces* residence time by allowing particles to bypass jams.
+I proposed this study on particle transport, modeling how particles move through a crowded 2D strip using an Asymmetric Simple Exclusion Process (ASEP). We used Mean Field and Birth-and-Death models to predict the particle **residence time**, comparing these theories to Monte Carlo simulations. While our models perfectly captured positive-drift dynamics, we found a complex, non-monotonic behavior in the zero-drift "bouncing back" regime. Here, a small amount of horizontal diffusion surprisingly *reduces* residence time by allowing particles to bypass jams.
 
 **Resources**
 
