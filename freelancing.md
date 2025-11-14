@@ -29,7 +29,7 @@ where \(\mathbf{w}\) contains learned weights and \(\mathbf{x}\) is a feature ve
 <details>
 <summary><strong>Strategic Consulting in AI and Quantum Computing for Oncology</strong> – pioneering next-generation drug discovery</summary>
 
-This project involved strategic consulting on the application of advanced computational methods in personalized medicine. The work focused on designing a roadmap for integrating **Artificial Intelligence** into cancer research and exploring the use of **Quantum Computing** to accelerate drug discovery pipelines. A key technical area was the assessment of hybrid quantum-classical algorithms, such as the Variational Quantum Eigensolver (VQE), for calculating molecular properties with high precision. The VQE finds the ground-state energy of a molecule by minimizing the expectation value of its Hamiltonian \(H\):
+This project involved strategic consulting on the application of advanced computational methods in personalized medicine. The work focused on designing a roadmap for integrating Artificial Intelligence into cancer research and exploring the use of Quantum Computing to accelerate drug discovery pipelines. A key technical area was the assessment of hybrid quantum-classical algorithms, such as the Variational Quantum Eigensolver (VQE), for calculating molecular properties with high precision. The VQE finds the ground-state energy of a molecule by minimizing the expectation value of its Hamiltonian \(H\):
 
 \[
 E(\theta) = \langle \psi(\theta) | H | \psi(\theta) \rangle
