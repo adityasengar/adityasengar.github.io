@@ -137,9 +137,6 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 ---
 # PhD days (2015-2020)
 
-## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering 
-
-
 
 ![Multiscale Catalyst Modeling](/images/reactor.jpg)
 
