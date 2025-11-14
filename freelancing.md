@@ -8,6 +8,15 @@ Below is a collection of consulting and research projects carried out by Aditya�
 
 ## Machine learning projects
 
+
+<details><summary><strong>Dynamic Multi-Objective Counterfactuals for Credit Risk</strong> – generating adaptive, user-centric recourse</summary>To move beyond simple gradient-based explanations, I designed a Dynamic Feature Weight Genetic Algorithm (DFWGA) for credit risk recourse. This model-agnostic, multi-objective solver co-evolves a dual chromosome $c = (\mathbf{v}, \mathbf{w})$, representing both the counterfactual candidate ($\mathbf{v}$) and its adaptive feature weights ($\mathbf{w}$). This allows the search to dynamically learn the most efficient recourse paths by minimizing a weighted distance function that incorporates user-defined costs $\mathbf{p}$:$$d(\mathbf{x}_\mathrm{orig}, \mathbf{c}; \mathbf{w}) = \sum_{i=1}^{m} w_i | x_{\mathrm{orig},i} - c_i | + \sum_{j=1}^{u} w_{m+j} \cdot \mathrm{Match}(x_{\mathrm{orig},m+j}, c_{m+j})
+$$Tested on the HMDA dataset, the DFWGA generated valid, plausible recourse options for diverse models (CNN, XGBoost, SVMs). For an MLP, it identified an optimal path to loan approval with an L1 proximity of just **1.024** and a sparsity of **4** feature changes.
+
+<p><img src="{{ site.baseurl }}/images/credit_risk.png" alt="Counterfactual explanations for credit risk" style="width:60%; border-radius:8px;"></p>
+
+<p><a href="[https://github.com/adityasengar/Counterfactual](https://github.com/adityasengar/Counterfactual)" target="_blank">GitHub repository</a></p>
+</details>$$
+
 <details>
 <summary><strong>Advancing Counterfactual Explanations for Credit Risk Modeling</strong> – explaining credit decisions</summary>
 
