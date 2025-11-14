@@ -10,13 +10,8 @@ I work on generative models for all-atom protein motion that learn from molecula
 * toc
 {:toc}
 
-## 📌 On this page
-* [My Time at EPFL (current)](#epfl)
-* [Major Achievements at Imperial](#imperial)
-* [PhD days](#phd)
-* [Misc: Blockchain Technology](#blockchain)
 
-# My Time at EPFL (current) {: #epfl }
+# My Time at EPFL (current)
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics (Accepted at NeurIPS 2025)
 
@@ -109,7 +104,7 @@ I co-authored a new study introducing a structure- and dynamics-driven design ap
 ---
 ---
 
-# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems  {: #imperial }
+# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
 
 ![oxDNA Primer Figure](/images/oxdna.jpg)
 
@@ -139,7 +134,7 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 ---
 ---
-# PhD days {: #phd }
+# PhD days
 
 ## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering 
 
@@ -167,7 +162,7 @@ Collectively, this work constitutes a complete “molecule-to-reactor” predict
 
 ---
 
-# Blockchain Technology for Efficient Public-Sector Schemes {: #blockchain }
+# Blockchain Technology for Efficient Public-Sector Schemes
 
 To diversify my research, I explored how **blockchain technology** could improve transparency and efficiency in government welfare programs. I proposed using blockchain as a **distributed ledger** for securely storing and managing beneficiary data, with smart contracts automating transactions to reduce human intervention. We applied this framework to India’s flagship employment scheme, **MGNREGA**, which had an allocation of roughly ₹55,000 crore (~US $8 billion) in FY 2018–2019. By leveraging cryptographic integrity and immutability, the system ensures funds are disbursed only to verified recipients and that all transactions are auditable, improving accountability and reducing fraud and inefficiency.
 
