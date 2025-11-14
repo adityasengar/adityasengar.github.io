@@ -10,7 +10,7 @@ I work on generative models for all-atom protein motion that learn from molecula
 {:toc}
 
 
-# My Time at EPFL (current)
+# My Time at EPFL (2024 - current)
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics (Accepted at NeurIPS 2025)
 
@@ -103,7 +103,7 @@ I co-authored a new study introducing a structure- and dynamics-driven design ap
 ---
 ---
 
-# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
+# My time at Imperial College London — DNA Nanotechnology & Biomolecular Systems (2020-2024)
 
 ![oxDNA Primer Figure](/images/oxdna.jpg)
 
@@ -135,7 +135,7 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 ---
 ---
-# PhD days
+# PhD days (2015-2020)
 
 ## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering 
 
