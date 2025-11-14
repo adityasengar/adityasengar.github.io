@@ -163,10 +163,21 @@ Collectively, this work constitutes a complete “molecule-to-reactor” predict
 
 ---
 
-# Blockchain Technology for Efficient Public-Sector Schemes
+# Misc
 
-To diversify my research, I explored how **blockchain technology** could improve transparency and efficiency in government welfare programs. I proposed using blockchain as a **distributed ledger** for securely storing and managing beneficiary data, with smart contracts automating transactions to reduce human intervention. We applied this framework to India’s flagship employment scheme, **MGNREGA**, which had an allocation of roughly ₹55,000 crore (~US $8 billion) in FY 2018–2019. By leveraging cryptographic integrity and immutability, the system ensures funds are disbursed only to verified recipients and that all transactions are auditable, improving accountability and reducing fraud and inefficiency.
+
+## Residence Time in Asymmetric Simple Exclusion Dynamics
+
+I co-authored this study on particle transport, modeling how particles move through a crowded 2D strip using an Asymmetric Simple Exclusion Process (ASEP). We used Mean Field and Birth-and-Death models to predict the particle **residence time**, comparing these theories to Monte Carlo simulations. While our models perfectly captured positive-drift dynamics, we found a complex, non-monotonic behavior in the zero-drift "bouncing back" regime. Here, a small amount of horizontal diffusion surprisingly *reduces* residence time by allowing particles to bypass jams.
 
 **Resources**
 
-[12] *Blockchain technology in efficient implementation of Government-based schemes* — preprint (ResearchGate link) — [View](https://www.researchgate.net/publication/327932404_Blockchain_technology_in_efficient_implementation_of_Government_based_schemes).
+[12] *Residence time estimates for asymmetric simple exclusion dynamics on strips* — **Physica A: Statistical Mechanics and its Applications** (2016). DOI: [10.1016/j.physa.2015.09.037](https://doi.org/10.1016/j.physa.2015.09.037).
+
+## Blockchain Technology for Efficient Public-Sector Schemes
+
+I proposed using blockchain as a **distributed ledger** for securely storing and managing beneficiary data, with smart contracts automating transactions to reduce human intervention. We applied this framework to India’s flagship employment scheme, **MGNREGA**, which had an allocation of roughly ₹55,000 crore (~US $8 billion) in FY 2018–2019. By leveraging cryptographic integrity and immutability, the system ensures funds are disbursed only to verified recipients and that all transactions are auditable, improving accountability and reducing fraud and inefficiency.
+
+**Resources**
+
+[13] *Blockchain technology in efficient implementation of Government-based schemes* — preprint (ResearchGate link) — [View](https://www.researchgate.net/publication/327932404_Blockchain_technology_in_efficient_implementation_of_Government_based_schemes).
