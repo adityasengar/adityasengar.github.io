@@ -17,7 +17,7 @@ $$Tested on the HMDA dataset, the DFWGA generated valid, plausible recourse opti
 <p><img src="{{ site.baseurl }}/images/credit_risk.png" alt="Counterfactual explanations for credit risk" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/Counterfactual" target="_blank">GitHub repository</a></p>
-</details>$$
+</details>
 
 
 
