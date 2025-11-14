@@ -6,8 +6,13 @@ permalink: /research/
 
 I work on generative models for all-atom protein motion that learn from molecular dynamics and structure data. At EPFL, I built LD-FPG: a spectral GNN autoencoder + latent diffusion system that samples physically plausible backbone and side-chain ensembles for GPCRs, with open code and a public D2R dataset. I’m extending this with latent-space dynamics—score-guided Langevin, Koopman, and neural autoregressive propagators—to recover kinetics, transition paths, and pathway usage for design. My earlier works span oxDNA-based DNA nanotechnology (branch migration, mismatch proofreading, free-energy mapping) and multiscale catalysis: a particle-based simulator linking surface chemistry to reactor performance, including studies of catalyst deactivation and transport effects. Across projects I prioritize open datasets, reproducible code, and methods that connect physics with machine learning.
 
+## 📌 On this page
+* [My Time at EPFL (current)](#epfl)
+* [Major Achievements at Imperial](#imperial)
+* [PhD days](#phd)
+* [Misc: Blockchain Technology](#blockchain)
 
-# My Time at EPFL (current)
+# My Time at EPFL (current) {: #epfl }
 
 ## Developing a Generative AI Framework for All-Atom Protein Dynamics (Accepted at NeurIPS 2025)
 
@@ -100,7 +105,7 @@ I co-authored a new study introducing a structure- and dynamics-driven design ap
 ---
 ---
 
-# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems
+# Major Achievements at Imperial — DNA Nanotechnology & Biomolecular Systems  {: #imperial }
 
 ![oxDNA Primer Figure](/images/oxdna.jpg)
 
@@ -130,9 +135,9 @@ I developed a **fast-kinetics sampling workflow** in oxDNA to study dynamic even
 
 ---
 ---
-# PhD days
+# PhD days {: #phd }
 
-## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering
+## Developing a “Molecule-to-Reactor” Computational Pipeline to Advance Catalytic Engineering 
 
 
 
@@ -158,7 +163,7 @@ Collectively, this work constitutes a complete “molecule-to-reactor” predict
 
 ---
 
-## Blockchain Technology for Efficient Public-Sector Schemes
+# Blockchain Technology for Efficient Public-Sector Schemes {: #blockchain }
 
 To diversify my research, I explored how **blockchain technology** could improve transparency and efficiency in government welfare programs. I proposed using blockchain as a **distributed ledger** for securely storing and managing beneficiary data, with smart contracts automating transactions to reduce human intervention. We applied this framework to India’s flagship employment scheme, **MGNREGA**, which had an allocation of roughly ₹55,000 crore (~US $8 billion) in FY 2018–2019. By leveraging cryptographic integrity and immutability, the system ensures funds are disbursed only to verified recipients and that all transactions are auditable, improving accountability and reducing fraud and inefficiency.
 
