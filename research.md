@@ -169,4 +169,4 @@ To diversify my research, I explored how **blockchain technology** could improve
 
 **Resources**
 
-[12] *Blockchain technology in efficient implementation of Government-based schemes* — preprint (ResearchGate link) — [View](https://www.researchgate.net/publication/327621716_Blockchain_technology_in_efficient_implementation_of_Government_based_schemes).
+[12] *Blockchain technology in efficient implementation of Government-based schemes* — preprint (ResearchGate link) — [View](https://www.researchgate.net/publication/327932404_Blockchain_technology_in_efficient_implementation_of_Government_based_schemes).
