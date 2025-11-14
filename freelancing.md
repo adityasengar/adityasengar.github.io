@@ -202,7 +202,7 @@ The analysis identified significant predictors and underscored the need for publ
 <summary><strong>Dynamic Risk Assessment in Cybersecurity</strong> – modelling evolving threats</summary>
 
 
-This project models cyber risk in banking systems using **Bayesian Attack Graphs (BAGs)** and the **A\* search algorithm**.  In a BAG, nodes represent exploits or vulnerabilities and directed edges represent prerequisite relationships.  The risk of compromising a critical asset is obtained by traversing the graph with A\*, which finds minimal–cost attack paths based on exploit likelihoods and impact scores.  Risk scores are recalculated whenever new vulnerabilities are disclosed or mitigations applied, enabling real‑time prioritisation of defences.  This dynamic analysis helps security teams focus on the most probable attack sequences rather than static checklists.
+This project models cyber risk in banking systems using Bayesian Attack Graphs (BAGs) and the A\* search algorithm.  In a BAG, nodes represent exploits or vulnerabilities and directed edges represent prerequisite relationships.  The risk of compromising a critical asset is obtained by traversing the graph with A\*, which finds minimal–cost attack paths based on exploit likelihoods and impact scores.  Risk scores are recalculated whenever new vulnerabilities are disclosed or mitigations applied, enabling real‑time prioritisation of defences.  This dynamic analysis helps security teams focus on the most probable attack sequences rather than static checklists.
 
 <p><img src="{{ site.baseurl }}/images/bag.png" alt="Dynamic cybersecurity risk model" style="width:60%; border-radius:8px;"></p>
 
@@ -212,7 +212,7 @@ This project models cyber risk in banking systems using **Bayesian Attack Graphs
 <details>
 <summary><strong>Cybersecurity Risk Assessment in Banking Systems</strong> – quantifying exposure</summary>
 
-For a banking client I built a **machine‑learning pipeline** to detect anomalous API requests and quantify exposure.  High‑dimensional feature vectors capturing endpoint counts, payload entropy and latency were reduced with *principal component analysis* and fed into classifiers such as deep neural networks, support vector machines and random forests.  Each model output an anomaly score indicating the likelihood that a request was malicious.  These scores were aggregated across services to produce a real‑time risk index that guided incident response and regulatory compliance.
+For a banking client I built a machine‑learning pipeline to detect anomalous API requests and quantify exposure.  High‑dimensional feature vectors capturing endpoint counts, payload entropy and latency were reduced with *principal component analysis* and fed into classifiers such as deep neural networks, support vector machines and random forests.  Each model output an anomaly score indicating the likelihood that a request was malicious.  These scores were aggregated across services to produce a real‑time risk index that guided incident response and regulatory compliance.
 
 <p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Banking cybersecurity assessment" style="width:60%; border-radius:8px;"></p>
 
