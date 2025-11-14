@@ -4,6 +4,8 @@ title: Freelancing Projects
 permalink: /freelancing/
 ---
 
+As an independent consultant, I partner with organizations to solve their most complex challenges in machine learning and computational science. I have successfully delivered 30+ projects for a diverse clientele across the United States, Europe, UK, Korea, and India. My approach bridges the gap between deep technical expertise and strategic, end-to-end project management. I focus on translating complex business needs into robust, scalable models and delivering clear, actionable insights for all stakeholders.
+
 Below is a collection of consulting and research projects carried out by Aditya Sengar.  Each entry expands to reveal a short technical summary, an illustration and a link placeholder for the corresponding code or report. More information about my professional background and services is available on my <a href="https://www.kolabtree.com/find-an-expert/aditya-s.27618" target="_blank">Kolabtree profile</a>.
 
 ## Machine learning projects
