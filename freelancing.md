@@ -35,7 +35,7 @@ This project involved strategic consulting on the application of advanced comput
 E(\theta) = \langle \psi(\theta) | H | \psi(\theta) \rangle
 \]
 
-Beyond the technical research, the engagement included **business development** for the AI oncology platform, managing legal aspects such as non-disclosure agreements, and overseeing project timelines to deliver a forward-looking strategy for therapeutic development.
+Beyond the technical research, the engagement included business development for the AI oncology platform, managing legal aspects such as non-disclosure agreements, and overseeing project timelines to deliver a forward-looking strategy for therapeutic development.
 
 <p><img src="{{ site.baseurl }}/images/accenius.png" alt="Quantum computing in oncology" style="width:60%; border-radius:8px;"></p>
 
