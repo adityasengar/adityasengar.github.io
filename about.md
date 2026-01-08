@@ -8,9 +8,18 @@ permalink: /about/
 
 I am a Machine Learning Scientist and Computational Physicist with over a decade of experience decoding complex dynamical systems. My work operates at the cutting edge of Generative AI for Science, moving beyond static structure prediction to model the breathing, moving reality of biological machinery.
 
-Unusually for a researcher, I have maintained a parallel career as a fractional Head of AI through Sengar Consulting BV. This dual track—publishing at NeurIPS while simultaneously shipping production-grade models for Fintech and Biotech clients—has sharpened my ability to translate abstract mathematics into high-ROI business applications.
+Unusually for a researcher, I have maintained a parallel career as a fractional Head of AI through Sengar Consulting BV. This dual track, publishing at NeurIPS while simultaneously shipping production grade models for Fintech and Biotech clients, has sharpened my ability to translate abstract mathematics into high-ROI business applications.
 
 My scientific journey has spanned Europe’s leading institutions, including Imperial College London, EPFL, TU Eindhoven, and collaborations with Cambridge and MIT. I have mentored over 10 researchers and orchestrated cross-border projects connecting scientists in the US, Korea, and the EU.
+
+## Find Me Online
+
+You can find more about my work or connect with me on the following platforms:
+
+- [LinkedIn](https://www.linkedin.com/in/aditya-sengar-phd/)
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=XO4RbVQAAAAJ)
+- [GitHub](https://github.com/adityasengar/)
+- [ORCID](https://orcid.org/0000-0003-2223-5604)
 
 
 ## My core philosophy
@@ -51,14 +60,5 @@ chemical engineering.
 - **Java**: used in five projects prior to university.
 - **Docker, Kubernetes, Run:AI**: used to containerize and orchestrate machine‑learning workflows, including
   multi‑GPU and distributed training.
-
-## Find Me Online
-
-You can find more about my work or connect with me on the following platforms:
-
-- [LinkedIn](https://www.linkedin.com/in/aditya-sengar-phd/)
-- [Google Scholar](https://scholar.google.com/citations?hl=en&user=XO4RbVQAAAAJ)
-- [GitHub](https://github.com/adityasengar/)
-- [ORCID](https://orcid.org/0000-0003-2223-5604)
 
 Feel free to reach out via email at `adityasengariitd@gmail.com`.
