@@ -8,7 +8,7 @@ I am a Machine Learning Scientist and Computational Physicist with over a decade
 
 Unusually for a researcher, I have maintained a parallel career as a fractional Head of AI through Sengar Consulting BV. This dual track, publishing at NeurIPS while simultaneously shipping production grade models for Fintech and Biotech clients, has sharpened my ability to translate abstract mathematics into high-ROI business applications.
 
-My scientific journey has spanned Europe’s leading institutions, including Imperial College London, EPFL, TU Eindhoven, TU Delft and collaborations with Cambridge/MIT/AMOLF/University of Surrey. I have mentored over 10 researchers and delivered cross-border consulting projects for clients based in US, UK, EU, Middle-East and East Asia.
+My scientific journey has spanned Europe’s leading institutions, including Imperial College London, EPFL, TU Eindhoven, TU Delft and collaborations with Univesity of Cambridge/MIT/AMOLF/University of Surrey. I have mentored over 10 researchers and delivered cross-border consulting projects for clients based in US, UK, EU, Middle-East and East Asia.
 
 ## Find Me Online
 
