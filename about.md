@@ -6,26 +6,16 @@ permalink: /about/
 
 ## About Me
 
-I am an interdisciplinary computational researcher with over eight years of experience in software development, machine
-learning, and molecular simulations. My academic and professional work has spanned multiple scientific domains,
-including nucleic acids research, chemical reaction network theory, and fluid mechanics, with a more recent focus on
-leveraging artificial intelligence for structural biology.
+I am a Machine Learning Scientist and Computational Physicist with over a decade of experience decoding complex dynamical systems. My work operates at the cutting edge of Generative AI for Science, moving beyond static structure prediction to model the breathing, moving reality of biological machinery.
+
+Unusually for a researcher, I have maintained a parallel career as a fractional Head of AI through Sengar Consulting BV. This dual track—publishing at NeurIPS while simultaneously shipping production-grade models for Fintech and Biotech clients—has sharpened my ability to translate abstract mathematics into high-ROI business applications.
+
+My scientific journey has spanned Europe’s leading institutions, including Imperial College London, EPFL, TU Eindhoven, and collaborations with Cambridge and MIT. I have mentored over 10 researchers and orchestrated cross-border projects connecting scientists in the US, Korea, and the EU.
 
 
-## Background & Experience
+## My core philosophy
 
-Before joining EPFL, I was a Research Associate at *Imperial College London* where I developed novel numerical
-methods for the oxDNA toolkit to analyze the kinetics and thermodynamics of DNA‑based systems. This involved
-building an AI platform to predict DNA binding rates and studying sequence–structure–function relationships in various
-DNA reactions.
-
-I earned my PhD (cum laude) from *Eindhoven University of Technology*. My research there led to the development of
-a kinetic Monte Carlo reactor that significantly advanced our understanding of chemical processes relevant to octane
-fuel production.
-
-Beyond academia, I have applied my expertise through my data science consulting company, *Sengar Consulting BV*.
-I have successfully delivered over 30 projects in areas such as biotechnology, drug discovery, immunotherapy, and
-cyber security, using cutting‑edge models including diffusion models, transformers, and reinforcement learning.
+I believe that the next breakthrough in drug discovery will come from marrying the rigorous priors of statistical physics with the generative power of geometric deep learning. Whether developing Latent Diffusion models for protein ensembles at EPFL or designing Bayesian Attack Graphs for cybersecurity clients, I focus on building systems that are not just accurate, but physically plausible and interpretable.
 
 ## International & Cross‑Cultural Work
 
