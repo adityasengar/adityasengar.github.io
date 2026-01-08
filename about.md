@@ -20,14 +20,6 @@ You can find more about my work or connect with me on the following platforms:
 - [ORCID](https://orcid.org/0000-0003-2223-5604)
 
 
-## My core philosophy
-
-I believe that the next breakthrough in drug discovery will come from marrying the rigorous priors of statistical physics with the generative power of geometric deep learning. Whether developing Latent Diffusion models for protein ensembles at EPFL or designing Bayesian Attack Graphs for cybersecurity clients, I focus on building systems that are not just accurate, but physically plausible and interpretable.
-
-## International & Cross‑Cultural Work
-
-My academic journey has taken me across Europe’s leading institutions — **University of Cambridge**, **University of Surrey**, **Imperial College London**, **TU Delft**, **Utrecht University**, **Eindhoven University of Technology** and **EPFL** — giving me a truly global perspective on research and teaching.  In parallel with academia, my consulting practice has connected me with researchers and entrepreneurs across the **United States**, **Korea**, **Saudi Arabia**, the **European Union** and **India**.  These diverse collaborations have sharpened my ability to communicate complex ideas across cultures and to deliver high‑quality work in a wide range of contexts.
-
 ## Awards & Fellowships
 
 - **Marie Skłodowska‑Curie Postdoctoral Fellowship – Certificate of Excellence (with Prof. Max Welling)**:
