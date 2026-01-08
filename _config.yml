@@ -86,8 +86,8 @@ nav:
     url: /
   - name: About
     url: /about/
-  - name: Freelancing
-    url: /freelancing/
+  - name: Consulting
+    url: /consulting/
 
 
 # Exclude these files from your production _site
