@@ -40,16 +40,6 @@ Here are a few places where my work has been featured, along with some key proje
 
 ***
 
-### Keynote Speaker at ICBSGBM 2025
-
-**Source:** LNCT University
-
-**Summary:** I was honored to be a keynote speaker at the prestigious International Conference on Building Sustainable Global Business Models hosted by LNCT University. My talk focused on emerging trends and applications of AI in building sustainable and efficient research pipelines.
-
-[**Read the conference summary at LNCT &rarr;**](https://lnct.ac.in/lnct-hosts-prestigious-international-conference-on-building-sustainable-global-business-models/)
-
-***
-
 ### Freelance Data Science & ML Consulting
 
 **Source:** Kolabtree Freelancer Platform
@@ -65,3 +55,15 @@ Here are a few places where my work has been featured, along with some key proje
 **Source:** Innousuisse (Swiss Innovation Agency)
 
 **Summary:** As part of a business course with Innousuisse, I was on a team that finished as runners-up for our project. Our work focused on developing a business model for a novel gene therapy approach targeting Parkinson's disease.
+
+
+***
+
+### Keynote Speaker at ICBSGBM 2025
+
+**Source:** LNCT University
+
+**Summary:** I was honored to be a keynote speaker at the prestigious International Conference on Building Sustainable Global Business Models hosted by LNCT University. My talk focused on emerging trends and applications of AI in building sustainable and efficient research pipelines.
+
+[**Read the conference summary at LNCT &rarr;**](https://lnct.ac.in/lnct-hosts-prestigious-international-conference-on-building-sustainable-global-business-models/)
+
