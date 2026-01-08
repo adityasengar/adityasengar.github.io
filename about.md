@@ -46,19 +46,12 @@ I have extensive experience in writing grant proposals and securing funding. I h
 successful grant applications for **EU agencies, NIH, SNSF, and UKRI**, spanning topics from machine learning to
 chemical engineering.
 
-## Software & Technical Skills
+## Technical Arsenal
 
-- **Python** (Pandas, scikit‑learn, PyTorch, Keras, TensorFlow): used in 15+ projects, including three postdoctoral
-  research projects and a dozen consulting engagements.
-- **Mathematica**: used in over 10 projects (including three at the postdoctoral level, three during my PhD, and
-  several in undergraduate research).
-- **C**: used in three PhD‑level projects.
-- **C++**: taught C++ to Master’s students during my PhD; used in one undergraduate project.
-- **Linux & HPC**: extensive experience running simulations and managing computational clusters.
-- **Matlab**: used in three freelancing projects and more than ten projects/assignments during my undergraduate
-  studies.
-- **Java**: used in five projects prior to university.
-- **Docker, Kubernetes, Run:AI**: used to containerize and orchestrate machine‑learning workflows, including
-  multi‑GPU and distributed training.
+- **Generative AI & DL**: Diffusion Models (Latent/Score-based), Flow Matching, Geometric Deep Learning (PyG), Transformers, Autoencoders.
+- **Scientific Computing**: Molecular Dynamics (All-atom/Coarse-grained), Monte Carlo Methods (kMC, VMMC), Statistical Mechanics, Fluid Dynamics.
+- **ML Ops & Infrastructure**: PyTorch (DDP/FSDP), Docker, Kubernetes, Run:AI, Slurm, High-Performance Computing (HPC) Clusters.
+- **Languages**: Python (Expert), C/C++ (Simulation Kernels), Mathematica.
+  
 
 Feel free to reach out via email at `adityasengariitd@gmail.com`.
