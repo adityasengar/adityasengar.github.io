@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
-
-## About Me
 
 I am a Machine Learning Scientist and Computational Physicist with over a decade of experience decoding complex dynamical systems. My work operates at the cutting edge of Generative AI for Science, moving beyond static structure prediction to model the breathing, moving reality of biological machinery.
 
