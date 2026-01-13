@@ -16,7 +16,6 @@ $$Tested on the HMDA dataset, the DFWGA generated valid, plausible recourse opti
 
 
 
-<p><img src="{{ site.baseurl }}/images/credit_risk.png" alt="Counterfactual explanations for credit risk" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/Counterfactual" target="_blank">GitHub repository</a></p>
 </details>
@@ -28,7 +27,6 @@ $$Tested on the HMDA dataset, the DFWGA generated valid, plausible recourse opti
 
 This project involved strategic consulting on the application of advanced computational methods in personalized medicine. The work focused on designing a roadmap for integrating Artificial Intelligence into cancer research and exploring the use of Quantum Computing to accelerate drug discovery pipelines. A key technical area was the assessment of hybrid quantum-classical algorithms, such as the Variational Quantum Eigensolver (VQE), for calculating molecular properties with high precision. Beyond the technical research, the engagement included business development for the AI oncology platform, managing legal aspects such as non-disclosure agreements, and overseeing project timelines to deliver a forward-looking strategy for therapeutic development.
 
-<p><img src="{{ site.baseurl }}/images/accenius.png" alt="Quantum computing in oncology" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://accenius.ai/dr-aditya-sengar/" target="_blank">View Consulting Profile</a></p>
 </details>
@@ -61,7 +59,6 @@ h_v^{(k+1)} = \phi\Bigl(h_v^{(k)}, \square_{u\in \mathcal{N}(v)} \psi(h_u^{(k)},
 
 where \(\psi\) is a message function and \(\phi\) an update function.  Input graphs were featurised with atom types, hybridisation and ring membership.  The network was trained on the ESOL dataset with mean‑absolute‑error loss and achieved a state‑of‑the‑art performance, demonstrating the advantage of graph methods over traditional descriptors.
 
-<p><img src="{{ site.baseurl }}/images/esol.png" alt="Graph neural network for solubility prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/GNN_Pytorch_ESOL" target="_blank">GitHub repository</a></p>
 </details>
@@ -93,7 +90,6 @@ where \(r\) is the reward and \(\gamma\) the discount factor.  Experiments showe
 
 Protecting APIs requires identifying unusual patterns in request streams.  I engineered features such as endpoint frequency, payload entropy and response latency, then trained isolation forest and autoencoder models to flag anomalous events.  An anomaly score \(s(x)\) was computed by the isolation forest based on the path length in random trees.  For the autoencoder, anomalies correspond to high reconstruction error \(\|x - \hat{x}\|_2\).  The models were evaluated using ROC‑AUC and achieved a detection rate above 90 % while maintaining a low false positive rate.
 
-<p><img src="{{ site.baseurl }}/images/api.png" alt="Anomaly detection representation" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/ML-for-threat-prediction" target="_blank">GitHub repository</a></p>
 </details>
@@ -109,7 +105,6 @@ To forecast football match results, I built a Poisson regression model to estima
 
 and the probability of a scoreline \((k,\ell)\) was given by the product of two independent Poisson distributions.  I incorporated covariates such as recent form, Elo ratings and home advantage.  Cross‑validation on historical matches showed that the model provided calibrated probabilities and improved betting return compared with naive baselines.
 
-<p><img src="{{ site.baseurl }}/images/football.png" alt="Football outcome prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/Football_prediction" target="_blank">GitHub repository</a></p>
 </details>
@@ -119,7 +114,6 @@ and the probability of a scoreline \((k,\ell)\) was given by the product of two 
 
 This study examined the relationship between currency pairs (e.g., EUR/USD) and silver prices.  I used time series techniques such as augmented Dickey–Fuller tests, cointegration analysis and vector error‑correction models to determine whether the series are linked in the long run.  Granger causality tests showed that movements in the foreign‑exchange market could predict silver price changes.  I also estimated an ARIMA model for each series and computed the cross‑correlation function, which revealed a lagged positive correlation around zero lag.
 
-<p><img src="{{ site.baseurl }}/images/silver.png" alt="Forex and silver market dynamics" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/commodity_price_prediction" target="_blank">GitHub repository</a></p>
 </details>
@@ -135,7 +129,6 @@ f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f),\quad i_t = \sigma(W_i x_t + U_i h_{t-
 
 with memory state \(c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t\).  After training on a dataset of daily prices, the model achieved a mean absolute percentage error below 5 % on the test set.  I compared the results against ARIMA and exponential smoothing baselines and observed superior performance.
 
-<p><img src="{{ site.baseurl }}/images/lstm.png" alt="LSTM stock price prediction" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/LSTM_Stock_Prediction" target="_blank">GitHub repository</a></p>
 </details>
@@ -211,7 +204,6 @@ This project models cyber risk in banking systems using Bayesian Attack Graphs (
 
 For a banking client I built a machine‑learning pipeline to detect anomalous API requests and quantify exposure.  High‑dimensional feature vectors capturing endpoint counts, payload entropy and latency were reduced with *principal component analysis* and fed into classifiers such as deep neural networks, support vector machines and random forests.  Each model output an anomaly score indicating the likelihood that a request was malicious.  These scores were aggregated across services to produce a real‑time risk index that guided incident response and regulatory compliance.
 
-<p><img src="{{ site.baseurl }}/images/cybersecurity.png" alt="Banking cybersecurity assessment" style="width:60%; border-radius:8px;"></p>
 
 <p><a href="https://github.com/adityasengar/ML-for-threat-prediction" target="_blank">GitHub repository</a></p>
 </details>
@@ -232,7 +224,6 @@ I conducted a market study for a nanoscale temperature sensor aimed at biomedica
 
 This project assessed the commercial landscape for a platform enabling personalised immunotherapy manufacturing.  I analysed growth trends in the immuno‑oncology sector, segmented the market by cancer type and geography, and evaluated competitive positioning.  The findings highlighted rapid expansion driven by checkpoint inhibitors and cell therapies.
 
-<p><img src="{{ site.baseurl }}/images/personalize.png" alt="Immunotherapy market analysis" style="width:60%; border-radius:8px;"></p>
 
 </details>
 
