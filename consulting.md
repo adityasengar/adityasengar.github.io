@@ -15,8 +15,6 @@ Below is a collection of consulting and research projects carried out by AdityaÂ
 $$Tested on the HMDA dataset, the DFWGA generated valid, plausible recourse options for diverse models (CNN, XGBoost, SVMs). For an MLP, it identified an optimal path to loan approval with an L1 proximity of just 1.024 and a sparsity of 4 feature changes.
 
 
-
-
 <p><a href="https://github.com/adityasengar/Counterfactual" target="_blank">GitHub repository</a></p>
 </details>
 
