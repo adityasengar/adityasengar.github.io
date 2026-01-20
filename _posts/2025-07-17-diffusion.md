@@ -264,11 +264,8 @@ EDM makes the connection between denoising and score matching explicit. It defin
 
 
 
-```
 
-    D(x; σ) = c_skip(σ) * x + c_out(σ) * F_θ(c_in(σ) * x; σ)
-
-```
+$$  D(x; σ) = c_skip(σ) * x + c_out(σ) * F_θ(c_in(σ) * x; σ) $$
 
 This structure makes the U-Net's (`F_θ`) job vastly simpler and more stable.
 
@@ -290,35 +287,19 @@ EDM treats generation as solving an **ODE**, using advanced numerical solvers. H
 
     a.  **Calculate Score at current point (`d_i`):**
 
-        $$
-
-        d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i}
-
-        $$
+        $$ d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i} $$
 
     b.  **Predictor Step to a temporary point (`x_hat`):**
 
-        $$
-
-        x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)
-
-        $$
+        $$    x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)    $$
 
     c.  **Calculate Score at the predicted point (`d_hat`):**
 
-        $$
-
-        d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}}
-
-        $$
+        $$  d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}} $$
 
     d.  **Corrector Step to find the final `x_{i+1}`:**
 
-        $$
-
-        x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)
-
-        $$
+        $$  x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)   $$
 
 3.  **Final Image:** After `N` steps, `x_N` is the final image.
 
