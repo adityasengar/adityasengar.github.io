@@ -62,7 +62,7 @@ The problem is, we can't get the score function for the true data distribution $
 
 
 
-### The Solution: Denoising Score Matching 💡
+### The Solution: Denoising Score Matching 
 
 
 
@@ -86,7 +86,7 @@ $$\nabla_{x_t} \log p(x_t) \propto -\epsilon$$
 
 
 
-#### An Intuitive Look: The "Center of Gravity" Analogy 🌌
+#### An Intuitive Look: The "Center of Gravity" Analogy 
 
 
 
