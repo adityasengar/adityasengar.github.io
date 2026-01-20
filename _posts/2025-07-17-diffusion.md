@@ -284,22 +284,22 @@ EDM treats generation as solving an **ODE**, using advanced numerical solvers. H
 
 
 2.  **Iterate for i = 0 to N-1:**
+   
+a. *Calculate Score at current point (`d_i`):**
 
-    a.  **Calculate Score at current point (`d_i`):**
+$$ d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i} $$
 
-        $$ d_i = \frac{x_i - D(x_i; \sigma_i)}{\sigma_i} $$
+b.  **Predictor Step to a temporary point (`x_hat`):**
 
-    b.  **Predictor Step to a temporary point (`x_hat`):**
+$$    x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)    $$
 
-        $$    x_{\text{hat}} = x_i + d_i \cdot (\sigma_{i+1} - \sigma_i)    $$
+c.  **Calculate Score at the predicted point (`d_hat`):**
 
-    c.  **Calculate Score at the predicted point (`d_hat`):**
+$$  d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}} $$
 
-        $$  d_{\text{hat}} = \frac{x_{\text{hat}} - D(x_{\text{hat}}; \sigma_{i+1})}{\sigma_{i+1}} $$
+d.  **Corrector Step to find the final `x_{i+1}`:**
 
-    d.  **Corrector Step to find the final `x_{i+1}`:**
-
-        $$  x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)   $$
+$$  x_{i+1} = x_i + \frac{1}{2} (d_i + d_{\text{hat}}) \cdot (\sigma_{i+1} - \sigma_i)   $$
 
 3.  **Final Image:** After `N` steps, `x_N` is the final image.
 
